@@ -1,3 +1,5 @@
+ [![Version](http://img.shields.io/cocoapods/v/Localize-Swift.svg)](http://cocoapods.org/?q=Localize-Swift)
+ [![Platform](http://img.shields.io/cocoapods/p/Localize-Swift.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # Localize-Swift
@@ -7,7 +9,7 @@ Localize-Swift is a Swift framework that improves i18n and localization with cle
 
 - Keep the localized .strings file your app already uses.
 - Allow your users to change their current language (example coming soon).
-- A more Swift-like syntax that replaces NSLocalizedString  
+- Use a more Swift-like syntax instead of NSLocalizedString.
 
 ## Usage
 
