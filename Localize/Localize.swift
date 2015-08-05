@@ -25,7 +25,7 @@ public func Localized(string: String) -> String {
 
 class Localize: NSObject {
     class func availableLanguages() -> [String] {
-        return NSBundle.mainBundle().localizations
+        return NSBundle.mainBundle().localizations as! [String]
     }
     
     class func currentLanguage() -> String {
@@ -43,7 +43,7 @@ class Localize: NSObject {
         //    TODO: Assert here to check if valid string
         var selectedLanguage: String = String()
         let availableLanguages : [String] = Localize.availableLanguages()
-        if (availableLanguages.contains(language)) {
+        if (contains(availableLanguages, language)) {
             selectedLanguage = language
         }
         else {
@@ -56,9 +56,9 @@ class Localize: NSObject {
     
     class func defaultLanguage() -> String {
         var defaultLanguage : String = String()
-        let preferredLanguage = NSBundle.mainBundle().preferredLocalizations.first!
+        let preferredLanguage = NSBundle.mainBundle().preferredLocalizations.first! as! String
         let availableLanguages : [String] = Localize.availableLanguages()
-        if (availableLanguages.contains(preferredLanguage)) {
+        if (contains(availableLanguages, preferredLanguage)) {
             defaultLanguage = preferredLanguage
         }
         else {
