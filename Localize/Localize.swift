@@ -10,7 +10,8 @@ import Foundation
 
 let LCLCurrentLanguageKey : String = "LCLCurrentLanguageKey"
 let LCLDefaultLanguage : String = "en"
-let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotification"
+
+public let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotification"
 
 // MARK: Localization Syntax
 
