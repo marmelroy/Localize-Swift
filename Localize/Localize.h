@@ -6,9 +6,7 @@
 //  Copyright © 2015 Roy Marmelstein. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#undef NSLocalizedString
+#import <Foundation/Foundation.h>
 
 //! Project version number for Localize.
 FOUNDATION_EXPORT double LocalizeVersionNumber;
