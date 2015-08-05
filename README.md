@@ -1,7 +1,5 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-![Sample](http://i.imgur.com/KDRw1LH.gif)
-
 # Localize-Swift
 Localize-Swift is a Swift framework that improves i18n and localization with cleaner syntax and in-app language switching.
 
@@ -11,6 +9,8 @@ Localize-Swift is a Swift framework that improves i18n and localization with cle
 - Allow your users to change their current language (example coming soon).
 - Use a more Swift-like syntax instead of NSLocalizedString.
 - A simpler genstrings replacement.
+
+<p align="center"><iframe src="http://gfycat.com/ifr/HarshHopefulBass" frameborder="0" scrolling="no" width="370" height="628" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe></p>
 
 ## Usage
 
