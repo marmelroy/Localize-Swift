@@ -10,10 +10,11 @@ import Foundation
 
 let LCLCurrentLanguageKey : String = "LCLCurrentLanguageKey"
 let LCLDefaultLanguage : String = "en"
+let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotification"
 
+// MARK: Localization Syntax
 
-// MARK: Swift-friendly localization syntax
-
+// Swift-friendly localization syntax, replaces NSLocalizedString
 public func Localized(string: String) -> String {
     let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
     let bundle = NSBundle(path: path!)
@@ -21,14 +22,16 @@ public func Localized(string: String) -> String {
     return string!
 }
 
-// MARK: Language preferences
+// MARK: Language Setting Functions
 
 public class Localize: NSObject {
     
+    // Returns a list of available localizations
     public class func availableLanguages() -> [String] {
         return NSBundle.mainBundle().localizations as! [String]
     }
     
+    // Returns the current language
     public class func currentLanguage() -> String {
         var currentLanguage : String = String()
         if ((NSUserDefaults.standardUserDefaults().objectForKey(LCLCurrentLanguageKey)) != nil){
@@ -40,6 +43,7 @@ public class Localize: NSObject {
         return currentLanguage
     }
     
+    // Change the current language
     public class func setCurrentLanguage(language: String) {
         var selectedLanguage: String = String()
         let availableLanguages : [String] = self.availableLanguages()
@@ -49,11 +53,14 @@ public class Localize: NSObject {
         else {
             selectedLanguage = self.defaultLanguage()
         }
-        NSUserDefaults.standardUserDefaults().setObject(selectedLanguage, forKey: LCLCurrentLanguageKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
+        if (selectedLanguage != currentLanguage()){
+            NSUserDefaults.standardUserDefaults().setObject(selectedLanguage, forKey: LCLCurrentLanguageKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
+            NSNotificationCenter.defaultCenter().postNotificationName(LCLLanguageChangeNotification, object: nil)
+        }
     }
     
+    // Returns the app's default language
     class func defaultLanguage() -> String {
         var defaultLanguage : String = String()
         let preferredLanguage = NSBundle.mainBundle().preferredLocalizations.first! as! String
@@ -67,6 +74,7 @@ public class Localize: NSObject {
         return defaultLanguage
     }
     
+    // Resets the current language to the default
     public class func resetCurrentLanaguageToDefault() {
         setCurrentLanguage(self.defaultLanguage())
     }
