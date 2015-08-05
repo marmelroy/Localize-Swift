@@ -35,20 +35,19 @@ public class Localize: NSObject {
             currentLanguage = NSUserDefaults.standardUserDefaults().objectForKey(LCLCurrentLanguageKey) as! String
         }
         else {
-            currentLanguage = defaultLanguage()
+            currentLanguage = self.defaultLanguage()
         }
         return currentLanguage
     }
     
     public class func setCurrentLanguage(language: String) {
-        //    TODO: Assert here to check if valid string
         var selectedLanguage: String = String()
-        let availableLanguages : [String] = Localize.availableLanguages()
+        let availableLanguages : [String] = self.availableLanguages()
         if (contains(availableLanguages, language)) {
             selectedLanguage = language
         }
         else {
-            selectedLanguage = Localize.defaultLanguage()
+            selectedLanguage = self.defaultLanguage()
         }
         NSUserDefaults.standardUserDefaults().setObject(selectedLanguage, forKey: LCLCurrentLanguageKey)
         NSUserDefaults.standardUserDefaults().synchronize()
@@ -58,7 +57,7 @@ public class Localize: NSObject {
     class func defaultLanguage() -> String {
         var defaultLanguage : String = String()
         let preferredLanguage = NSBundle.mainBundle().preferredLocalizations.first! as! String
-        let availableLanguages : [String] = Localize.availableLanguages()
+        let availableLanguages : [String] = self.availableLanguages()
         if (contains(availableLanguages, preferredLanguage)) {
             defaultLanguage = preferredLanguage
         }
@@ -69,7 +68,7 @@ public class Localize: NSObject {
     }
     
     public class func resetCurrentLanaguageToDefault() {
-        setCurrentLanguage(defaultLanguage())
+        setCurrentLanguage(self.defaultLanguage())
     }
 }
 
