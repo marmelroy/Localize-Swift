@@ -69,7 +69,7 @@ public class Localize: NSObject {
     }
     
     public class func resetCurrentLanaguageToDefault() {
-        setCurrentLanaguage(defaultLanguage())
+        setCurrentLanguage(defaultLanguage())
     }
 }
 
