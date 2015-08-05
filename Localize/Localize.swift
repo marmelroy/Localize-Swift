@@ -23,7 +23,8 @@ public func Localized(string: String) -> String {
 
 // MARK: Language preferences
 
-class Localize: NSObject {
+public class Localize: NSObject {
+    
     class func availableLanguages() -> [String] {
         return NSBundle.mainBundle().localizations as! [String]
     }
