@@ -3,14 +3,14 @@
 # Localize-Swift
 Localize-Swift is a Swift framework that improves i18n and localization with cleaner syntax and in-app language switching.
 
+<p align="center"><img src="http://i.imgur.com/KDRw1LH.gif"/></p>
+
 ## Features
 
 - Keep the localized .strings file your app already uses.
 - Allow your users to change their current language (example coming soon).
 - Use a more Swift-like syntax instead of NSLocalizedString.
 - A simpler genstrings replacement.
-
-<p align="center"><img src="http://i.imgur.com/KDRw1LH.gif"/></p>
 
 ## Usage
 
