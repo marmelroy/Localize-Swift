@@ -25,11 +25,11 @@ public func Localized(string: String) -> String {
 
 public class Localize: NSObject {
     
-    class func availableLanguages() -> [String] {
+    public class func availableLanguages() -> [String] {
         return NSBundle.mainBundle().localizations as! [String]
     }
     
-    class func currentLanguage() -> String {
+    public class func currentLanguage() -> String {
         var currentLanguage : String = String()
         if ((NSUserDefaults.standardUserDefaults().objectForKey(LCLCurrentLanguageKey)) != nil){
             currentLanguage = NSUserDefaults.standardUserDefaults().objectForKey(LCLCurrentLanguageKey) as! String
@@ -40,7 +40,7 @@ public class Localize: NSObject {
         return currentLanguage
     }
     
-    class func setCurrentLanaguage(language: String) {
+    public class func setCurrentLanaguage(language: String) {
         //    TODO: Assert here to check if valid string
         var selectedLanguage: String = String()
         let availableLanguages : [String] = Localize.availableLanguages()
@@ -68,7 +68,7 @@ public class Localize: NSObject {
         return defaultLanguage
     }
     
-    class func resetCurrentLanaguageToDefault() {
+    public class func resetCurrentLanaguageToDefault() {
         setCurrentLanaguage(defaultLanguage())
     }
 }
