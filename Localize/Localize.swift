@@ -78,5 +78,13 @@ public class Localize: NSObject {
     public class func resetCurrentLanaguageToDefault() {
         setCurrentLanguage(self.defaultLanguage())
     }
+    
+    // Returns the app's full display name in the current language
+    class func displayNameForLanguage(language: String) -> String {
+        var currentLanguage : String = self.currentLanguage()
+        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage)
+        let displayName = locale.displayNameForKey(NSLocaleLanguageCode, value: language)
+        return displayName!
+    }
 }
 
