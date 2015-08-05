@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		34CE2D0F1B7206A2005CA4CD /* Localize.h in Headers */ = {isa = PBXBuildFile; fileRef = 34CE2D0E1B7206A2005CA4CD /* Localize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34CE2D171B7206C4005CA4CD /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE2D161B7206C4005CA4CD /* Localize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		34CE2D0B1B7206A2005CA4CD /* Localize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CE2D0E1B7206A2005CA4CD /* Localize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localize.h; sourceTree = "<group>"; };
 		34CE2D101B7206A2005CA4CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34CE2D161B7206C4005CA4CD /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				34CE2D0E1B7206A2005CA4CD /* Localize.h */,
 				34CE2D101B7206A2005CA4CD /* Info.plist */,
+				34CE2D161B7206C4005CA4CD /* Localize.swift */,
 			);
 			path = Localize;
 			sourceTree = "<group>";
@@ -90,6 +93,7 @@
 		34CE2D021B7206A2005CA4CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Roy Marmelstein";
 				TargetAttributes = {
@@ -130,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34CE2D171B7206C4005CA4CD /* Localize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +233,7 @@
 		34CE2D141B7206A2005CA4CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -238,12 +244,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.roymarmelstein.Localize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		34CE2D151B7206A2005CA4CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

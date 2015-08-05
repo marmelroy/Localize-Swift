@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#undef NSLocalizedString
+
 //! Project version number for Localize.
 FOUNDATION_EXPORT double LocalizeVersionNumber;
 
