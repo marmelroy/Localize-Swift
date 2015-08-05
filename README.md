@@ -12,29 +12,29 @@ Localize-Swift is a Swift framework that improves i18n and localization with cle
 ## Usage
 
 Import at the top of each Swift file that sets text:
-'''
+```
 import Localize
-'''
+```
 
 Wrap every string in Localized():
-'''
+```
 textLabel.text = Localized("Hello World")
-'''
+```
 
 To get an array of available localizations:
-'''
+```
 Localize.availableLanguages()
-'''
+```
 
 To change the current language:
-'''
+```
 Localize.setCurrentLanaguage("fr")
-'''
+```
 
 To reset back to the default translation:
-'''
+```
 Localize.resetCurrentLanaguageToDefault()
-'''
+```
 
 ### Setting up with Carthage
 
