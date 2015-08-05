@@ -40,7 +40,7 @@ public class Localize: NSObject {
         return currentLanguage
     }
     
-    public class func setCurrentLanaguage(language: String) {
+    public class func setCurrentLanguage(language: String) {
         //    TODO: Assert here to check if valid string
         var selectedLanguage: String = String()
         let availableLanguages : [String] = Localize.availableLanguages()
