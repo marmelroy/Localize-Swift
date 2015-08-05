@@ -7,19 +7,50 @@
 //
 
 import UIKit
+import Localize
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var changeButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
+    var actionSheet: UIAlertController!
+    
+    let availableLanguages = Localize.availableLanguages()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.setText()
+    }
+    
+    func setText(){
+        textLabel.text = Localized("Hello world");
+        changeButton.setTitle("Change", forState: UIControlState.Normal)
+        resetButton.setTitle("Reset", forState: UIControlState.Normal)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func doChangeLanguage(sender: AnyObject) {
+        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        for language in availableLanguages {
+            let displayName = language
+            let languageAction = UIAlertAction(title: displayName, style: .Default, handler: {
+                (alert: UIAlertAction!) -> Void in
+                    Localize.setCurrentLanguage(language)
+                    self.setText()
+            })
+            actionSheet.addAction(languageAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        actionSheet.addAction(cancelAction)
+        self.presentViewController(actionSheet, animated: true, completion: nil)
     }
 
-
+    @IBAction func doResetLanguage(sender: AnyObject) {
+        Localize.resetCurrentLanaguageToDefault()
+        self.setText()
+    }
 }
 
