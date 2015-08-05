@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     
     func setText(){
         textLabel.text = Localized("Hello world");
-        changeButton.setTitle("Change", forState: UIControlState.Normal)
-        resetButton.setTitle("Reset", forState: UIControlState.Normal)
+        changeButton.setTitle(Localized("Change"), forState: UIControlState.Normal)
+        resetButton.setTitle(Localized("Reset"), forState: UIControlState.Normal)
     }
 
     @IBAction func doChangeLanguage(sender: AnyObject) {
