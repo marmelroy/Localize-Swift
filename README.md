@@ -1,6 +1,6 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-[![Sample](http://gfycat.com/HarshHopefulBass)
+![Sample](http://gfycat.com/HarshHopefulBass)
 
 # Localize-Swift
 Localize-Swift is a Swift framework that improves i18n and localization with cleaner syntax and in-app language switching.
