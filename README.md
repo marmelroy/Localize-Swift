@@ -1,4 +1,4 @@
- [![Version](http://img.shields.io/cocoapods/v/Localize-Swift.svg)](http://cocoapods.org/?q=Localize-Swift)
+ [![Version](http://img.shields.io/cocoapods/v/Localize-Swift.svg)](https://cocoapods.org/pods/Localize-Swift)
  [![Platform](http://img.shields.io/cocoapods/p/Localize-Swift.svg)]()
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
