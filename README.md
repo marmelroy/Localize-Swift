@@ -10,6 +10,7 @@ Localize-Swift is a Swift framework that improves i18n and localization with cle
 - Keep the localized .strings file your app already uses.
 - Allow your users to change their current language (example coming soon).
 - Use a more Swift-like syntax instead of NSLocalizedString.
+- A simpler genstrings replacement.
 
 ## Usage
 
@@ -37,6 +38,16 @@ To reset back to the default translation:
 ```
 Localize.resetCurrentLanaguageToDefault()
 ```
+
+## genstrings
+
+To support this new Localized() syntax, Localize-Swift includes a custom genstrings script. To grab all strings from your app (including Localized and NSLocalizedString, copy the genstrings.py file into your project's root folder and run with
+```
+python genstrings.py
+```
+
+This will print the collected strings in the terminal. Select and copy to your base Localizable.strings.
+
 
 ### Setting up with Carthage
 
