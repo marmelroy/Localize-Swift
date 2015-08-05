@@ -41,7 +41,10 @@ Localize.resetCurrentLanaguageToDefault()
 
 ## genstrings
 
-To support this new Localized() syntax, Localize-Swift includes a custom genstrings script. To grab all strings from your app (including Localized and NSLocalizedString, copy the genstrings.py file into your project's root folder and run with
+To support this new Localized("string") syntax, Localize-Swift includes a custom genstrings script.
+
+To grab all strings from your app (including Localized and NSLocalizedString), copy the genstrings.py file into your project's root folder and run with
+
 ```
 python genstrings.py
 ```
