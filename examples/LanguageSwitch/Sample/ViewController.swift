@@ -19,25 +19,42 @@ class ViewController: UIViewController {
     
     let availableLanguages = Localize.availableLanguages()
     
+    // MARK: UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setText()
     }
+    
+    // Add an observer for LCLLanguageChangeNotification on viewWillAppear. This is posted whenever a language changes and allows the viewcontroller to make the necessary UI updated. Very useful for places in your app when a language change might happen.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setText", name: LCLLanguageChangeNotification, object: nil)
+    }
+    
+    // Remove the LCLLanguageChangeNotification on viewWillDisappear
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    // MARK: Localized Text
     
     func setText(){
         textLabel.text = Localized("Hello world");
         changeButton.setTitle(Localized("Change"), forState: UIControlState.Normal)
         resetButton.setTitle(Localized("Reset"), forState: UIControlState.Normal)
     }
+    
+    // MARK: IBActions
 
     @IBAction func doChangeLanguage(sender: AnyObject) {
         actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.ActionSheet)
         for language in availableLanguages {
-            let displayName = language
+            let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .Default, handler: {
                 (alert: UIAlertAction!) -> Void in
                     Localize.setCurrentLanguage(language)
-                    self.setText()
             })
             actionSheet.addAction(languageAction)
         }
@@ -50,7 +67,6 @@ class ViewController: UIViewController {
 
     @IBAction func doResetLanguage(sender: AnyObject) {
         Localize.resetCurrentLanaguageToDefault()
-        self.setText()
     }
 }
 
