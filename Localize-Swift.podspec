@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Localize-Swift"
-  s.version      = "1.0"
+  s.version      = "0.0.1"
   s.summary      = "In-app language switching and better syntax for Swift i18n -  work in progress"
   s.description  = "Swift framework that improves i18n and localization with cleaner syntax and in-app language switching."
   s.homepage     = "https://github.com/marmelroy/Localize-Swift"
