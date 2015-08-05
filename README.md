@@ -10,7 +10,7 @@ Localize-Swift is a Swift framework that improves i18n and localization with cle
 - Use a more Swift-like syntax instead of NSLocalizedString.
 - A simpler genstrings replacement.
 
-<p align="center"><iframe src="http://gfycat.com/ifr/HarshHopefulBass" frameborder="0" scrolling="no" width="370" height="628" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe></p>
+<p align="center"><img src="http://i.imgur.com/KDRw1LH.gif"/></p>
 
 ## Usage
 
