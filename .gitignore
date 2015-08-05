@@ -44,3 +44,5 @@ examples/LanguageSwitch/Carthage/Checkouts/Localize-Swift/examples/LanguageSwitc
 examples/LanguageSwitch/Carthage/Checkouts/Localize-Swift/Localize.xcodeproj/project.pbxproj
 examples/LanguageSwitch/Carthage/Checkouts/Localize-Swift/examples/LanguageSwitch/Sample/Base.lproj/Main.storyboard
 examples/LanguageSwitch/Carthage/Build/iOS/Localize.framework/_CodeSignature/CodeResources
+examples/LanguageSwitch/Sample.xcodeproj/project.xcworkspace/xcuserdata/marmelroy.xcuserdatad/UserInterfaceState.xcuserstate
+examples/LanguageSwitch/Carthage
