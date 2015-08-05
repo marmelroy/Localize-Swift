@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CoreFoundation
 
 let LCLCurrentLanguageKey : String = "LCLCurrentLanguageKey"
 let LCLDefaultLanguage : String = "en"
@@ -16,7 +15,10 @@ let LCLDefaultLanguage : String = "en"
 // MARK: Swift-friendly localization syntax
 
 public func Localized(string: String) -> String {
-    return NSLocalizedString(string, comment:"")
+    let path = NSBundle.mainBundle().pathForResource(currentLanguage(), ofType: "lproj")
+    let bundle = NSBundle(path: path!)
+    let string = bundle?.localizedStringForKey(string, value: nil, table: nil)
+    return string!
 }
 
 // MARK: Language preferences
@@ -37,7 +39,7 @@ public func currentLanguage() -> String {
 }
 
 public func setCurrentLanaguage(language: String) {
-//    TODO: Assert here to check if valid string
+    //    TODO: Assert here to check if valid string
     var selectedLanguage: String = String()
     if (availableLanguages().contains(language)) {
         selectedLanguage = language
@@ -47,7 +49,7 @@ public func setCurrentLanaguage(language: String) {
     }
     NSUserDefaults.standardUserDefaults().setObject(selectedLanguage, forKey: LCLCurrentLanguageKey)
     NSUserDefaults.standardUserDefaults().synchronize()
-
+    
 }
 
 func defaultLanguage() -> String {
@@ -65,17 +67,3 @@ func defaultLanguage() -> String {
 public func resetCurrentLanaguageToDefault() {
     setCurrentLanaguage(defaultLanguage())
 }
-
-// MARK: NSLocalizedString Override
-
-class Foundation {
-    func NSLocalizedString(key: String, comment: String) -> String {
-        let path = NSBundle.mainBundle().pathForResource(currentLanguage(), ofType: "lproj")
-        let bundle = NSBundle(path: path!)
-        let string = bundle?.localizedStringForKey(key, value: nil, table: nil)
-        return string!
-    }
-}
-
-
-
