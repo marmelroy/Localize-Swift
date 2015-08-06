@@ -1,20 +1,20 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # Localize-Swift
-Localize-Swift is a Swift framework that improves i18n and localization with cleaner syntax and in-app language switching.
+Localize-Swift is a simple framework that improves i18n and localization in Swift iOS apps - providing cleaner syntax and in-app language switching.
 
 <p align="center"><img src="http://i.imgur.com/vsrpqBt.gif" width="242" height="425"/></p>
 
 ## Features
 
-- Keep the localized .strings file your app already uses.
-- Allow your users to change their current language (example coming soon).
-- Use a more Swift-like syntax instead of NSLocalizedString.
-- A simpler genstrings replacement.
+- Keep the Localizable.strings file your app already uses.
+- Allow your users to change the app's language without changing their device language.
+- Use Localized(key) instead of NSLocalizedString(key,comment) - a more Swift-friendly syntax.
+- Generate your strings with a new genstrings python script that recognises Localized(key). 
 
 ## Usage
 
-Import at the top of each Swift file that sets text:
+Import Localize at the top of each Swift file that will contain localized text:
 ```
 import Localize
 ```
@@ -34,22 +34,27 @@ To change the current language:
 Localize.setCurrentLanaguage("fr")
 ```
 
-To reset back to the default translation:
+To update the UI in the view where language change is offered, observe LCLLanguageChangeNotification :
+```
+NSNotificationCenter.defaultCenter().addObserver(self, selector: "setText", name: LCLLanguageChangeNotification, object: nil)
+```
+
+To reset back to the default app language:
 ```
 Localize.resetCurrentLanaguageToDefault()
 ```
 
 ## genstrings
 
-To support this new Localized("string") syntax, Localize-Swift includes a custom genstrings script.
+To support this new Localized("string") syntax, Localize-Swift includes a custom genstrings python script.
 
-To grab all strings from your app (including Localized and NSLocalizedString), copy the genstrings.py file into your project's root folder and run with
+Copy the genstrings.py file into your project's root folder and run with
 
 ```
 python genstrings.py
 ```
 
-This will print the collected strings in the terminal. Select and copy to your base Localizable.strings.
+This will print the collected strings in the terminal. Select and copy to your default Localizable.strings.
 
 
 ### Setting up with Carthage
