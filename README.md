@@ -34,7 +34,7 @@ To change the current language:
 Localize.setCurrentLanaguage("fr")
 ```
 
-To update the UI in the view where language change is offered, observe LCLLanguageChangeNotification :
+To update the UI in the viewcontroller where a language change can take place, observe LCLLanguageChangeNotification :
 ```
 NSNotificationCenter.defaultCenter().addObserver(self, selector: "setText", name: LCLLanguageChangeNotification, object: nil)
 ```
