@@ -23,6 +23,14 @@ public func Localized(string: String) -> String {
     return string!
 }
 
+public func LocalizedWithFormat(string: String, args: CVarArgType...) -> String {
+    let locale : NSLocale = NSLocale(localeIdentifier: Localize.currentLanguage())
+    return withVaList(args) {
+        NSString(format: string, locale: Localize.currentLanguage(), arguments: $0)
+    } as String
+}
+
+
 // MARK: Language Setting Functions
 
 public class Localize: NSObject {
