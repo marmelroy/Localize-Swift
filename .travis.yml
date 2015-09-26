@@ -1,0 +1,17 @@
+osx_image: xcode7.0
+language: objective-c
+before_install:
+  - brew update;
+  - brew reinstall xctool
+  - gem install cocoapods
+  - xcrun simctl list
+install: echo "<3"
+env:
+  - MODE=build
+  - MODE=examples
+script: ./build.sh $MODE
+
+# whitelist
+branches:
+  only:
+    - master

@@ -41,6 +41,7 @@ def fetch_files_recursive(directory, extension):
 localizedStringComment = re.compile('NSLocalizedString\("([^"]*)",\s*"([^"]*)"\s*\)', re.DOTALL)
 localizedStringNil = re.compile('NSLocalizedString\("([^"]*)",\s*nil\s*\)', re.DOTALL)
 localized = re.compile('Localized\("([^"]*)"\)', re.DOTALL)
+localizedSwift2 = re.compile('([^"]*).Localized\(""\)', re.DOTALL)
 
 # get string list
 uid = 0
@@ -55,6 +56,9 @@ for file in fetch_files_recursive('.', '.swift'):
             uid += 1
             strings.append((result.group(1), '', file, uid))
         for result in localized.finditer(content):
+            uid += 1
+            strings.append((result.group(1), '', file, uid))
+        for result in localizedSwift2.finditer(content):
             uid += 1
             strings.append((result.group(1), '', file, uid))
 

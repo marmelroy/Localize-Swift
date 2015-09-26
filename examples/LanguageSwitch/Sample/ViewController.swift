@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Localize
+import Localize_Swift
 
 class ViewController: UIViewController {
 
@@ -41,9 +41,9 @@ class ViewController: UIViewController {
     // MARK: Localized Text
     
     func setText(){
-        textLabel.text = Localized("Hello world");
-        changeButton.setTitle(Localized("Change"), forState: UIControlState.Normal)
-        resetButton.setTitle(Localized("Reset"), forState: UIControlState.Normal)
+        textLabel.text = "Hello world".Localized();
+        changeButton.setTitle("Change".Localized(), forState: UIControlState.Normal)
+        resetButton.setTitle("Reset".Localized(), forState: UIControlState.Normal)
     }
     
     // MARK: IBActions
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             actionSheet.addAction(languageAction)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
-            (alert: UIAlertAction!) -> Void in
+            (alert: UIAlertAction) -> Void in
         })
         actionSheet.addAction(cancelAction)
         self.presentViewController(actionSheet, animated: true, completion: nil)

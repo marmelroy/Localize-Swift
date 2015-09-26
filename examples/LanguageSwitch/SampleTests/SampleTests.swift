@@ -2,35 +2,55 @@
 //  SampleTests.swift
 //  SampleTests
 //
-//  Created by Roy Marmelstein on 05/08/2015.
-//  Copyright (c) 2015 Roy Marmelstein. All rights reserved.
+//  Created by Roy Marmelstein on 26/09/2015.
+//  Copyright © 2015 Roy Marmelstein. All rights reserved.
 //
 
-import UIKit
 import XCTest
+import Localize_Swift
 
 class SampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        Localize.resetCurrentLanaguageToDefault()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testSwift1Syntax() {
+        let testString = "Hello world";
+        Localize.setCurrentLanguage("fr")
+        let translatedString = Localized(testString)
+        XCTAssertEqual(translatedString, "Bonjour le monde")
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+    func testSwift2Syntax() {
+        let testString = "Hello world";
+        Localize.setCurrentLanguage("fr")
+        let translatedString = testString.Localized()
+        XCTAssertEqual(translatedString, "Bonjour le monde")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
+    func testMultipleLanguageSwitching() {
+        let testString = "Hello world";
+        Localize.setCurrentLanguage("es")
+        XCTAssertEqual(testString.Localized(), "Hola mundo")
+        Localize.setCurrentLanguage("de")
+        XCTAssertEqual(testString.Localized(), "Hallo Welt")
+        Localize.resetCurrentLanaguageToDefault()
+        XCTAssertEqual(testString.Localized(), "Hello world")
     }
+
+    func testFalseLanguage() {
+        let testString = "Hello world";
+        Localize.setCurrentLanguage("xxx")
+        XCTAssertEqual(testString.Localized(), "Hello world")
+    }
+    
+    func testFalseString() {
+        let testString = "Non translated string";
+        Localize.setCurrentLanguage("fr")
+        XCTAssertEqual(testString.Localized(), "Non translated string")
+    }
+
     
 }
