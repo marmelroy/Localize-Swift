@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Localize
+import Localize_Swift
 
 class SampleTests: XCTestCase {
     

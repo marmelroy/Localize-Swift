@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Localize
+import Localize_Swift
 
 class ViewController: UIViewController {
 
