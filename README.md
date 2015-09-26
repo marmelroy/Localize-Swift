@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/marmelroy/Localize-Swift.svg?branch=master)](https://travis-ci.org/marmelroy/Localize-Swift)
+
+[![Version](http://img.shields.io/cocoapods/v/Localize-Swift.svg)](http://cocoapods.org/?q=AsyncDisplayKit)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # Localize-Swift
@@ -14,9 +17,16 @@ Localize-Swift is a simple framework that improves i18n and localization in Swif
 
 ## Usage
 
-Import Localize at the top of each Swift file that will contain localized text:
+Import Localize at the top of each Swift file that will contain localized text.
+
+If Carthage -
 ```
 import Localize
+```
+
+If CocoaPods -
+```
+import Localize_Swift
 ```
 
 Add .Localized() following any String object you want translated:
