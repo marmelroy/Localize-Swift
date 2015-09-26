@@ -31,7 +31,7 @@ Localize.availableLanguages()
 
 To change the current language:
 ```
-Localize.setCurrentLanaguage("fr")
+Localize.setCurrentLanguage("fr")
 ```
 
 To update the UI in the viewcontroller where a language change can take place, observe LCLLanguageChangeNotification :
