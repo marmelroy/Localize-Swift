@@ -30,7 +30,7 @@ public func LocalizedWithFormat(string: String, args: CVarArgType...) -> String 
 }
 
 // Swift 2 friendly localization syntax, replaces NSLocalizedString
-extension String {
+public extension String {
     func Localized() -> String {
         let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
         let bundle = NSBundle(path: path!)
