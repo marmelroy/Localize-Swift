@@ -16,7 +16,9 @@ Localize-Swift is a simple framework that improves i18n and localization in Swif
 
 Import Localize at the top of each Swift file that will contain localized text:
 ```
-import Localize
+import Localize // if Carthage
+// or
+import Localize_Swift // if CocoaPods
 ```
 
 Add .Localized() following any String object you want translated:
