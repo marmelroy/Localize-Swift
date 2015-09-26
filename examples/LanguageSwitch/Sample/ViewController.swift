@@ -41,9 +41,9 @@ class ViewController: UIViewController {
     // MARK: Localized Text
     
     func setText(){
-        textLabel.text = Localized("Hello world");
-        changeButton.setTitle(Localized("Change"), forState: UIControlState.Normal)
-        resetButton.setTitle(Localized("Reset"), forState: UIControlState.Normal)
+        textLabel.text = "Hello world".Localized();
+        changeButton.setTitle("Change".Localized(), forState: UIControlState.Normal)
+        resetButton.setTitle("Reset".Localized(), forState: UIControlState.Normal)
     }
     
     // MARK: IBActions
