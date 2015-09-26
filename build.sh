@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# **** Update me when new Xcode versions are released! ****
+PLATFORM="platform=iOS Simulator,OS=9.0,name=iPhone 6"
+SDK="iphonesimulator9.0"
+
+
+# It is pitch black.
+set -e
+function trap_handler() {
+    echo -e "\n\nOh no! You walked directly into the slavering fangs of a lurking grue!"
+    echo "**** You have died ****"
+    exit 255
+}
+trap trap_handler INT TERM EXIT
+
+
+MODE="$1"
+
+if [ "$MODE" = "build" ]; then
+    echo "Building Localize-Swift."
+    pod install
+    xctool \
+        -project Localize.xcodeproj \
+        -scheme Localize \
+        -sdk "$SDK" \
+        -destination "$PLATFORM" \
+        build
+    trap - EXIT
+    exit 0
+fi
+
+if [ "$MODE" = "examples" ]; then
+    echo "Building and testing all Localize-Swift examples."
+
+    for example in examples/*/; do
+        echo "Building $example."
+        pod install --project-directory=$example
+        xctool \
+            -workspace "${example}Sample.xcworkspace" \
+            -scheme Sample \
+            -sdk "$SDK" \
+            -destination "$PLATFORM" \
+            build test
+    done
+    trap - EXIT
+    exit 0
+fi
+
+echo "Unrecognised mode '$MODE'."

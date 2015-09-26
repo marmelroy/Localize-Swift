@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3426FF931BB6AEE200E8E1BB /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426FF921BB6AEE200E8E1BB /* SampleTests.swift */; };
-		3426FF9A1BB6AF2C00E8E1BB /* Localize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34346D221B7297010063FED4 /* Localize.framework */; };
 		3426FF9B1BB6AF5D00E8E1BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34346D2F1B72983C0063FED4 /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
 		34346D031B7294470063FED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34346D021B7294470063FED4 /* AppDelegate.swift */; };
 		34346D051B7294470063FED4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34346D041B7294470063FED4 /* ViewController.swift */; };
 		34346D081B7294470063FED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34346D061B7294470063FED4 /* Main.storyboard */; };
 		34346D0A1B7294470063FED4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34346D091B7294470063FED4 /* Images.xcassets */; };
 		34346D0D1B7294470063FED4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34346D0B1B7294470063FED4 /* LaunchScreen.xib */; };
-		34346D231B7297010063FED4 /* Localize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34346D221B7297010063FED4 /* Localize.framework */; };
 		34346D2C1B72983C0063FED4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34346D2F1B72983C0063FED4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3426FF9A1BB6AF2C00E8E1BB /* Localize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34346D231B7297010063FED4 /* Localize.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +161,6 @@
 				34346CF91B7294470063FED4 /* Sources */,
 				34346CFA1B7294470063FED4 /* Frameworks */,
 				34346CFB1B7294470063FED4 /* Resources */,
-				34346D251B7297380063FED4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -242,23 +237,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		34346D251B7297380063FED4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Localize.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3426FF8C1BB6AEE200E8E1BB /* Sources */ = {
