@@ -15,7 +15,7 @@ public let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotificati
 
 // MARK: Localization Syntax
 
-// Swift-friendly localization syntax, replaces NSLocalizedString
+// Swift 1.x friendly localization syntax, replaces NSLocalizedString
 public func Localized(string: String) -> String {
     let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
     let bundle = NSBundle(path: path!)
@@ -27,6 +27,16 @@ public func LocalizedWithFormat(string: String, args: CVarArgType...) -> String 
     return withVaList(args) {
         NSString(format: string, locale: Localize.currentLanguage(), arguments: $0)
     } as String
+}
+
+// Swift 2 friendly localization syntax, replaces NSLocalizedString
+extension String {
+    func Localized() -> String {
+        let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
+        let bundle = NSBundle(path: path!)
+        let string = bundle?.localizedStringForKey(self, value: nil, table: nil)
+        return string!
+    }
 }
 
 
