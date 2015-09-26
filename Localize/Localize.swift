@@ -23,12 +23,6 @@ public func Localized(string: String) -> String {
     return string!
 }
 
-public func LocalizedWithFormat(string: String, args: CVarArgType...) -> String {
-    return withVaList(args) {
-        NSString(format: string, locale: Localize.currentLanguage(), arguments: $0)
-    } as String
-}
-
 // Swift 2 friendly localization syntax, replaces NSLocalizedString
 public extension String {
     func Localized() -> String {

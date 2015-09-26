@@ -7,27 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3426FF7E1BB6A5A800E8E1BB /* LocalizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426FF7D1BB6A5A800E8E1BB /* LocalizeTests.swift */; };
-		3426FF801BB6A5A800E8E1BB /* Localize.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CE2D0B1B7206A2005CA4CD /* Localize.framework */; settings = {ASSET_TAGS = (); }; };
 		34CE2D0F1B7206A2005CA4CD /* Localize.h in Headers */ = {isa = PBXBuildFile; fileRef = 34CE2D0E1B7206A2005CA4CD /* Localize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34CE2D171B7206C4005CA4CD /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CE2D161B7206C4005CA4CD /* Localize.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3426FF811BB6A5A800E8E1BB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34CE2D021B7206A2005CA4CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34CE2D0A1B7206A2005CA4CD;
-			remoteInfo = Localize;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3425CDD41B721D3800AA66C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3426FF7B1BB6A5A800E8E1BB /* LocalizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3426FF7D1BB6A5A800E8E1BB /* LocalizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeTests.swift; sourceTree = "<group>"; };
-		3426FF7F1BB6A5A800E8E1BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34CE2D0B1B7206A2005CA4CD /* Localize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CE2D0E1B7206A2005CA4CD /* Localize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localize.h; sourceTree = "<group>"; };
 		34CE2D101B7206A2005CA4CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,14 +20,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3426FF781BB6A5A800E8E1BB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3426FF801BB6A5A800E8E1BB /* Localize.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		34CE2D071B7206A2005CA4CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,20 +30,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3426FF7C1BB6A5A800E8E1BB /* LocalizeTests */ = {
-			isa = PBXGroup;
-			children = (
-				3426FF7D1BB6A5A800E8E1BB /* LocalizeTests.swift */,
-				3426FF7F1BB6A5A800E8E1BB /* Info.plist */,
-			);
-			path = LocalizeTests;
-			sourceTree = "<group>";
-		};
 		34CE2D011B7206A2005CA4CD = {
 			isa = PBXGroup;
 			children = (
 				34CE2D0D1B7206A2005CA4CD /* Localize */,
-				3426FF7C1BB6A5A800E8E1BB /* LocalizeTests */,
 				34CE2D0C1B7206A2005CA4CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,7 +42,6 @@
 			isa = PBXGroup;
 			children = (
 				34CE2D0B1B7206A2005CA4CD /* Localize.framework */,
-				3426FF7B1BB6A5A800E8E1BB /* LocalizeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,24 +71,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3426FF7A1BB6A5A800E8E1BB /* LocalizeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3426FF851BB6A5A800E8E1BB /* Build configuration list for PBXNativeTarget "LocalizeTests" */;
-			buildPhases = (
-				3426FF771BB6A5A800E8E1BB /* Sources */,
-				3426FF781BB6A5A800E8E1BB /* Frameworks */,
-				3426FF791BB6A5A800E8E1BB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3426FF821BB6A5A800E8E1BB /* PBXTargetDependency */,
-			);
-			name = LocalizeTests;
-			productName = LocalizeTests;
-			productReference = 3426FF7B1BB6A5A800E8E1BB /* LocalizeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		34CE2D0A1B7206A2005CA4CD /* Localize */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34CE2D131B7206A2005CA4CD /* Build configuration list for PBXNativeTarget "Localize" */;
@@ -151,9 +99,6 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Roy Marmelstein";
 				TargetAttributes = {
-					3426FF7A1BB6A5A800E8E1BB = {
-						CreatedOnToolsVersion = 7.0;
-					};
 					34CE2D0A1B7206A2005CA4CD = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -172,19 +117,11 @@
 			projectRoot = "";
 			targets = (
 				34CE2D0A1B7206A2005CA4CD /* Localize */,
-				3426FF7A1BB6A5A800E8E1BB /* LocalizeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3426FF791BB6A5A800E8E1BB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		34CE2D091B7206A2005CA4CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,14 +132,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3426FF771BB6A5A800E8E1BB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3426FF7E1BB6A5A800E8E1BB /* LocalizeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		34CE2D061B7206A2005CA4CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,37 +142,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		3426FF821BB6A5A800E8E1BB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34CE2D0A1B7206A2005CA4CD /* Localize */;
-			targetProxy = 3426FF811BB6A5A800E8E1BB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		3426FF831BB6A5A800E8E1BB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LocalizeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.roymarmelstein.LocalizeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		3426FF841BB6A5A800E8E1BB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LocalizeTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.roymarmelstein.LocalizeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		34CE2D111B7206A2005CA4CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,14 +272,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3426FF851BB6A5A800E8E1BB /* Build configuration list for PBXNativeTarget "LocalizeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3426FF831BB6A5A800E8E1BB /* Debug */,
-				3426FF841BB6A5A800E8E1BB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		34CE2D051B7206A2005CA4CD /* Build configuration list for PBXProject "Localize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
