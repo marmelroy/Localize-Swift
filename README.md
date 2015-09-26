@@ -9,8 +9,8 @@ Localize-Swift is a simple framework that improves i18n and localization in Swif
 
 - Keep the Localizable.strings file your app already uses.
 - Allow your users to change the app's language without changing their device language.
-- Use Localized(key) instead of NSLocalizedString(key,comment) - a more Swift-friendly syntax.
-- Generate your strings with a new genstrings python script that recognises Localized(key). 
+- Use .Localized() instead of NSLocalizedString(key,comment) - a more Swifty syntax.
+- Generate your strings with a new genstrings python script that recognises .Localized().
 
 ## Usage
 
@@ -19,9 +19,9 @@ Import Localize at the top of each Swift file that will contain localized text:
 import Localize
 ```
 
-Wrap every string in Localized():
+Add .Localized() following any String object you want translated:
 ```
-textLabel.text = Localized("Hello World")
+textLabel.text = "Hello World".Localized()
 ```
 
 To get an array of available localizations:
@@ -31,7 +31,7 @@ Localize.availableLanguages()
 
 To change the current language:
 ```
-Localize.setCurrentLanaguage("fr")
+Localize.setCurrentLanguage("fr")
 ```
 
 To update the UI in the viewcontroller where a language change can take place, observe LCLLanguageChangeNotification :
@@ -46,7 +46,7 @@ Localize.resetCurrentLanaguageToDefault()
 
 ## genstrings
 
-To support this new Localized("string") syntax, Localize-Swift includes a custom genstrings python script.
+To support this new i18n syntax, Localize-Swift includes a custom genstrings python script.
 
 Copy the genstrings.py file into your project's root folder and run with
 
@@ -77,5 +77,5 @@ github "marmelroy/Localize-Swift"
 ### Setting up with [CocoaPods](http://cocoapods.org/?q=libPhoneNumber-iOS)
 ```
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'Localize-Swift', '~> 0.0.1'
+pod 'Localize-Swift', '~> 0.2'
 ```
