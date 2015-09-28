@@ -25,7 +25,7 @@ public func Localized(string: String) -> String {
 
 // Swift 2 friendly localization syntax, replaces NSLocalizedString
 public extension String {
-    func Localized() -> String {
+    func localized() -> String {
         let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
         let bundle = NSBundle(path: path!)
         let string = bundle?.localizedStringForKey(self, value: nil, table: nil)
