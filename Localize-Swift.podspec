@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "Roy Marmelstein" => "hello@roysapps.com" }
   s.social_media_url   = "http://twitter.com/marmelroy"
-  s.source       = { :git => "https://github.com/marmelroy/Localize-Swift.git", :tag => "0.4" }
+  s.source       = { :git => "https://github.com/marmelroy/Localize-Swift.git", :tag => "0.5" }
   s.source_files = "Localize"
   s.platform = :ios
   s.ios.deployment_target = "8.0"
