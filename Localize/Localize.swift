@@ -17,19 +17,19 @@ public let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotificati
 
 // Swift 1.x friendly localization syntax, replaces NSLocalizedString
 public func Localized(string: String) -> String {
-    let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
-    let bundle = NSBundle(path: path!)
-    let string = bundle?.localizedStringForKey(string, value: nil, table: nil)
-    return string!
+    if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
+        return bundle.localizedStringForKey(string, value: nil, table: nil)
+    }
+    return string
 }
 
 // Swift 2 friendly localization syntax, replaces NSLocalizedString
 public extension String {
     func localized() -> String {
-        let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
-        let bundle = NSBundle(path: path!)
-        let string = bundle?.localizedStringForKey(self, value: nil, table: nil)
-        return string!
+        if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
+            return bundle.localizedStringForKey(self, value: nil, table: nil)
+        }
+        return self
     }
 }
 
