@@ -49,7 +49,7 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "setText", name
 
 To reset back to the default app language:
 ```
-Localize.resetCurrentLanaguageToDefault()
+Localize.resetCurrentLanguageToDefault()
 ```
 
 ## genstrings
