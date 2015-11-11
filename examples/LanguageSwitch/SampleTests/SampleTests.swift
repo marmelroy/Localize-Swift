@@ -13,7 +13,7 @@ class SampleTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        Localize.resetCurrentLanaguageToDefault()
+        Localize.resetCurrentLanguageToDefault()
     }
     
     func testSwift1Syntax() {
@@ -36,7 +36,7 @@ class SampleTests: XCTestCase {
         XCTAssertEqual(testString.localized(), "Hola mundo")
         Localize.setCurrentLanguage("de")
         XCTAssertEqual(testString.localized(), "Hallo Welt")
-        Localize.resetCurrentLanaguageToDefault()
+        Localize.resetCurrentLanguageToDefault()
         XCTAssertEqual(testString.localized(), "Hello world")
     }
 
