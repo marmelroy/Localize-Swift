@@ -10,6 +10,7 @@ import Foundation
 
 let LCLCurrentLanguageKey : String = "LCLCurrentLanguageKey"
 let LCLDefaultLanguage : String = "en"
+let LCLBaseBundle : String = "Base"
 
 public let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotification"
 
@@ -19,6 +20,8 @@ public let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotificati
 public func Localized(string: String) -> String {
     if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
         return bundle.localizedStringForKey(string, value: nil, table: nil)
+    } else if let path = NSBundle.mainBundle().pathForResource(LCLBaseBundle, ofType: "lproj"), bundle = NSBundle(path: path) {
+        return bundle.localizedStringForKey(string, value: nil, table: nil)
     }
     return string
 }
@@ -27,6 +30,8 @@ public func Localized(string: String) -> String {
 public extension String {
     func localized() -> String {
         if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
+            return bundle.localizedStringForKey(self, value: nil, table: nil)
+        } else if let path = NSBundle.mainBundle().pathForResource(LCLBaseBundle, ofType: "lproj"), bundle = NSBundle(path: path) {
             return bundle.localizedStringForKey(self, value: nil, table: nil)
         }
         return self
