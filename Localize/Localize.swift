@@ -8,14 +8,22 @@
 
 import Foundation
 
+/// Internal current language key
 let LCLCurrentLanguageKey : String = "LCLCurrentLanguageKey"
+
+/// Default language. English. If English is unavailable defaults to base localization.
 let LCLDefaultLanguage : String = "en"
 
+/// Name for language change notification
 public let LCLLanguageChangeNotification : String = "LCLLanguageChangeNotification"
 
 // MARK: Localization Syntax
 
-// Swift 1.x friendly localization syntax, replaces NSLocalizedString
+/**
+Swift 1.x friendly localization syntax, replaces NSLocalizedString
+- Parameter string: Key to be localized.
+- Returns: The localized string.
+*/
 public func Localized(string: String) -> String {
     if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
         return bundle.localizedStringForKey(string, value: nil, table: nil)
@@ -23,8 +31,11 @@ public func Localized(string: String) -> String {
     return string
 }
 
-// Swift 2 friendly localization syntax, replaces NSLocalizedString
 public extension String {
+    /**
+     Swift 2 friendly localization syntax, replaces NSLocalizedString
+     - Returns: The localized string.
+     */
     func localized() -> String {
         if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
             return bundle.localizedStringForKey(self, value: nil, table: nil)
@@ -38,12 +49,18 @@ public extension String {
 
 public class Localize: NSObject {
     
-    // Returns a list of available localizations
+    /**
+     List available languages
+     - Returns: Array of available languages.
+     */
     public class func availableLanguages() -> [String] {
         return NSBundle.mainBundle().localizations
     }
     
-    // Returns the current language
+    /**
+     Current language
+     - Returns: The current language. String.
+     */
     public class func currentLanguage() -> String {
         var currentLanguage : String = String()
         if ((NSUserDefaults.standardUserDefaults().objectForKey(LCLCurrentLanguageKey)) != nil){
@@ -55,7 +72,10 @@ public class Localize: NSObject {
         return currentLanguage
     }
     
-    // Change the current language
+    /**
+     Change the current language
+     - Parameter language: Desired language.
+     */
     public class func setCurrentLanguage(language: String) {
         var selectedLanguage: String = String()
         let availableLanguages : [String] = self.availableLanguages()
@@ -72,7 +92,10 @@ public class Localize: NSObject {
         }
     }
     
-    // Returns the app's default language
+    /**
+     Default language
+     - Returns: The app's default language. String.
+     */
     class func defaultLanguage() -> String {
         var defaultLanguage : String = String()
         let preferredLanguage = NSBundle.mainBundle().preferredLocalizations.first!
@@ -86,12 +109,18 @@ public class Localize: NSObject {
         return defaultLanguage
     }
     
-    // Resets the current language to the default
+    /**
+     Resets the current language to the default
+     */
     public class func resetCurrentLanguageToDefault() {
         setCurrentLanguage(self.defaultLanguage())
     }
     
-    // Returns the app's full display name in the current language
+    /**
+     Get the current language's display name for a language.
+     - Parameter language: Desired language.
+     - Returns: The localized string.
+     */
     public class func displayNameForLanguage(language: String) -> String {
         let currentLanguage : String = self.currentLanguage()
         let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage)
