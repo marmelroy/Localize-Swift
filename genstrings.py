@@ -42,7 +42,7 @@ localizedStringComment = re.compile('NSLocalizedString\("([^"]*)",\s*"([^"]*)"\s
 localizedStringNil = re.compile('NSLocalizedString\("([^"]*)",\s*nil\s*\)', re.DOTALL)
 localized = re.compile('Localized\("([^"]*)"[^\n\r]*\)', re.DOTALL)
 localizedSwift2 = re.compile('"([^"]*)".localized\(\)', re.DOTALL)
-localizedSwift2WithFormat = re.compile('"([^"]*)".localizedWithFormat\(.*\)', re.DOTALL)
+localizedSwift2WithFormat = re.compile('"([^"]*)".localizedWithFormat\([^\n\r]*\)', re.DOTALL)
 
 # get string list
 uid = 0
