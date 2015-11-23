@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func doResetLanguage(sender: AnyObject) {
-        Localize.resetCurrentLanaguageToDefault()
+        Localize.resetCurrentLanguageToDefault()
     }
 }
 

@@ -49,7 +49,7 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "setText", name
 
 To reset back to the default app language:
 ```
-Localize.resetCurrentLanaguageToDefault()
+Localize.resetCurrentLanguageToDefault()
 ```
 
 ## genstrings
@@ -82,7 +82,7 @@ To integrate Localize-Swift into your Xcode project using Carthage, specify it i
 github "marmelroy/Localize-Swift"
 ```
 
-### Setting up with [CocoaPods](http://cocoapods.org/?q=libPhoneNumber-iOS)
+### Setting up with [CocoaPods](http://cocoapods.org/?q=Localize-Swift)
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'Localize-Swift', '~> 0.2'
