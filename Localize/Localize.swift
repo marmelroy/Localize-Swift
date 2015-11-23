@@ -31,6 +31,15 @@ public func Localized(string: String) -> String {
     return string
 }
 
+/**
+ Swift 1.x friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
+ - Parameter string: Key to be localized.
+ - Returns: The formatted localized string with arguments.
+ */
+public func Localized(string: String, arguments args: CVarArgType...) -> String {
+    return String(format: Localized(string), arguments: args)
+}
+
 public extension String {
     /**
      Swift 2 friendly localization syntax, replaces NSLocalizedString
@@ -42,7 +51,16 @@ public extension String {
         }
         return self
     }
+
+    /**
+     Swift 2 friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
+     - Returns: The formatted localized string with arguments.
+     */
+    func localizedWithFormat(arguments args: CVarArgType...) -> String {
+        return String(format: localized(), arguments: args)
+    }
 }
+
 
 
 // MARK: Language Setting Functions
