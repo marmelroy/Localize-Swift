@@ -23,15 +23,26 @@ public func Localized(string: String) -> String {
     return string!
 }
 
-// Swift 2 friendly localization syntax, replaces NSLocalizedString
+// Swift 1.x friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
+public func Localized(string: String, args: CVarArgType...) -> String {
+    return String(format: Localized(string), arguments: args)
+}
+
 public extension String {
+    // Swift 2 friendly localization syntax, replaces NSLocalizedString
     func localized() -> String {
         let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj")
         let bundle = NSBundle(path: path!)
         let string = bundle?.localizedStringForKey(self, value: nil, table: nil)
         return string!
     }
+
+    // Swift 2 friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
+    func localizedWithFormat(args: CVarArgType...) -> String {
+        return String(format: localized(), arguments: args)
+    }
 }
+
 
 
 // MARK: Language Setting Functions
