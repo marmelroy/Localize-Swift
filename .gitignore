@@ -72,4 +72,56 @@ examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods.debug.xcconfig
 examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods.modulemap
 examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods.release.xcconfig
 examples/LanguageSwitch/Sample.xcworkspace/xcuserdata/marmelroy.xcuserdatad/UserInterfaceState.xcuserstate
-build
+
+# Created by https://www.gitignore.io/api/xcode,osx
+
+### Xcode ###
+# Xcode
+#
+
+## Build generated
+build/
+DerivedData
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
