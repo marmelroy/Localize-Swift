@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author             = { "Roy Marmelstein" => "hello@roysapps.com" }
   s.social_media_url   = "http://twitter.com/marmelroy"
   s.source       = { :git => "https://github.com/marmelroy/Localize-Swift.git", :tag => "1.0" }
-  s.source_files = "Source"
+  s.source_files = "Sources"
   s.platform = :ios
   s.ios.deployment_target = "8.0"
   s.requires_arc = true
