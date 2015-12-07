@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Sample
+//  ExampleSPM
 //
-//  Created by Roy Marmelstein on 05/08/2015.
-//  Copyright (c) 2015 Roy Marmelstein. All rights reserved.
+//  Created by Roy Marmelstein on 07/12/2015.
+//  Copyright © 2015 Roy Marmelstein. All rights reserved.
 //
 
 import UIKit
