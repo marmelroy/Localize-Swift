@@ -91,7 +91,7 @@ public class Localize: NSObject {
      - Parameter language: Desired language.
      */
     public class func setCurrentLanguage(language: String) {
-        var selectedLanguage = availableLanguages().contains(language) ? language : defaultLanguage()
+        let selectedLanguage = availableLanguages().contains(language) ? language : defaultLanguage()
         if (selectedLanguage != currentLanguage()){
             NSUserDefaults.standardUserDefaults().setObject(selectedLanguage, forKey: LCLCurrentLanguageKey)
             NSUserDefaults.standardUserDefaults().synchronize()
