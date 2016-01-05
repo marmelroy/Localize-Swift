@@ -103,7 +103,7 @@ public class Localize: NSObject {
      Default language
      - Returns: The app's default language. String.
      */
-    class func defaultLanguage() -> String {
+    public class func defaultLanguage() -> String {
         var defaultLanguage: String = String()
         guard let preferredLanguage = NSBundle.mainBundle().preferredLocalizations.first else {
             return LCLDefaultLanguage
