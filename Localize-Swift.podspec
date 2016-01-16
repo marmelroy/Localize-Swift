@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Localize-Swift"
-  s.version      = "1.0"
+  s.version      = "1.0.1"
   s.summary      = "Swift-friendly localization and i18n with in-app language switching."
   s.description  = "Localize-Swift is a simple framework that improves i18n and localization in Swift iOS apps - providing cleaner syntax and in-app language switching."
   s.homepage     = "https://github.com/marmelroy/Localize-Swift"
@@ -11,5 +11,6 @@ Pod::Spec.new do |s|
   s.source_files = "Sources"
   s.platform = :ios
   s.ios.deployment_target = "8.0"
+  s.tvos.deployment_target = '9.0'
   s.requires_arc = true
 end
