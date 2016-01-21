@@ -40,6 +40,19 @@ public func Localized(string: String, arguments args: CVarArgType...) -> String 
     return String(format: Localized(string), arguments: args)
 }
 
+/**
+ Swift 1.x friendly plural localization syntax with a format argument
+ 
+ - parameter string:   String to be formatted
+ - parameter argument: Argument to determine pluralisation
+ 
+ - returns: Pluralized localized string.
+ */
+public func LocalizedPlural(string: String, argument: CVarArgType) -> String {
+    return NSString.localizedStringWithFormat(Localized(string), argument) as String
+}
+
+
 public extension String {
     /**
      Swift 2 friendly localization syntax, replaces NSLocalizedString
@@ -56,8 +69,19 @@ public extension String {
      Swift 2 friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
      - Returns: The formatted localized string with arguments.
      */
-    func localizedWithFormat(arguments args: CVarArgType...) -> String {
-        return String(format: localized(), arguments: args)
+    func localizedFormat(arguments: CVarArgType...) -> String {
+        return String(format: localized(), arguments: arguments)
+    }
+    
+    /**
+     Swift 2 friendly plural localization syntax with a format argument
+     
+     - parameter argument: Argument to determine pluralisation
+     
+     - returns: Pluralized localized string.
+     */
+    func localizedPlural(argument: CVarArgType) -> String {
+        return NSString.localizedStringWithFormat(localized(), argument) as String
     }
 }
 
