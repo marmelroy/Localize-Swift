@@ -80,5 +80,5 @@ github "marmelroy/Localize-Swift"
 ### Setting up with [CocoaPods](http://cocoapods.org/?q=Localize-Swift)
 ```
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'Localize-Swift', '~> 0.2'
+pod 'Localize-Swift', '~> 1.1'
 ```
