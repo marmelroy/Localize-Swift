@@ -20,8 +20,8 @@ MODE="$1"
 if [ "$MODE" = "build" ]; then
     echo "Building Localize-Swift."
     xctool \
-        -project Localize.xcodeproj \
-        -scheme Localize \
+        -project Localize_Swift.xcodeproj \
+        -scheme Localize_Swift \
         -sdk "$SDK" \
         -destination "$PLATFORM" \
         build
