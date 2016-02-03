@@ -14,6 +14,9 @@ let LCLCurrentLanguageKey = "LCLCurrentLanguageKey"
 /// Default language. English. If English is unavailable defaults to base localization.
 let LCLDefaultLanguage = "en"
 
+/// Base bundle as fallback.
+let LCLBaseBundle = "Base"
+
 /// Name for language change notification
 public let LCLLanguageChangeNotification = "LCLLanguageChangeNotification"
 
@@ -25,10 +28,7 @@ Swift 1.x friendly localization syntax, replaces NSLocalizedString
 - Returns: The localized string.
 */
 public func Localized(string: String) -> String {
-    if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
-        return bundle.localizedStringForKey(string, value: nil, table: nil)
-    }
-    return string
+    return string.localized()
 }
 
 /**
@@ -37,7 +37,7 @@ public func Localized(string: String) -> String {
  - Returns: The formatted localized string with arguments.
  */
 public func Localized(string: String, arguments args: CVarArgType...) -> String {
-    return String(format: Localized(string), arguments: args)
+    return string.localizedFormat(args)
 }
 
 /**
@@ -49,7 +49,7 @@ public func Localized(string: String, arguments args: CVarArgType...) -> String 
  - returns: Pluralized localized string.
  */
 public func LocalizedPlural(string: String, argument: CVarArgType) -> String {
-    return NSString.localizedStringWithFormat(Localized(string), argument) as String
+    return string.localizedPlural(argument)
 }
 
 
@@ -61,6 +61,9 @@ public extension String {
     func localized() -> String {
         if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
             return bundle.localizedStringForKey(self, value: nil, table: nil)
+        }
+        else if let path = NSBundle.mainBundle().pathForResource(LCLBaseBundle, ofType: "lproj"), bundle = NSBundle(path: path) {
+            return bundle.localizedStringForKey(string, value: nil, table: nil)
         }
         return self
     }
