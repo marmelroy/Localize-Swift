@@ -36,8 +36,8 @@ public func Localized(string: String) -> String {
  - Parameter string: Key to be localized.
  - Returns: The formatted localized string with arguments.
  */
-public func Localized(string: String, arguments args: CVarArgType...) -> String {
-    return string.localizedFormat(args)
+public func Localized(string: String, arguments: CVarArgType...) -> String {
+    return String(format: string.localized(), arguments: arguments)
 }
 
 /**
@@ -63,7 +63,7 @@ public extension String {
             return bundle.localizedStringForKey(self, value: nil, table: nil)
         }
         else if let path = NSBundle.mainBundle().pathForResource(LCLBaseBundle, ofType: "lproj"), bundle = NSBundle(path: path) {
-            return bundle.localizedStringForKey(string, value: nil, table: nil)
+            return bundle.localizedStringForKey(self, value: nil, table: nil)
         }
         return self
     }
