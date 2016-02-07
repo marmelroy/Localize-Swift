@@ -11,6 +11,8 @@
 		3433F2461C518AF7003AE34D /* Localize_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2451C518AF7003AE34D /* Localize_SwiftTests.swift */; };
 		3433F2521C518B38003AE34D /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433F2501C518B38003AE34D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3433F2531C518B38003AE34D /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2511C518B38003AE34D /* Localize.swift */; };
+		344169471C67539300B93D28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169461C67539300B93D28 /* Foundation.framework */; };
+		344169491C67539700B93D28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169481C67539700B93D28 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		3433F2471C518AF7003AE34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3433F2501C518B38003AE34D /* Localize_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Localize_Swift.h; path = Sources/Localize_Swift.h; sourceTree = SOURCE_ROOT; };
 		3433F2511C518B38003AE34D /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localize.swift; path = Sources/Localize.swift; sourceTree = SOURCE_ROOT; };
+		344169461C67539300B93D28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		344169481C67539700B93D28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344169491C67539700B93D28 /* UIKit.framework in Frameworks */,
+				344169471C67539300B93D28 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +82,8 @@
 				3433F2501C518B38003AE34D /* Localize_Swift.h */,
 				3433F2511C518B38003AE34D /* Localize.swift */,
 				3433F23B1C518AF7003AE34D /* Info.plist */,
+				344169481C67539700B93D28 /* UIKit.framework */,
+				344169461C67539300B93D28 /* Foundation.framework */,
 			);
 			path = Localize_Swift;
 			sourceTree = "<group>";
@@ -321,6 +329,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
