@@ -107,10 +107,7 @@ public class Localize: NSObject {
      - Returns: The current language. String.
      */
     public class func currentLanguage() -> String {
-        if let currentLanguage = NSUserDefaults.standardUserDefaults().objectForKey(LCLCurrentLanguageKey) as? String {
-            return currentLanguage
-        }
-        return defaultLanguage()
+        return language
     }
     
     /**
@@ -122,6 +119,15 @@ public class Localize: NSObject {
         if (selectedLanguage != currentLanguage()){
             NSUserDefaults.standardUserDefaults().setObject(selectedLanguage, forKey: LCLCurrentLanguageKey)
             NSUserDefaults.standardUserDefaults().synchronize()
+          
+            self.language = selectedLanguage
+            
+            // Localize UserDefaults AppleLanguages key
+            localizeUserDefaultsLanguages(language)
+          
+            // Localize Bundles
+            NSBundle.setLanguage(language)
+          
             NSNotificationCenter.defaultCenter().postNotificationName(LCLLanguageChangeNotification, object: nil)
         }
     }

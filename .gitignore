@@ -47,30 +47,6 @@ examples/LanguageSwitch/Carthage/Build/iOS/Localize.framework/_CodeSignature/Cod
 examples/LanguageSwitch/Sample.xcodeproj/project.xcworkspace/xcuserdata/marmelroy.xcuserdatad/UserInterfaceState.xcuserstate
 examples/LanguageSwitch/Carthage
 Sample.xccheckout
-examples/LanguageSwitch/Podfile.lock
-examples/LanguageSwitch/Pods/Headers/Private/Localize-Swift/Localize.h
-examples/LanguageSwitch/Pods/Local Podspecs/Localize-Swift.podspec.json
-examples/LanguageSwitch/Pods/Manifest.lock
-examples/LanguageSwitch/Pods/Pods.xcodeproj/project.pbxproj
-examples/LanguageSwitch/Pods/Pods.xcodeproj/xcshareddata/xcschemes/Localize-Swift.xcscheme
-examples/LanguageSwitch/Pods/Pods.xcodeproj/xcuserdata/marmelroy.xcuserdatad/xcschemes/Pods.xcscheme
-examples/LanguageSwitch/Pods/Pods.xcodeproj/xcuserdata/marmelroy.xcuserdatad/xcschemes/xcschememanagement.plist
-examples/LanguageSwitch/Pods/Target Support Files/Localize-Swift/Info.plist
-examples/LanguageSwitch/Pods/Target Support Files/Localize-Swift/Localize-Swift-dummy.m
-examples/LanguageSwitch/Pods/Target Support Files/Localize-Swift/Localize-Swift-prefix.pch
-examples/LanguageSwitch/Pods/Target Support Files/Localize-Swift/Localize-Swift-umbrella.h
-examples/LanguageSwitch/Pods/Target Support Files/Localize-Swift/Localize-Swift.modulemap
-examples/LanguageSwitch/Pods/Target Support Files/Localize-Swift/Localize-Swift.xcconfig
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Info.plist
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods-acknowledgements.plist
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods-dummy.m
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods-frameworks.sh
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods-resources.sh
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods-umbrella.h
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods.debug.xcconfig
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods.modulemap
-examples/LanguageSwitch/Pods/Target Support Files/Pods/Pods.release.xcconfig
 examples/LanguageSwitch/Sample.xcworkspace/xcuserdata/marmelroy.xcuserdatad/UserInterfaceState.xcuserstate
 
 # Created by https://www.gitignore.io/api/xcode,osx
@@ -78,6 +54,15 @@ examples/LanguageSwitch/Sample.xcworkspace/xcuserdata/marmelroy.xcuserdatad/User
 ### Xcode ###
 # Xcode
 #
+
+
+## Cocoapods
+examples/LanguageSwitch/Pods/
+examples/LanguageSwitch/Podfile.lock
+examples/LanguageSwitch/Build
+examples/LanguageSwitch/Podfile.lock
+examples/LanguageSwitch/Sample.
+examples/LanguageSwitch/Sample.xcworkspace
 
 ## Build generated
 build/
