@@ -2,4 +2,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, "8.0"
 use_frameworks!
 
-pod 'Localize-Swift', :path => '../..'
+target 'Sample' do
+  pod 'Localize-Swift', :path => '../..'
+end
