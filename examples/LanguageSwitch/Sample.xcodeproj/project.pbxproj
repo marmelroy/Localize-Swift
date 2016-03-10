@@ -15,6 +15,9 @@
 		34346D0A1B7294470063FED4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34346D091B7294470063FED4 /* Images.xcassets */; };
 		34346D0D1B7294470063FED4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34346D0B1B7294470063FED4 /* LaunchScreen.xib */; };
 		34346D2C1B72983C0063FED4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34346D2F1B72983C0063FED4 /* Localizable.strings */; };
+		80ADC5921C91CB1B006C285D /* LocalizableBundlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5911C91CB1B006C285D /* LocalizableBundlesTableViewController.swift */; };
+		80ADC5941C91CC57006C285D /* BundleFolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5931C91CC57006C285D /* BundleFolderTableViewController.swift */; };
+		80ADC5961C91CCC6006C285D /* DictionaryBrowserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5951C91CCC6006C285D /* DictionaryBrowserTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 				34346D021B7294470063FED4 /* AppDelegate.swift */,
 				34346D041B7294470063FED4 /* ViewController.swift */,
 				34346D061B7294470063FED4 /* Main.storyboard */,
+				80ADC5911C91CB1B006C285D /* LocalizableBundlesTableViewController.swift */,
+				80ADC5931C91CC57006C285D /* BundleFolderTableViewController.swift */,
+				80ADC5951C91CCC6006C285D /* DictionaryBrowserTableViewController.swift */,
 				34346D091B7294470063FED4 /* Images.xcassets */,
 				34346D0B1B7294470063FED4 /* LaunchScreen.xib */,
 				34346D281B7297820063FED4 /* Resources */,
@@ -242,7 +248,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				34346D051B7294470063FED4 /* ViewController.swift in Sources */,
+				80ADC5941C91CC57006C285D /* BundleFolderTableViewController.swift in Sources */,
+				80ADC5921C91CB1B006C285D /* LocalizableBundlesTableViewController.swift in Sources */,
 				34346D031B7294470063FED4 /* AppDelegate.swift in Sources */,
+				80ADC5961C91CCC6006C285D /* DictionaryBrowserTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
