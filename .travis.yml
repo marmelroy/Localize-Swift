@@ -7,7 +7,7 @@ env:
 before_install:
   - brew update || brew update
   - brew outdated xctool || brew upgrade xctool
-  - gem install cocoapods --pre
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
   - xcrun simctl list
 install: echo "<3"
 env:
@@ -18,4 +18,4 @@ script: ./build.sh $MODE
 # whitelist
 branches:
   only:
-    - master
+    - dev
