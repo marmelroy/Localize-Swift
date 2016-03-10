@@ -13,6 +13,12 @@
 		3433F2531C518B38003AE34D /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2511C518B38003AE34D /* Localize.swift */; };
 		344169471C67539300B93D28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169461C67539300B93D28 /* Foundation.framework */; };
 		344169491C67539700B93D28 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169481C67539700B93D28 /* UIKit.framework */; };
+		80ADC5861C918386006C285D /* LocalizedBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5851C918386006C285D /* LocalizedBundle.swift */; };
+		80ADC5881C91916B006C285D /* Localize+NSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5871C91916B006C285D /* Localize+NSUserDefaults.swift */; };
+		80ADC58A1C919514006C285D /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5891C919514006C285D /* String+LocalizeTableName.swift */; };
+		80ADC58C1C919A5E006C285D /* String+LocalizeBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC58B1C919A5E006C285D /* String+LocalizeBundle.swift */; };
+		80ADC58E1C91C0E1006C285D /* Localize+TransparentInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC58D1C91C0E1006C285D /* Localize+TransparentInit.swift */; };
+		80ADC5901C91C37C006C285D /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC58F1C91C37C006C285D /* Localizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,12 @@
 		3433F2511C518B38003AE34D /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localize.swift; path = Sources/Localize.swift; sourceTree = SOURCE_ROOT; };
 		344169461C67539300B93D28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		344169481C67539700B93D28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		80ADC5851C918386006C285D /* LocalizedBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedBundle.swift; path = Sources/LocalizedBundle.swift; sourceTree = SOURCE_ROOT; };
+		80ADC5871C91916B006C285D /* Localize+NSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Localize+NSUserDefaults.swift"; path = "Sources/Localize+NSUserDefaults.swift"; sourceTree = SOURCE_ROOT; };
+		80ADC5891C919514006C285D /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeTableName.swift"; path = "Sources/String+LocalizeTableName.swift"; sourceTree = SOURCE_ROOT; };
+		80ADC58B1C919A5E006C285D /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeBundle.swift"; path = "Sources/String+LocalizeBundle.swift"; sourceTree = SOURCE_ROOT; };
+		80ADC58D1C91C0E1006C285D /* Localize+TransparentInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Localize+TransparentInit.swift"; path = "Sources/Localize+TransparentInit.swift"; sourceTree = SOURCE_ROOT; };
+		80ADC58F1C91C37C006C285D /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizable.swift; path = Sources/Localizable.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,12 @@
 			children = (
 				3433F2501C518B38003AE34D /* Localize_Swift.h */,
 				3433F2511C518B38003AE34D /* Localize.swift */,
+				80ADC5871C91916B006C285D /* Localize+NSUserDefaults.swift */,
+				80ADC58D1C91C0E1006C285D /* Localize+TransparentInit.swift */,
+				80ADC5851C918386006C285D /* LocalizedBundle.swift */,
+				80ADC5891C919514006C285D /* String+LocalizeTableName.swift */,
+				80ADC58B1C919A5E006C285D /* String+LocalizeBundle.swift */,
+				80ADC58F1C91C37C006C285D /* Localizable.swift */,
 				3433F23B1C518AF7003AE34D /* Info.plist */,
 				344169481C67539700B93D28 /* UIKit.framework */,
 				344169461C67539300B93D28 /* Foundation.framework */,
@@ -205,7 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80ADC5881C91916B006C285D /* Localize+NSUserDefaults.swift in Sources */,
+				80ADC5901C91C37C006C285D /* Localizable.swift in Sources */,
 				3433F2531C518B38003AE34D /* Localize.swift in Sources */,
+				80ADC5861C918386006C285D /* LocalizedBundle.swift in Sources */,
+				80ADC58C1C919A5E006C285D /* String+LocalizeBundle.swift in Sources */,
+				80ADC58A1C919514006C285D /* String+LocalizeTableName.swift in Sources */,
+				80ADC58E1C91C0E1006C285D /* Localize+TransparentInit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
