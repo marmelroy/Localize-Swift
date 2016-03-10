@@ -57,7 +57,8 @@ examples/LanguageSwitch/Sample.xcworkspace/xcuserdata/marmelroy.xcuserdatad/User
 
 
 ## Cocoapods
-examples/LanguageSwitch/Pods/Podfile.lock
+examples/LanguageSwitch/Pods/
+examples/LanguageSwitch/Podfile.lock
 examples/LanguageSwitch/Build
 examples/LanguageSwitch/Podfile.lock
 examples/LanguageSwitch/Sample.
