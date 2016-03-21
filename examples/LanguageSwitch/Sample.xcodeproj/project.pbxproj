@@ -15,9 +15,9 @@
 		34346D0A1B7294470063FED4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34346D091B7294470063FED4 /* Images.xcassets */; };
 		34346D0D1B7294470063FED4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34346D0B1B7294470063FED4 /* LaunchScreen.xib */; };
 		34346D2C1B72983C0063FED4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34346D2F1B72983C0063FED4 /* Localizable.strings */; };
-		80ADC5921C91CB1B006C285D /* LocalizableBundlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5911C91CB1B006C285D /* LocalizableBundlesTableViewController.swift */; };
-		80ADC5941C91CC57006C285D /* BundleFolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5931C91CC57006C285D /* BundleFolderTableViewController.swift */; };
-		80ADC5961C91CCC6006C285D /* DictionaryBrowserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ADC5951C91CCC6006C285D /* DictionaryBrowserTableViewController.swift */; };
+		80BFA51B1CA00C800027A995 /* BundleFolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BFA5181CA00C800027A995 /* BundleFolderTableViewController.swift */; };
+		80BFA51C1CA00C800027A995 /* DictionaryBrowserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BFA5191CA00C800027A995 /* DictionaryBrowserTableViewController.swift */; };
+		80BFA51D1CA00C800027A995 /* LocalizableBundlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BFA51A1CA00C800027A995 /* LocalizableBundlesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,9 @@
 		34346D341B7298C60063FED4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		34346D351B7298DD0063FED4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		34346D361B7298E80063FED4 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/Localizable.strings; sourceTree = "<group>"; };
+		80BFA5181CA00C800027A995 /* BundleFolderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleFolderTableViewController.swift; sourceTree = "<group>"; };
+		80BFA5191CA00C800027A995 /* DictionaryBrowserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryBrowserTableViewController.swift; sourceTree = "<group>"; };
+		80BFA51A1CA00C800027A995 /* LocalizableBundlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableBundlesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +104,10 @@
 			children = (
 				34346D021B7294470063FED4 /* AppDelegate.swift */,
 				34346D041B7294470063FED4 /* ViewController.swift */,
+				80BFA5181CA00C800027A995 /* BundleFolderTableViewController.swift */,
+				80BFA5191CA00C800027A995 /* DictionaryBrowserTableViewController.swift */,
+				80BFA51A1CA00C800027A995 /* LocalizableBundlesTableViewController.swift */,
 				34346D061B7294470063FED4 /* Main.storyboard */,
-				80ADC5911C91CB1B006C285D /* LocalizableBundlesTableViewController.swift */,
-				80ADC5931C91CC57006C285D /* BundleFolderTableViewController.swift */,
-				80ADC5951C91CCC6006C285D /* DictionaryBrowserTableViewController.swift */,
 				34346D091B7294470063FED4 /* Images.xcassets */,
 				34346D0B1B7294470063FED4 /* LaunchScreen.xib */,
 				34346D281B7297820063FED4 /* Resources */,
@@ -234,6 +237,10 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3426FF8C1BB6AEE200E8E1BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -247,11 +254,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80BFA51C1CA00C800027A995 /* DictionaryBrowserTableViewController.swift in Sources */,
 				34346D051B7294470063FED4 /* ViewController.swift in Sources */,
-				80ADC5941C91CC57006C285D /* BundleFolderTableViewController.swift in Sources */,
-				80ADC5921C91CB1B006C285D /* LocalizableBundlesTableViewController.swift in Sources */,
+				80BFA51B1CA00C800027A995 /* BundleFolderTableViewController.swift in Sources */,
+				80BFA51D1CA00C800027A995 /* LocalizableBundlesTableViewController.swift in Sources */,
 				34346D031B7294470063FED4 /* AppDelegate.swift in Sources */,
-				80ADC5961C91CCC6006C285D /* DictionaryBrowserTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -404,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

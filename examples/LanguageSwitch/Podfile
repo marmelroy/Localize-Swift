@@ -7,8 +7,6 @@ abstract_target 'LocalizeSwiftPod' do
   
   target 'Sample'
   
-  target 'SampleTests' do
-    inherit! :search_paths
-  end
+  target 'SampleTests'
   
 end
