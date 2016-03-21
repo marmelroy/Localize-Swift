@@ -20,4 +20,4 @@ script: ./build.sh $MODE
 # whitelist
 branches:
   only:
-    - dev
+    - master
