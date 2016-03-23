@@ -59,24 +59,27 @@ internal extension NSBundle {
   /// - Parameter language: Desired language.
   private func setLanguage(language: String) {
     
-    let localizedBundlePath: String?
+    let localeComponents = NSLocale.componentsFromLocaleIdentifier(language)
+    let languageCode = localeComponents[NSLocaleLanguageCode] ?? language
+
+    /// list of possible .lproj folders names
+    let lprojFolderPatterns: [String?] = [
+      language, // en-us.lproj
+      (languageCode != language) ? languageCode : nil, // en.lproj
+      NSBundle.enLocale.localeIdentifierDisplayName(languageCode) // English.lproj
+    ]
     
-    // Looking for .lproj folders
-    
-    // en.lproj, fr.lproj
-    if let defaultPath = pathForResource(language, ofType: "lproj") {
-      localizedBundlePath = defaultPath
-    
-    // English.lproj, French.lproj
-    } else if let languageLocaleName = NSBundle.enLocale.localeIdentifierDisplayName(language),
-      let localedPath = pathForResource(languageLocaleName, ofType: "lproj")
-    {
-      localizedBundlePath = localedPath
-      
-    // No .lproj
-    } else {
-      localizedBundlePath = .None
+    /// Available folders in bundle
+    let lprojFoldersPaths: [String] = lprojFolderPatterns.flatMap {
+      if let folderName = $0,
+        path = pathForResource(folderName, ofType: "lproj") {
+        return path
+      } else {
+        return nil
+      }
     }
+    
+    let localizedBundlePath = lprojFoldersPaths.first
     
     // Getting localized bundle
     let localizedBudnle: NSBundle?
