@@ -8,16 +8,16 @@
 
 import Foundation
 
-public protocol Localizable {
+@objc public protocol Localizable {
   
-  func localize()
+  @objc func localize()
   
 }
 
 public extension Localizable where Self: AnyObject {
   
   func addLanguageChangeObserver() {
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "localize", name: LCLLanguageChangeNotification, object: .None)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(localize), name: LCLLanguageChangeNotification, object: .None)
   }
   
   func removeLanguageChangeObserver() {
