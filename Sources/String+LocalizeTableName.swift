@@ -20,9 +20,10 @@ public extension String {
    - Returns: The localized string.
    */
   func localized(tableName tableName: String?) -> String {
-    return NSLocalizedString(self,
-      tableName: tableName,
-      comment: (tableName ?? "Localizable.strings") + "." + self)
+    return NSBundle.mainBundle().localizedStringForKey(
+      self,
+      value: self,
+      table: tableName)
   }
   
   /**

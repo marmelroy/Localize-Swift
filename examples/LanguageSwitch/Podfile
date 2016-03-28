@@ -5,8 +5,8 @@ use_frameworks!
 #abstract_target 'LocalizeSwiftPod' do
   pod 'Localize-Swift', :path => '../..'
   
-#  target 'Sample'
+  target 'Sample'
   
-#  target 'SampleTests'
+  target 'SampleTests'
   
 #end

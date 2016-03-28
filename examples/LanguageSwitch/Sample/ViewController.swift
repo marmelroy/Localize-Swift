@@ -40,7 +40,7 @@ class ViewController: UIViewController, Localizable {
     // MARK: Localized Text
     
     func localize() {
-        textLabel.text = "Hello world".localized();
+        textLabel.text = "Hello world".localized(tableName: "Greetings");
         changeButton.setTitle("Change".localized(), forState: UIControlState.Normal)
         resetButton.setTitle("Reset".localized(), forState: UIControlState.Normal)
         
@@ -54,16 +54,29 @@ class ViewController: UIViewController, Localizable {
         let localizedDoneButtonTitle = "Done".localized(bundle: uiKitBundle)
         
         //
-        let doneBarButton = UIBarButtonItem(title: "Done", style: .Done, target: .None, action: "doneBarButtonPressed")
+        let doneBarButton = UIBarButtonItem(title: "Done", style: .Done, target: .None, action: #selector(doneBarButtonPressed))
         doneBarButton.possibleTitles = Set.init(arrayLiteral: localizedDoneButtonTitle, "Done")
         doneBarButton.title = localizedDoneButtonTitle
         
         // System item with predefined title
-        let newCancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: .None, action: "cancelBarButtonPressed")
+        let newCancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: .None, action: #selector(cancelBarButtonPressed))
         
-        let space = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: self, action: "flexibleSpaceAction")
+        let space = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: .None, action: #selector(flexibleSpaceAction))
         
         toolBar.items = [doneBarButton, space, newCancelButton]
+    }
+    
+    // MARK: Empty bar button actions
+    @objc func doneBarButtonPressed() {
+    
+    }
+    
+    @objc func cancelBarButtonPressed() {
+    
+    }
+    
+    @objc func flexibleSpaceAction() {
+    
     }
     
     // MARK: IBActions
