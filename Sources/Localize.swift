@@ -59,13 +59,7 @@ public extension String {
      - Returns: The localized string.
      */
     func localized() -> String {
-        if let path = NSBundle.mainBundle().pathForResource(Localize.currentLanguage(), ofType: "lproj"), bundle = NSBundle(path: path) {
-            return bundle.localizedStringForKey(self, value: nil, table: nil)
-        }
-        else if let path = NSBundle.mainBundle().pathForResource(LCLBaseBundle, ofType: "lproj"), bundle = NSBundle(path: path) {
-            return bundle.localizedStringForKey(self, value: nil, table: nil)
-        }
-        return self
+        return  NSBundle.mainBundle().localizedStringForKey(self, value: nil, table: nil)
     }
 
     /**
@@ -107,10 +101,7 @@ public class Localize: NSObject {
      - Returns: The current language. String.
      */
     public class func currentLanguage() -> String {
-        if let currentLanguage = NSUserDefaults.standardUserDefaults().objectForKey(LCLCurrentLanguageKey) as? String {
-            return currentLanguage
-        }
-        return defaultLanguage()
+        return language
     }
     
     /**
@@ -122,6 +113,15 @@ public class Localize: NSObject {
         if (selectedLanguage != currentLanguage()){
             NSUserDefaults.standardUserDefaults().setObject(selectedLanguage, forKey: LCLCurrentLanguageKey)
             NSUserDefaults.standardUserDefaults().synchronize()
+          
+            self.language = selectedLanguage
+            
+            // Localize UserDefaults AppleLanguages key
+            localizeUserDefaultsLanguages(language)
+          
+            // Localize Bundles
+            NSBundle.setLanguage(language)
+          
             NSNotificationCenter.defaultCenter().postNotificationName(LCLLanguageChangeNotification, object: nil)
         }
     }

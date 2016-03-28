@@ -1,0 +1,9 @@
+/* 
+  LocalizableTable.strings
+  Sample
+
+  Created by Vitalii Budnik on 3/28/16.
+  Copyright © 2016 Roy Marmelstein. All rights reserved.
+*/
+
+"Hello world" = "你好世界";
