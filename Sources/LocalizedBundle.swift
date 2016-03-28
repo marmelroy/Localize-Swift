@@ -61,10 +61,11 @@ internal extension NSBundle {
     
     let localeComponents = NSLocale.componentsFromLocaleIdentifier(language)
     let languageCode = localeComponents[NSLocaleLanguageCode] ?? language
-
+    
     /// list of possible .lproj folders names
     let lprojFolderPatterns: [String?] = [
-      language, // en-us.lproj
+      language, // en-GB.lproj
+      language.stringByReplacingOccurrencesOfString("-", withString: "_"), // en_GB.lproj
       (languageCode != language) ? languageCode : nil, // en.lproj
       NSBundle.enLocale.localeIdentifierDisplayName(languageCode) // English.lproj
     ]
