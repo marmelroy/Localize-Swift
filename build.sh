@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # **** Update me when new Xcode versions are released! ****
-PLATFORM="platform=iOS Simulator,OS=9.0,name=iPhone 6"
-SDK="iphonesimulator9.0"
+PLATFORM="platform=iOS Simulator,OS=9.3,name=iPhone 6s"
+SDK="iphonesimulator"
 
 
 # It is pitch black.
@@ -19,7 +19,7 @@ MODE="$1"
 
 if [ "$MODE" = "build" ]; then
     echo "Building Localize-Swift."
-    xctool \
+    xcodebuild \
         -project Localize_Swift.xcodeproj \
         -scheme Localize_Swift \
         -sdk "$SDK" \
