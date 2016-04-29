@@ -119,6 +119,9 @@ for string1 in strings:
         if dupmatch == 0:
             filestrings[string1[2]].append(string1)
 
+print '\n\n\n\n\n'
+print '/*\n * SHARED STRINGS\n */\n'
+
 # output filewise
 for key in filestrings.keys():
     print '/*\n * ' + key + '\n */\n'
@@ -132,11 +135,6 @@ for key in filestrings.keys():
             print '/* ' + string[1] + ' */'
             print '"' + string[0] + '" = "' + string[0] + '";'
             print
-    print '\n\n\n\n\n'
-
-
-print '\n\n\n\n\n'
-print '/*\n * SHARED STRINGS\n */\n'
 
 # output duplicates
 for string in duplicated:
