@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Localize-Swift"
-  s.version          = "1.1.2"
+  s.version          = "1.5"
   s.summary          = "Swift-friendly localization and i18n syntax with in-app language switching."
 
 # This description is used to generate tags and improve search results.
@@ -27,8 +27,11 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/marmelroy/Localize-Swift.git", :tag => s.version.to_s, :submodules => true}
   s.social_media_url   = "http://twitter.com/marmelroy"
 
-  s.platform     = :ios, '8.0'
+  s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.9'
   s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '2.0'
+
   s.requires_arc = true
 
   s.source_files = 'Sources'
