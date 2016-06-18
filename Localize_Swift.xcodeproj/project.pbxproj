@@ -14,6 +14,9 @@
 		343A6DD11D1529560081AA37 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2511C518B38003AE34D /* Localize.swift */; };
 		343A6DD41D1529560081AA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169461C67539300B93D28 /* Foundation.framework */; };
 		343A6DD61D1529560081AA37 /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433F2501C518B38003AE34D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		343A6DDF1D152B1B0081AA37 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2511C518B38003AE34D /* Localize.swift */; };
+		343A6DE11D152B1B0081AA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169461C67539300B93D28 /* Foundation.framework */; };
+		343A6DE31D152B1B0081AA37 /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433F2501C518B38003AE34D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		344169471C67539300B93D28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169461C67539300B93D28 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +39,9 @@
 		3433F2501C518B38003AE34D /* Localize_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Localize_Swift.h; path = Sources/Localize_Swift.h; sourceTree = SOURCE_ROOT; };
 		3433F2511C518B38003AE34D /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localize.swift; path = Sources/Localize.swift; sourceTree = SOURCE_ROOT; };
 		343A6DDB1D1529560081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A6DE81D152B1B0081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A6DE91D152B1B0081AA37 /* Localize_Swift-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Localize_Swift-tvOS.plist"; path = "/Users/marmelroy/Documents/Projects/OpenSource/Localize/Localize_Swift-tvOS.plist"; sourceTree = "<absolute>"; };
 		344169461C67539300B93D28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		344169481C67539700B93D28 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		343A6DE01D152B1B0081AA37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343A6DE11D152B1B0081AA37 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +95,7 @@
 				3433F2361C518AF7003AE34D /* Localize_Swift.framework */,
 				3433F2401C518AF7003AE34D /* Localize_SwiftTests.xctest */,
 				343A6DDB1D1529560081AA37 /* Localize_Swift.framework */,
+				343A6DE81D152B1B0081AA37 /* Localize_Swift.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +106,7 @@
 				3433F2501C518B38003AE34D /* Localize_Swift.h */,
 				3433F2511C518B38003AE34D /* Localize.swift */,
 				3433F23B1C518AF7003AE34D /* Info.plist */,
-				344169481C67539700B93D28 /* UIKit.framework */,
+				343A6DE91D152B1B0081AA37 /* Localize_Swift-tvOS.plist */,
 				344169461C67539300B93D28 /* Foundation.framework */,
 			);
 			path = Localize_Swift;
@@ -124,6 +137,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DD61D1529560081AA37 /* Localize_Swift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A6DE21D152B1B0081AA37 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343A6DE31D152B1B0081AA37 /* Localize_Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +205,24 @@
 			productReference = 343A6DDB1D1529560081AA37 /* Localize_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		343A6DDD1D152B1B0081AA37 /* Localize_Swift tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343A6DE51D152B1B0081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift tvOS" */;
+			buildPhases = (
+				343A6DDE1D152B1B0081AA37 /* Sources */,
+				343A6DE01D152B1B0081AA37 /* Frameworks */,
+				343A6DE21D152B1B0081AA37 /* Headers */,
+				343A6DE41D152B1B0081AA37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Localize_Swift tvOS";
+			productName = Localize_Swift;
+			productReference = 343A6DE81D152B1B0081AA37 /* Localize_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,6 +256,7 @@
 				3433F2351C518AF7003AE34D /* Localize_Swift */,
 				3433F23F1C518AF7003AE34D /* Localize_SwiftTests */,
 				343A6DCF1D1529560081AA37 /* Localize_Swift OSX */,
+				343A6DDD1D152B1B0081AA37 /* Localize_Swift tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -237,6 +277,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		343A6DD71D1529560081AA37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A6DE41D152B1B0081AA37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,6 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DD11D1529560081AA37 /* Localize.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A6DDE1D152B1B0081AA37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343A6DDF1D152B1B0081AA37 /* Localize.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +523,48 @@
 			};
 			name = Release;
 		};
+		343A6DE61D152B1B0081AA37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 9;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Localize_Swift-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
+				PRODUCT_NAME = Localize_Swift;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		343A6DE71D152B1B0081AA37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 9;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Localize_Swift-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
+				PRODUCT_NAME = Localize_Swift;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -503,6 +600,15 @@
 			buildConfigurations = (
 				343A6DD91D1529560081AA37 /* Debug */,
 				343A6DDA1D1529560081AA37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		343A6DE51D152B1B0081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343A6DE61D152B1B0081AA37 /* Debug */,
+				343A6DE71D152B1B0081AA37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

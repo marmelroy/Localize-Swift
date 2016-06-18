@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "343A6DCF1D1529560081AA37"
-               BuildableName = "Localize_Swift.framework"
-               BlueprintName = "Localize_Swift OSX"
+               BlueprintIdentifier = "343A6DDD1D152B1B0081AA37"
+               BuildableName = "Localize_Swift tvOS.framework"
+               BlueprintName = "Localize_Swift tvOS"
                ReferencedContainer = "container:Localize_Swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "343A6DCF1D1529560081AA37"
-            BuildableName = "Localize_Swift.framework"
-            BlueprintName = "Localize_Swift OSX"
+            BlueprintIdentifier = "343A6DDD1D152B1B0081AA37"
+            BuildableName = "Localize_Swift tvOS.framework"
+            BlueprintName = "Localize_Swift tvOS"
             ReferencedContainer = "container:Localize_Swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "343A6DCF1D1529560081AA37"
-            BuildableName = "Localize_Swift.framework"
-            BlueprintName = "Localize_Swift OSX"
+            BlueprintIdentifier = "343A6DDD1D152B1B0081AA37"
+            BuildableName = "Localize_Swift tvOS.framework"
+            BlueprintName = "Localize_Swift tvOS"
             ReferencedContainer = "container:Localize_Swift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
