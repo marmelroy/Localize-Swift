@@ -98,8 +98,13 @@ public class Localize: NSObject {
      List available languages
      - Returns: Array of available languages.
      */
-    public class func availableLanguages() -> [String] {
-        return NSBundle.mainBundle().localizations
+    public class func availableLanguages(excludeBase: Bool = false) -> [String] {
+        var availableLanguages = NSBundle.mainBundle().localizations
+        // If excludeBase = true, don't include "Base" in available languages
+        if let indexOfBase = availableLanguages.indexOf("Base") where excludeBase == true {
+            availableLanguages.removeAtIndex(indexOfBase)
+        }
+        return availableLanguages
     }
     
     /**
