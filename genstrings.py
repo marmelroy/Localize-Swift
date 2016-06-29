@@ -42,6 +42,7 @@ localizedStringComment = re.compile('NSLocalizedString\("([^"]*)",\s*"([^"]*)"\s
 localizedStringNil = re.compile('NSLocalizedString\("([^"]*)",\s*nil\s*\)', re.DOTALL)
 localized = re.compile('Localized\("([^"]*)"[^\n\r]*\)', re.DOTALL)
 localizedSwift2 = re.compile('"([^"]*)".localized\(\)', re.DOTALL)
+localizedSwift2Comment = re.compile('"([^"]*)".localized\(\s*"([^"]*)"\s*\)', re.DOTALL)
 localizedSwift2WithFormat = re.compile('"([^"]*)".localizedFormat\([^\n\r]*\)', re.DOTALL)
 
 # get string list
@@ -62,6 +63,9 @@ for file in fetch_files_recursive('.', '.swift'):
         for result in localizedSwift2.finditer(content):
             uid += 1
             strings.append((result.group(1), '', file, uid))
+        for result in localizedSwift2Comment.finditer(content):
+            uid += 1
+            strings.append((result.group(1), result.group(2), file, uid))
         for result in localizedSwift2WithFormat.finditer(content):
             uid += 1
             strings.append((result.group(1), '', file, uid))
