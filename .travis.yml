@@ -1,4 +1,4 @@
-osx_image: xcode8.0
+osx_image: xcode8
 language: objective-c
 env:
   global:
@@ -7,7 +7,7 @@ env:
 before_install:
   - brew update || brew update
   - brew outdated xctool || brew upgrade xctool
-  - gem install cocoapods
+  - gem install cocoapods -pre
   - xcrun simctl list
 install: echo "<3"
 env:
@@ -19,3 +19,4 @@ script: ./build.sh $MODE
 branches:
   only:
     - master
+    - swift3.0
