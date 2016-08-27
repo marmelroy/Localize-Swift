@@ -27,29 +27,29 @@ class ViewController: UIViewController {
     }
     
     // Add an observer for LCLLanguageChangeNotification on viewWillAppear. This is posted whenever a language changes and allows the viewcontroller to make the necessary UI updated. Very useful for places in your app when a language change might happen.
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setText", name: LCLLanguageChangeNotification, object: nil)
+        NotificationCenter.defaultCenter().addObserver(self, selector: "setText", name: LCLLanguageChangeNotification, object: nil)
     }
     
     // Remove the LCLLanguageChangeNotification on viewWillDisappear
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: Localized Text
     
     func setText(){
         textLabel.text = "Hello world".localized();
-        changeButton.setTitle("Change".localized(), forState: UIControlState.Normal)
-        resetButton.setTitle("Reset".localized(), forState: UIControlState.Normal)
+        changeButton.setTitle("Change".localized(), for: UIControlState.Normal)
+        resetButton.setTitle("Reset".localized(), for: UIControlState.Normal)
     }
     
     // MARK: IBActions
 
-    @IBAction func doChangeLanguage(sender: AnyObject) {
-        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.ActionSheet)
+    @IBAction func doChangeLanguage(_ sender: AnyObject) {
+        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.actionSheet)
         for language in availableLanguages {
             let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .Default, handler: {
@@ -58,14 +58,14 @@ class ViewController: UIViewController {
             })
             actionSheet.addAction(languageAction)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
             (alert: UIAlertAction) -> Void in
         })
         actionSheet.addAction(cancelAction)
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+        self.present(actionSheet, animated: true, completion: nil)
     }
 
-    @IBAction func doResetLanguage(sender: AnyObject) {
+    @IBAction func doResetLanguage(_ sender: AnyObject) {
         Localize.resetCurrentLanguageToDefault()
     }
 }
