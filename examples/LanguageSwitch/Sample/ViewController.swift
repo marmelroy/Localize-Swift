@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     // Add an observer for LCLLanguageChangeNotification on viewWillAppear. This is posted whenever a language changes and allows the viewcontroller to make the necessary UI updated. Very useful for places in your app when a language change might happen.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.defaultCenter().addObserver(self, selector: "setText", name: LCLLanguageChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
     }
     
     // Remove the LCLLanguageChangeNotification on viewWillDisappear
@@ -42,8 +42,8 @@ class ViewController: UIViewController {
     
     func setText(){
         textLabel.text = "Hello world".localized();
-        changeButton.setTitle("Change".localized(), for: UIControlState.Normal)
-        resetButton.setTitle("Reset".localized(), for: UIControlState.Normal)
+        changeButton.setTitle("Change".localized(), for: UIControlState.normal)
+        resetButton.setTitle("Reset".localized(), for: UIControlState.normal)
     }
     
     // MARK: IBActions
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.actionSheet)
         for language in availableLanguages {
             let displayName = Localize.displayNameForLanguage(language)
-            let languageAction = UIAlertAction(title: displayName, style: .Default, handler: {
+            let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
                 (alert: UIAlertAction!) -> Void in
                     Localize.setCurrentLanguage(language)
             })
