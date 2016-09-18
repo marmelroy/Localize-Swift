@@ -18,4 +18,3 @@ script: ./build.sh $MODE
 branches:
   only:
     - master
-    - swift3.0

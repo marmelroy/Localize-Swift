@@ -40,7 +40,7 @@ Localize.setCurrentLanguage("fr")
 
 To update the UI in the viewcontroller where a language change can take place, observe LCLLanguageChangeNotification :
 ```
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "setText", name: LCLLanguageChangeNotification, object: nil)
+NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
 ```
 
 To reset back to the default app language:
@@ -50,22 +50,17 @@ Localize.resetCurrentLanguageToDefault()
 
 ## genstrings
 
-To support this new i18n syntax, Localize-Swift includes custom genstrings swift and python scripts.
+To support this new i18n syntax, Localize-Swift includes custom genstrings swift script.
 
-Copy the genstrings file (either .swift or .py) into your project's root folder and run with
+Copy the genstrings.swift file into your project's root folder and run with
 
 ```
 ./genstrings.swift
 ```
-or
-
-```
-python genstrings.py
-```
 
 This will print the collected strings in the terminal. Select and copy to your default Localizable.strings.
 
-The swift genstrings includes the ability to specify excluded directories and files (by editing the script).
+The script includes the ability to specify excluded directories and files (by editing the script).
 
 ### Setting up with Carthage
 
@@ -87,5 +82,5 @@ github "marmelroy/Localize-Swift"
 ### Setting up with [CocoaPods](http://cocoapods.org/?q=Localize-Swift)
 ```
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'Localize-Swift', '~> 1.5'
+pod 'Localize-Swift', '~> 1.6'
 ```
