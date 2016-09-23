@@ -19,32 +19,32 @@ Localize-Swift is a simple framework that improves i18n and localization in Swif
 Import Localize at the top of each Swift file that will contain localized text.
 
 If CocoaPods -
-```
+```swift
 import Localize_Swift
 ```
 
-Add .localized() following any String object you want translated:
-```
+Add `.localized()` following any `String` object you want translated:
+```swift
 textLabel.text = "Hello World".localized()
 ```
 
 To get an array of available localizations:
-```
+```swift
 Localize.availableLanguages()
 ```
 
 To change the current language:
-```
+```swift
 Localize.setCurrentLanguage("fr")
 ```
 
 To update the UI in the view controller where a language change can take place, observe LCLLanguageChangeNotification:
-```
+```swift
 NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
 ```
 
 To reset back to the default app language:
-```
+```swift
 Localize.resetCurrentLanguageToDefault()
 ```
 
@@ -54,7 +54,7 @@ To support this new i18n syntax, Localize-Swift includes custom genstrings swift
 
 Copy the genstrings.swift file into your project's root folder and run with
 
-```
+```bash
 ./genstrings.swift
 ```
 
@@ -80,7 +80,7 @@ github "marmelroy/Localize-Swift"
 ```
 
 ### Setting up with [CocoaPods](http://cocoapods.org/?q=Localize-Swift)
-```
+```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'Localize-Swift', '~> 1.6'
 ```
