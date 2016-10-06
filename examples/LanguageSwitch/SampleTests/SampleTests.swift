@@ -52,5 +52,28 @@ class SampleTests: XCTestCase {
         XCTAssertEqual(testString.localized(), "Non translated string")
     }
 
+	func testTableName() {
+		let testString = "Change";
+		Localize.setCurrentLanguage("fr")
+        let translatedString = testString.localized(using: "ButtonTitles")
+		XCTAssertEqual(translatedString, "Modifier")
+	}
+	
+    func testTableNameMultipleLanguage() {
+        let testString = "Change";
+        Localize.setCurrentLanguage("es")
+        XCTAssertEqual(testString.localized(using: "ButtonTitles"), "Cambiar")
+        Localize.setCurrentLanguage("de")
+        XCTAssertEqual(testString.localized(using: "ButtonTitles"), "Ändern")
+        Localize.resetCurrentLanguageToDefault()
+        XCTAssertEqual(testString.localized(using: "ButtonTitles"), "Change")
+    }
     
+    func testTableNameFail() {
+        let testString = "Change";
+        Localize.setCurrentLanguage("xxx")
+        let translatedString = testString.localized(using: "ButtonTitles")
+        XCTAssertEqual(translatedString, "Change")
+    }
+
 }
