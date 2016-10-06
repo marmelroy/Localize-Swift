@@ -21,6 +21,10 @@
 		343A6DEE1D152E5A0081AA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169461C67539300B93D28 /* Foundation.framework */; };
 		343A6DF01D152E5A0081AA37 /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433F2501C518B38003AE34D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		344169471C67539300B93D28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344169461C67539300B93D28 /* Foundation.framework */; };
+		68A520041DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
+		68A520051DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
+		68A520061DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
+		68A520071DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,7 @@
 		343A6DE91D152B1B0081AA37 /* Localize_Swift-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Localize_Swift-tvOS.plist"; path = "/Users/marmelroy/Documents/Projects/OpenSource/Localize/Localize_Swift-tvOS.plist"; sourceTree = "<absolute>"; };
 		343A6DF51D152E5A0081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		344169461C67539300B93D28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeTableName.swift"; path = "Sources/String+LocalizeTableName.swift"; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,7 @@
 			children = (
 				3433F2501C518B38003AE34D /* Localize_Swift.h */,
 				3433F2511C518B38003AE34D /* Localize.swift */,
+				68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */,
 				3433F23B1C518AF7003AE34D /* Info.plist */,
 				343A6DE91D152B1B0081AA37 /* Localize_Swift-tvOS.plist */,
 				344169461C67539300B93D28 /* Foundation.framework */,
@@ -350,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3433F2531C518B38003AE34D /* Localize.swift in Sources */,
+				68A520041DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DD11D1529560081AA37 /* Localize.swift in Sources */,
+				68A520051DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DDF1D152B1B0081AA37 /* Localize.swift in Sources */,
+				68A520061DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DEC1D152E5A0081AA37 /* Localize.swift in Sources */,
+				68A520071DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
