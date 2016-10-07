@@ -20,15 +20,7 @@ public extension String {
      - Returns: The localized string.
      */
     func localized(using tableName: String?) -> String {
-        if let path = Bundle.main.path(forResource: Localize.currentLanguage(), ofType: "lproj"),
-            let bundle = Bundle(path: path) {
-            return bundle.localizedString(forKey: self, value: nil, table: tableName)
-        }
-        else if let path = Bundle.main.path(forResource: LCLBaseBundle, ofType: "lproj"),
-            let bundle = Bundle(path: path) {
-            return bundle.localizedString(forKey: self, value: nil, table: tableName)
-        }
-        return self
+        return localized(using: tableName, in: .main)
     }
     
     /**
