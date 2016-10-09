@@ -12,42 +12,42 @@ import Foundation
 public extension String {
     
     /**
-     Swift 2 friendly localization syntax, replaces NSLocalizedString
+     Swift 2 friendly localization syntax, replaces NSLocalizedString.
      
-     - Parameter tableName: The receiver’s string table to search. If tableName is `nil`
+     - parameter tableName: The receiver’s string table to search. If tableName is `nil`
      or is an empty string, the method attempts to use `Localizable.strings`.
      
-     - Returns: The localized string.
+     - returns: The localized string.
      */
     func localized(using tableName: String?) -> String {
         return localized(using: tableName, in: .main)
     }
     
     /**
-     Swift 2 friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
+     Swift 2 friendly localization syntax with format arguments, replaces String(format:NSLocalizedString).
      
-     - Parameter tableName: The receiver’s string table to search. If tableName is `nil`
+     - parameter arguments: arguments values for temlpate (substituted according to the user’s default locale).
+
+     - parameter tableName: The receiver’s string table to search. If tableName is `nil`
      or is an empty string, the method attempts to use `Localizable.strings`.
      
-     - Parameter arguments: arguments values for temlpate (substituted according to the user’s default locale).
-     
-     - Returns: The formatted localized string with arguments.
+     - returns: The formatted localized string with arguments.
      */
-    func localizedFormat(using tableName: String?, arguments: CVarArg...) -> String {
+    func localizedFormat(arguments: CVarArg..., using tableName: String?) -> String {
         return String(format: localized(using: tableName), arguments: arguments)
     }
     
     /**
-     Swift 2 friendly plural localization syntax with a format argument
+     Swift 2 friendly plural localization syntax with a format argument.
      
-     - Parameter tableName: The receiver’s string table to search. If tableName is `nil`
+     - parameter argument: Argument to determine pluralisation.
+
+     - parameter tableName: The receiver’s string table to search. If tableName is `nil`
      or is an empty string, the method attempts to use `Localizable.strings`.
-     
-     - parameter argument: Argument to determine pluralisation
      
      - returns: Pluralized localized string.
      */
-    func localizedPlural(using tableName: String?, argument: CVarArg) -> String {
+    func localizedPlural(argument: CVarArg, using tableName: String?) -> String {
         return NSString.localizedStringWithFormat(localized(using: tableName) as NSString, argument) as String
     }
     
