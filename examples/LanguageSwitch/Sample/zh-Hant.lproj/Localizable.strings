@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Sample
+
+  Created by Roy Marmelstein on 05/08/2015.
+  Copyright (c) 2015 Roy Marmelstein. All rights reserved.
+*/
+
+"Change" = "改變";
+
+"Hello world" = "你好世界";
+
+"Reset" = "重置";
