@@ -16,22 +16,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3426FF8F1BB6AEE200E8E1BB"
-               BuildableName = "SampleTests.xctest"
-               BlueprintName = "SampleTests"
-               ReferencedContainer = "container:Sample.xcodeproj">
+               BlueprintIdentifier = "3433F23F1C518AF7003AE34D"
+               BuildableName = "Localize_SwiftTests.xctest"
+               BlueprintName = "Localize_SwiftTests"
+               ReferencedContainer = "container:Localize_Swift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34346CFC1B7294470063FED4"
-            BuildableName = "Sample.app"
-            BlueprintName = "Sample"
-            ReferencedContainer = "container:Sample.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

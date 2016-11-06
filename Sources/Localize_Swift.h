@@ -6,7 +6,7 @@
 //  Copyright © 2016 Roy Marmelstein. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for Localize_Swift.
 FOUNDATION_EXPORT double Localize_SwiftVersionNumber;
