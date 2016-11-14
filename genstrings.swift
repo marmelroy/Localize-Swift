@@ -18,8 +18,9 @@ class GenStrings {
     }
 
     // Performs the genstrings functionality
-    func perform() {
-        let rootPath = URL(fileURLWithPath:fileManager.currentDirectoryPath)
+    func perform(path: String? = nil) {
+        let directoryPath = path ?? fileManager.currentDirectoryPath
+        let rootPath = URL(fileURLWithPath:directoryPath)
         let allFiles = fetchFilesInFolder(rootPath: rootPath)
         // We use a set to avoid duplicates
         var localizableStrings = Set<String>()
@@ -116,4 +117,9 @@ class GenStrings {
 }
 
 let genStrings = GenStrings()
-genStrings.perform()
+if CommandLine.arguments.count > 1 {
+    let path = CommandLine.arguments[1]
+    genStrings.perform(path: path)
+} else {
+    genStrings.perform()
+}
