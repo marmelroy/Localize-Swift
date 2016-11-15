@@ -59,15 +59,7 @@ public extension String {
      - Returns: The localized string.
      */
     func localized() -> String {
-        if let path = Bundle.main.path(forResource: Localize.currentLanguage(), ofType: "lproj"),
-            let bundle = Bundle(path: path) {
-            return bundle.localizedString(forKey: self, value: nil, table: nil)
-        }
-        else if let path = Bundle.main.path(forResource: LCLBaseBundle, ofType: "lproj"),
-            let bundle = Bundle(path: path) {
-            return bundle.localizedString(forKey: self, value: nil, table: nil)
-        }
-        return self
+        return localized(using: nil, in: .main)
     }
 
     /**
