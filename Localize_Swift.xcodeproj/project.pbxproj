@@ -33,6 +33,14 @@
 		68A520051DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
 		68A520061DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
 		68A520071DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
+		68A5201A1DA8164400F43D9E /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520191DA8164400F43D9E /* String+Localize.swift */; };
+		68A5201B1DA8164400F43D9E /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520191DA8164400F43D9E /* String+Localize.swift */; };
+		68A5201C1DA8164400F43D9E /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520191DA8164400F43D9E /* String+Localize.swift */; };
+		68A5201D1DA8164400F43D9E /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520191DA8164400F43D9E /* String+Localize.swift */; };
+		68A5201F1DA816C600F43D9E /* Swift1Synax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5201E1DA816C600F43D9E /* Swift1Synax.swift */; };
+		68A520201DA816C600F43D9E /* Swift1Synax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5201E1DA816C600F43D9E /* Swift1Synax.swift */; };
+		68A520211DA816C600F43D9E /* Swift1Synax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5201E1DA816C600F43D9E /* Swift1Synax.swift */; };
+		68A520221DA816C600F43D9E /* Swift1Synax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A5201E1DA816C600F43D9E /* Swift1Synax.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,15 +60,21 @@
 		3433F2451C518AF7003AE34D /* Localize_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize_SwiftTests.swift; sourceTree = "<group>"; };
 		3433F2471C518AF7003AE34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3433F2501C518B38003AE34D /* Localize_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Localize_Swift.h; path = Sources/Localize_Swift.h; sourceTree = SOURCE_ROOT; };
-		3433F2511C518B38003AE34D /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localize.swift; path = Sources/Localize.swift; sourceTree = SOURCE_ROOT; };
+		3433F2511C518B38003AE34D /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		343A6DDB1D1529560081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		343A6DE81D152B1B0081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		343A6DE91D152B1B0081AA37 /* Localize_Swift-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Localize_Swift-tvOS.plist"; path = "/Users/marmelroy/Documents/Projects/OpenSource/Localize/Localize_Swift-tvOS.plist"; sourceTree = "<absolute>"; };
 		343A6DF51D152E5A0081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		344169461C67539300B93D28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		68973D651DA7AA200076F08A /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeBundle.swift"; path = "Sources/String+LocalizeBundle.swift"; sourceTree = SOURCE_ROOT; };
-		68973D6A1DA7AB140076F08A /* String+LocalizedBundleTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizedBundleTableName.swift"; path = "Sources/String+LocalizedBundleTableName.swift"; sourceTree = SOURCE_ROOT; };
-		68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeTableName.swift"; path = "Sources/String+LocalizeTableName.swift"; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 0; };
+		68973D651DA7AA200076F08A /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizeBundle.swift"; sourceTree = "<group>"; };
+		68973D6A1DA7AB140076F08A /* String+LocalizedBundleTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizedBundleTableName.swift"; sourceTree = "<group>"; };
+		68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizeTableName.swift"; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
+		68A520191DA8164400F43D9E /* String+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
+		68A5201E1DA816C600F43D9E /* Swift1Synax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift1Synax.swift; sourceTree = "<group>"; };
+		68A520251DA81C3B00F43D9E /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		68A520261DA81C4600F43D9E /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		68A520271DA81C5100F43D9E /* Localize-Swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = "Localize-Swift.podspec"; sourceTree = "<group>"; };
+		68A520281DA81C5D00F43D9E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		68A520291DA81C6700F43D9E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +124,16 @@
 		3433F22C1C518AF7003AE34D = {
 			isa = PBXGroup;
 			children = (
+				68A520231DA81AE500F43D9E /* Sources */,
+				68A520241DA81C1500F43D9E /* Metadata */,
 				3433F2381C518AF7003AE34D /* Localize_Swift */,
 				3433F2441C518AF7003AE34D /* Localize_SwiftTests */,
 				3433F2371C518AF7003AE34D /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
 		};
 		3433F2371C518AF7003AE34D /* Products */ = {
 			isa = PBXGroup;
@@ -131,13 +150,7 @@
 		3433F2381C518AF7003AE34D /* Localize_Swift */ = {
 			isa = PBXGroup;
 			children = (
-				3433F2501C518B38003AE34D /* Localize_Swift.h */,
-				3433F2511C518B38003AE34D /* Localize.swift */,
-				68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */,
-				68973D651DA7AA200076F08A /* String+LocalizeBundle.swift */,
-				68973D6A1DA7AB140076F08A /* String+LocalizedBundleTableName.swift */,
 				3433F23B1C518AF7003AE34D /* Info.plist */,
-				343A6DE91D152B1B0081AA37 /* Localize_Swift-tvOS.plist */,
 				344169461C67539300B93D28 /* Foundation.framework */,
 			);
 			path = Localize_Swift;
@@ -150,6 +163,32 @@
 				3433F2471C518AF7003AE34D /* Info.plist */,
 			);
 			path = Localize_SwiftTests;
+			sourceTree = "<group>";
+		};
+		68A520231DA81AE500F43D9E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3433F2501C518B38003AE34D /* Localize_Swift.h */,
+				3433F2511C518B38003AE34D /* Localize.swift */,
+				68A5201E1DA816C600F43D9E /* Swift1Synax.swift */,
+				68A520191DA8164400F43D9E /* String+Localize.swift */,
+				68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */,
+				68973D651DA7AA200076F08A /* String+LocalizeBundle.swift */,
+				68973D6A1DA7AB140076F08A /* String+LocalizedBundleTableName.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		68A520241DA81C1500F43D9E /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				68A520251DA81C3B00F43D9E /* .travis.yml */,
+				68A520261DA81C4600F43D9E /* CHANGELOG.md */,
+				68A520281DA81C5D00F43D9E /* Package.swift */,
+				68A520291DA81C6700F43D9E /* README.md */,
+				68A520271DA81C5100F43D9E /* Localize-Swift.podspec */,
+			);
+			name = Metadata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,10 +406,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A5201A1DA8164400F43D9E /* String+Localize.swift in Sources */,
 				68973D6B1DA7AB140076F08A /* String+LocalizedBundleTableName.swift in Sources */,
 				68973D661DA7AA200076F08A /* String+LocalizeBundle.swift in Sources */,
 				3433F2531C518B38003AE34D /* Localize.swift in Sources */,
 				68A520041DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
+				68A5201F1DA816C600F43D9E /* Swift1Synax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,10 +427,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A5201B1DA8164400F43D9E /* String+Localize.swift in Sources */,
 				68973D6C1DA7AB140076F08A /* String+LocalizedBundleTableName.swift in Sources */,
 				68973D671DA7AA200076F08A /* String+LocalizeBundle.swift in Sources */,
 				343A6DD11D1529560081AA37 /* Localize.swift in Sources */,
 				68A520051DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
+				68A520201DA816C600F43D9E /* Swift1Synax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,10 +440,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A5201C1DA8164400F43D9E /* String+Localize.swift in Sources */,
 				68973D6D1DA7AB140076F08A /* String+LocalizedBundleTableName.swift in Sources */,
 				68973D681DA7AA200076F08A /* String+LocalizeBundle.swift in Sources */,
 				343A6DDF1D152B1B0081AA37 /* Localize.swift in Sources */,
 				68A520061DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
+				68A520211DA816C600F43D9E /* Swift1Synax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,10 +453,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A5201D1DA8164400F43D9E /* String+Localize.swift in Sources */,
 				68973D6E1DA7AB140076F08A /* String+LocalizedBundleTableName.swift in Sources */,
 				68973D691DA7AA200076F08A /* String+LocalizeBundle.swift in Sources */,
 				343A6DEC1D152E5A0081AA37 /* Localize.swift in Sources */,
 				68A520071DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
+				68A520221DA816C600F43D9E /* Swift1Synax.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
