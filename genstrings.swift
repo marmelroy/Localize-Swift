@@ -11,7 +11,7 @@ class GenStrings {
     let excludedFileNames = ["genstrings.swift"]
     var regularExpresions = [String:NSRegularExpression]()
 
-    let localizedRegex = "(?<=\")([^\"]*)(?=\".(localized|localizedFormat))|(?<=(Localized|NSLocalizedString)\\(\")([^\"]*?)(?=\")"
+    let localizedRegex = "(?:\")([^\"]*)(?:\".(?:localized|localizedFormat))(?:\\()(?:(?:\")([^\"]*)(?:\"))?(?:\\))|(?<=(Localized|NSLocalizedString)\\(\")([^\"]*?)(?=\")"
 
     enum GenstringsError: Error {
         case Error
@@ -22,32 +22,96 @@ class GenStrings {
         let directoryPath = path ?? fileManager.currentDirectoryPath
         let rootPath = URL(fileURLWithPath:directoryPath)
         let allFiles = fetchFilesInFolder(rootPath: rootPath)
-        // We use a set to avoid duplicates
-        var localizableStrings = Set<String>()
+        var localizableStrings = [String:[String]]()
         for filePath in allFiles {
             let stringsInFile = localizableStringsInFile(filePath: filePath)
-            localizableStrings = localizableStrings.union(stringsInFile)
+            for (key, value) in stringsInFile {
+                if localizableStrings[key] == nil {
+                    // Given localization doesn't exist
+                    localizableStrings[key] = value
+                } else {
+                    // Given localization already exists
+                    for comment in value {
+                        // Make sure comments are not repeated
+                        if !localizableStrings[key]!.contains(comment) {
+                            localizableStrings[key]!.append(comment)
+                        }
+                    }
+                }
+            }
         }
-        // We sort the strings
-        let sortedStrings = localizableStrings.sorted(by: { $0 < $1 })
+        // We sort the strings (we are guaranteed to have at least one element per localizable string)
+        let sortedStrings = Array(localizableStrings.keys).sorted(by:<)
         var processedStrings = String()
-        for string in sortedStrings {
-            processedStrings.append("\"\(string)\" = \"\(string)\"; \n")
+        for orderedKey in sortedStrings {
+            // We are guaranteed to have at least an empty array
+            let comments = localizableStrings[orderedKey]!
+            if comments.count == 0 {
+                // Localization without comment
+                processedStrings.append("\"\(orderedKey)\" = \"\(orderedKey)\"; \n")
+            } else if comments.count > 0 {
+                // Localization with comments
+                processedStrings.append("/* ")
+                var first = true
+                comments.forEach({
+                        // Concatenate comments with cute formatting
+                        if first {
+                            processedStrings.append("\($0)")
+                            first = false
+                        } else {
+                            processedStrings.append("\n   \($0)")
+                        }
+                        
+                    })
+                processedStrings.append(" */\n")
+                processedStrings.append("\"\(orderedKey)\" = \"\(orderedKey)\"; \n")
+            } else {
+                // We shouldn't get more than 2 items, but if we do, we ignore the entry for safety
+            }
         }
         print(processedStrings)
     }
 
     // Applies regex to a file at filePath.
-    func localizableStringsInFile(filePath: URL) -> Set<String> {
+    func localizableStringsInFile(filePath: URL) -> [String:[String]] {
+        var localizedElementsArray = [String:[String]]()
         do {
             let fileContentsData = try Data(contentsOf: filePath)
             guard let fileContentsString = NSString(data: fileContentsData, encoding: String.Encoding.utf8.rawValue) else {
-                return Set<String>()
+                return localizedElementsArray
             }
-            let localizedStringsArray = try regexMatches(pattern: localizedRegex, string: fileContentsString as String).map({fileContentsString.substring(with: $0.range)})
-            return Set(localizedStringsArray)
+
+            let localizedStringsArrayFoo = try regexMatches(pattern: localizedRegex, string: fileContentsString as String)
+            localizedStringsArrayFoo.forEach({
+                var ItemArray = [String]()
+                for index in 1..<$0.numberOfRanges {
+                    let testRange = $0.rangeAt(index)
+                    if testRange.location != NSNotFound && testRange.location + testRange.length <= fileContentsString.length {
+                        ItemArray.append(fileContentsString.substring(with: testRange))
+                    }
+                }
+                var ItemMap = [String]()
+                if ItemArray.count == 1 {
+                    // Localization without comment, nothing to do
+                    localizedElementsArray[ItemArray.first!] = ItemMap
+                } else if ItemArray.count == 2 {
+                    // Localization with comment, append comment
+                    // Check if previously there were comments
+                    if localizedElementsArray[ItemArray.first!] != nil {
+                        // Add only unique comments
+                        if (!localizedElementsArray[ItemArray.first!]!.contains(ItemArray[1])) {
+                            localizedElementsArray[ItemArray.first!]!.append(ItemArray[1])
+                        }
+                    } else {
+                        ItemMap.append(ItemArray[1])
+                        localizedElementsArray[ItemArray.first!] = ItemMap
+                    }
+                } else {
+                    // We shouldn't get more than 2 items, but if we do, we ignore the entry for safety
+                }
+            })
         } catch {}
-        return Set<String>()
+        return localizedElementsArray
     }
 
     //MARK: Regex
