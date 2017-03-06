@@ -29,6 +29,11 @@ Add `.localized()` following any `String` object you want translated:
 textLabel.text = "Hello World".localized()
 ```
 
+To include helpful comments alongside each localization, simply add it as a `String` parameter to the call in `.localized()`:
+```swift
+textLabel.text = "Hello World".localized("This will be displayed in the main screen")
+```
+
 To get an array of available localizations:
 ```swift
 Localize.availableLanguages()
