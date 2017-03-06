@@ -58,7 +58,7 @@ public extension String {
      Swift 2 friendly localization syntax, replaces NSLocalizedString
      - Returns: The localized string.
      */
-    func localized() -> String {
+    func localized(comment: String = "") -> String {
         return localized(using: nil, in: .main)
     }
 
