@@ -80,6 +80,26 @@ public extension String {
     func localizedPlural(_ argument: CVarArg) -> String {
         return NSString.localizedStringWithFormat(localized() as NSString, argument) as String
     }
+    
+    /**
+     Swift 2 friendly localization syntax for country code
+     - returns: The localized string for country code
+     */
+    @available(iOS 10.0, *)
+    func localizedCountry() -> String {
+        let locale : NSLocale = NSLocale(localeIdentifier: Localize.currentLanguage())
+        return locale.localizedString(forCountryCode: self) ?? self
+    }
+    
+    /**
+     Swift 2 friendly localization syntax for currency code
+     - returns: The localized string for currency code
+     */
+    @available(iOS 10.0, *)
+    func localizedCurrency() -> String {
+        let locale : NSLocale = NSLocale(localeIdentifier: Localize.currentLanguage())
+        return locale.localizedString(forCurrencyCode: self) ?? self
+    }
 }
 
 
