@@ -26,30 +26,30 @@ class SampleTests: XCTestCase {
     func testSwift2Syntax() {
         let testString = "Hello world";
         Localize.setCurrentLanguage("fr")
-        let translatedString = testString.localized()
+        let translatedString = testString.localized
         XCTAssertEqual(translatedString, "Bonjour le monde")
     }
     
     func testMultipleLanguageSwitching() {
         let testString = "Hello world";
         Localize.setCurrentLanguage("es")
-        XCTAssertEqual(testString.localized(), "Hola mundo")
+        XCTAssertEqual(testString.localized, "Hola mundo")
         Localize.setCurrentLanguage("de")
-        XCTAssertEqual(testString.localized(), "Hallo Welt")
+        XCTAssertEqual(testString.localized, "Hallo Welt")
         Localize.resetCurrentLanguageToDefault()
-        XCTAssertEqual(testString.localized(), "Hello world")
+        XCTAssertEqual(testString.localized, "Hello world")
     }
 
     func testFalseLanguage() {
         let testString = "Hello world";
         Localize.setCurrentLanguage("xxx")
-        XCTAssertEqual(testString.localized(), "Hello world")
+        XCTAssertEqual(testString.localized, "Hello world")
     }
     
     func testFalseString() {
         let testString = "Non translated string";
         Localize.setCurrentLanguage("fr")
-        XCTAssertEqual(testString.localized(), "Non translated string")
+        XCTAssertEqual(testString.localized, "Non translated string")
     }
 
 	func testTableName() {
