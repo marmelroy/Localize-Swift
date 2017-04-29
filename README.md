@@ -12,21 +12,21 @@ Localize-Swift is a simple framework that improves i18n and localization in Swif
 
 - Keep the Localizable.strings file your app already uses.
 - Allow your users to change the app's language without changing their device language.
-- Use .localized() instead of NSLocalizedString(key,comment) - a more Swifty syntax.
+- Use .localized instead of NSLocalizedString(key,comment) - a more Swifty syntax.
 - Generate your strings with a new genstrings swift/python script that recognises .localized().
 
 ## Usage
 
-Import Localize at the top of each Swift file that will contain localized text.
+Import SwiftyLocalization at the top of each Swift file that will contain localized text.
 
 If CocoaPods -
 ```swift
-import Localize_Swift
+import SwiftyLocalization
 ```
 
-Add `.localized()` following any `String` object you want translated:
+Add `.localized` following any `String` object you want translated:
 ```swift
-textLabel.text = "Hello World".localized()
+textLabel.text = "Hello World".localized
 ```
 
 To get an array of available localizations:
