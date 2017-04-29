@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Localize_Swift
+@testable import SwiftyLocalization
 
 class Localize_SwiftTests: XCTestCase {
     
