@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Localize_Swift.xcodeproj">
+      location = "self:/Users/alessio/Develop/Localize-Swift/SwiftyLocalization.xcodeproj">
    </FileRef>
 </Workspace>

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "343A6DEA1D152E5A0081AA37"
-               BuildableName = "Localize_Swift.framework"
-               BlueprintName = "Localize_Swift watchOS"
-               ReferencedContainer = "container:Localize_Swift.xcodeproj">
+               BlueprintIdentifier = "3433F2351C518AF7003AE34D"
+               BuildableName = "SwiftyLocalization.framework"
+               BlueprintName = "SwiftyLocalization"
+               ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3433F23F1C518AF7003AE34D"
+               BuildableName = "SwiftyLocalizationTests.xctest"
+               BlueprintName = "SwiftyLocalizationTests"
+               ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3433F2351C518AF7003AE34D"
+            BuildableName = "SwiftyLocalization.framework"
+            BlueprintName = "SwiftyLocalization"
+            ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "343A6DEA1D152E5A0081AA37"
-            BuildableName = "Localize_Swift.framework"
-            BlueprintName = "Localize_Swift watchOS"
-            ReferencedContainer = "container:Localize_Swift.xcodeproj">
+            BlueprintIdentifier = "3433F2351C518AF7003AE34D"
+            BuildableName = "SwiftyLocalization.framework"
+            BlueprintName = "SwiftyLocalization"
+            ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "343A6DEA1D152E5A0081AA37"
-            BuildableName = "Localize_Swift.framework"
-            BlueprintName = "Localize_Swift watchOS"
-            ReferencedContainer = "container:Localize_Swift.xcodeproj">
+            BlueprintIdentifier = "3433F2351C518AF7003AE34D"
+            BuildableName = "SwiftyLocalization.framework"
+            BlueprintName = "SwiftyLocalization"
+            ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
