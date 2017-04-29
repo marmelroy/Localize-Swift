@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # **** Update me when new Xcode versions are released! ****
-PLATFORM="platform=iOS Simulator,OS=10.0,name=iPhone 7"
+PLATFORM="platform=iOS Simulator,OS=10.3,name=iPhone 7"
 SDK="iphonesimulator"
 
 
@@ -20,8 +20,8 @@ MODE="$1"
 if [ "$MODE" = "build" ]; then
     echo "Building Localize-Swift."
     xcodebuild \
-        -project Localize_Swift.xcodeproj \
-        -scheme Localize_Swift \
+        -project SwiftyLocalization.xcodeproj \
+        -scheme SwiftyLocalization \
         -sdk "$SDK" \
         -destination "$PLATFORM" \
         build

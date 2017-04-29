@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3433F2411C518AF7003AE34D /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433F2361C518AF7003AE34D /* Localize_Swift.framework */; };
+		3433F2411C518AF7003AE34D /* SwiftyLocalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433F2361C518AF7003AE34D /* SwiftyLocalization.framework */; };
 		3433F2461C518AF7003AE34D /* Localize_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2451C518AF7003AE34D /* Localize_SwiftTests.swift */; };
 		3433F2521C518B38003AE34D /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433F2501C518B38003AE34D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3433F2531C518B38003AE34D /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2511C518B38003AE34D /* Localize.swift */; };
@@ -46,17 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3433F2361C518AF7003AE34D /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3433F2361C518AF7003AE34D /* SwiftyLocalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyLocalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433F23B1C518AF7003AE34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3433F2401C518AF7003AE34D /* Localize_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Localize_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3433F2401C518AF7003AE34D /* SwiftyLocalizationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyLocalizationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433F2451C518AF7003AE34D /* Localize_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize_SwiftTests.swift; sourceTree = "<group>"; };
 		3433F2471C518AF7003AE34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3433F2501C518B38003AE34D /* Localize_Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Localize_Swift.h; path = Sources/Localize_Swift.h; sourceTree = SOURCE_ROOT; };
 		3433F2511C518B38003AE34D /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localize.swift; path = Sources/Localize.swift; sourceTree = SOURCE_ROOT; };
-		343A6DDB1D1529560081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		343A6DE81D152B1B0081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A6DDB1D1529560081AA37 /* SwiftyLocalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyLocalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A6DE81D152B1B0081AA37 /* SwiftyLocalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyLocalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		343A6DE91D152B1B0081AA37 /* Localize_Swift-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Localize_Swift-tvOS.plist"; path = "/Users/marmelroy/Documents/Projects/OpenSource/Localize/Localize_Swift-tvOS.plist"; sourceTree = "<absolute>"; };
-		343A6DF51D152E5A0081AA37 /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A6DF51D152E5A0081AA37 /* SwiftyLocalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyLocalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		344169461C67539300B93D28 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68973D651DA7AA200076F08A /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeBundle.swift"; path = "Sources/String+LocalizeBundle.swift"; sourceTree = SOURCE_ROOT; };
 		68973D6A1DA7AB140076F08A /* String+LocalizedBundleTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizedBundleTableName.swift"; path = "Sources/String+LocalizedBundleTableName.swift"; sourceTree = SOURCE_ROOT; };
@@ -76,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3433F2411C518AF7003AE34D /* Localize_Swift.framework in Frameworks */,
+				3433F2411C518AF7003AE34D /* SwiftyLocalization.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,11 +119,11 @@
 		3433F2371C518AF7003AE34D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3433F2361C518AF7003AE34D /* Localize_Swift.framework */,
-				3433F2401C518AF7003AE34D /* Localize_SwiftTests.xctest */,
-				343A6DDB1D1529560081AA37 /* Localize_Swift.framework */,
-				343A6DE81D152B1B0081AA37 /* Localize_Swift.framework */,
-				343A6DF51D152E5A0081AA37 /* Localize_Swift.framework */,
+				3433F2361C518AF7003AE34D /* SwiftyLocalization.framework */,
+				3433F2401C518AF7003AE34D /* SwiftyLocalizationTests.xctest */,
+				343A6DDB1D1529560081AA37 /* SwiftyLocalization.framework */,
+				343A6DE81D152B1B0081AA37 /* SwiftyLocalization.framework */,
+				343A6DF51D152E5A0081AA37 /* SwiftyLocalization.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,9 +190,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3433F2351C518AF7003AE34D /* Localize_Swift */ = {
+		3433F2351C518AF7003AE34D /* SwiftyLocalization */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3433F24A1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "Localize_Swift" */;
+			buildConfigurationList = 3433F24A1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "SwiftyLocalization" */;
 			buildPhases = (
 				3433F2311C518AF7003AE34D /* Sources */,
 				3433F2321C518AF7003AE34D /* Frameworks */,
@@ -203,14 +203,14 @@
 			);
 			dependencies = (
 			);
-			name = Localize_Swift;
+			name = SwiftyLocalization;
 			productName = Localize_Swift;
-			productReference = 3433F2361C518AF7003AE34D /* Localize_Swift.framework */;
+			productReference = 3433F2361C518AF7003AE34D /* SwiftyLocalization.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3433F23F1C518AF7003AE34D /* Localize_SwiftTests */ = {
+		3433F23F1C518AF7003AE34D /* SwiftyLocalizationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3433F24D1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "Localize_SwiftTests" */;
+			buildConfigurationList = 3433F24D1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "SwiftyLocalizationTests" */;
 			buildPhases = (
 				3433F23C1C518AF7003AE34D /* Sources */,
 				3433F23D1C518AF7003AE34D /* Frameworks */,
@@ -221,14 +221,14 @@
 			dependencies = (
 				3433F2431C518AF7003AE34D /* PBXTargetDependency */,
 			);
-			name = Localize_SwiftTests;
+			name = SwiftyLocalizationTests;
 			productName = Localize_SwiftTests;
-			productReference = 3433F2401C518AF7003AE34D /* Localize_SwiftTests.xctest */;
+			productReference = 3433F2401C518AF7003AE34D /* SwiftyLocalizationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		343A6DCF1D1529560081AA37 /* Localize_Swift OSX */ = {
+		343A6DCF1D1529560081AA37 /* SwiftyLocalization OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 343A6DD81D1529560081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift OSX" */;
+			buildConfigurationList = 343A6DD81D1529560081AA37 /* Build configuration list for PBXNativeTarget "SwiftyLocalization OSX" */;
 			buildPhases = (
 				343A6DD01D1529560081AA37 /* Sources */,
 				343A6DD21D1529560081AA37 /* Frameworks */,
@@ -239,14 +239,14 @@
 			);
 			dependencies = (
 			);
-			name = "Localize_Swift OSX";
+			name = "SwiftyLocalization OSX";
 			productName = Localize_Swift;
-			productReference = 343A6DDB1D1529560081AA37 /* Localize_Swift.framework */;
+			productReference = 343A6DDB1D1529560081AA37 /* SwiftyLocalization.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		343A6DDD1D152B1B0081AA37 /* Localize_Swift tvOS */ = {
+		343A6DDD1D152B1B0081AA37 /* SwiftyLocalization tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 343A6DE51D152B1B0081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift tvOS" */;
+			buildConfigurationList = 343A6DE51D152B1B0081AA37 /* Build configuration list for PBXNativeTarget "SwiftyLocalization tvOS" */;
 			buildPhases = (
 				343A6DDE1D152B1B0081AA37 /* Sources */,
 				343A6DE01D152B1B0081AA37 /* Frameworks */,
@@ -257,14 +257,14 @@
 			);
 			dependencies = (
 			);
-			name = "Localize_Swift tvOS";
+			name = "SwiftyLocalization tvOS";
 			productName = Localize_Swift;
-			productReference = 343A6DE81D152B1B0081AA37 /* Localize_Swift.framework */;
+			productReference = 343A6DE81D152B1B0081AA37 /* SwiftyLocalization.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		343A6DEA1D152E5A0081AA37 /* Localize_Swift watchOS */ = {
+		343A6DEA1D152E5A0081AA37 /* SwiftyLocalization watchOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 343A6DF21D152E5A0081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift watchOS" */;
+			buildConfigurationList = 343A6DF21D152E5A0081AA37 /* Build configuration list for PBXNativeTarget "SwiftyLocalization watchOS" */;
 			buildPhases = (
 				343A6DEB1D152E5A0081AA37 /* Sources */,
 				343A6DED1D152E5A0081AA37 /* Frameworks */,
@@ -275,9 +275,9 @@
 			);
 			dependencies = (
 			);
-			name = "Localize_Swift watchOS";
+			name = "SwiftyLocalization watchOS";
 			productName = Localize_Swift;
-			productReference = 343A6DF51D152E5A0081AA37 /* Localize_Swift.framework */;
+			productReference = 343A6DF51D152E5A0081AA37 /* SwiftyLocalization.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -303,7 +303,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3433F2301C518AF7003AE34D /* Build configuration list for PBXProject "Localize_Swift" */;
+			buildConfigurationList = 3433F2301C518AF7003AE34D /* Build configuration list for PBXProject "SwiftyLocalization" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -315,11 +315,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3433F2351C518AF7003AE34D /* Localize_Swift */,
-				3433F23F1C518AF7003AE34D /* Localize_SwiftTests */,
-				343A6DCF1D1529560081AA37 /* Localize_Swift OSX */,
-				343A6DDD1D152B1B0081AA37 /* Localize_Swift tvOS */,
-				343A6DEA1D152E5A0081AA37 /* Localize_Swift watchOS */,
+				3433F2351C518AF7003AE34D /* SwiftyLocalization */,
+				3433F23F1C518AF7003AE34D /* SwiftyLocalizationTests */,
+				343A6DCF1D1529560081AA37 /* SwiftyLocalization OSX */,
+				343A6DDD1D152B1B0081AA37 /* SwiftyLocalization tvOS */,
+				343A6DEA1D152E5A0081AA37 /* SwiftyLocalization watchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -420,7 +420,7 @@
 /* Begin PBXTargetDependency section */
 		3433F2431C518AF7003AE34D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3433F2351C518AF7003AE34D /* Localize_Swift */;
+			target = 3433F2351C518AF7003AE34D /* SwiftyLocalization */;
 			targetProxy = 3433F2421C518AF7003AE34D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -596,7 +596,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
-				PRODUCT_NAME = Localize_Swift;
+				PRODUCT_NAME = SwiftyLocalization;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -616,7 +616,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
-				PRODUCT_NAME = Localize_Swift;
+				PRODUCT_NAME = SwiftyLocalization;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -637,7 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
-				PRODUCT_NAME = Localize_Swift;
+				PRODUCT_NAME = SwiftyLocalization;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -658,7 +658,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
-				PRODUCT_NAME = Localize_Swift;
+				PRODUCT_NAME = SwiftyLocalization;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 			};
@@ -679,7 +679,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
-				PRODUCT_NAME = Localize_Swift;
+				PRODUCT_NAME = SwiftyLocalization;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -700,7 +700,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.roymarmelstein.Localize-Swift";
-				PRODUCT_NAME = Localize_Swift;
+				PRODUCT_NAME = SwiftyLocalization;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 			};
@@ -709,7 +709,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3433F2301C518AF7003AE34D /* Build configuration list for PBXProject "Localize_Swift" */ = {
+		3433F2301C518AF7003AE34D /* Build configuration list for PBXProject "SwiftyLocalization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3433F2481C518AF7003AE34D /* Debug */,
@@ -718,7 +718,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3433F24A1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "Localize_Swift" */ = {
+		3433F24A1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "SwiftyLocalization" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3433F24B1C518AF7003AE34D /* Debug */,
@@ -727,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3433F24D1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "Localize_SwiftTests" */ = {
+		3433F24D1C518AF7003AE34D /* Build configuration list for PBXNativeTarget "SwiftyLocalizationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3433F24E1C518AF7003AE34D /* Debug */,
@@ -736,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		343A6DD81D1529560081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift OSX" */ = {
+		343A6DD81D1529560081AA37 /* Build configuration list for PBXNativeTarget "SwiftyLocalization OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				343A6DD91D1529560081AA37 /* Debug */,
@@ -745,7 +745,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		343A6DE51D152B1B0081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift tvOS" */ = {
+		343A6DE51D152B1B0081AA37 /* Build configuration list for PBXNativeTarget "SwiftyLocalization tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				343A6DE61D152B1B0081AA37 /* Debug */,
@@ -754,7 +754,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		343A6DF21D152E5A0081AA37 /* Build configuration list for PBXNativeTarget "Localize_Swift watchOS" */ = {
+		343A6DF21D152E5A0081AA37 /* Build configuration list for PBXNativeTarget "SwiftyLocalization watchOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				343A6DF31D152E5A0081AA37 /* Debug */,

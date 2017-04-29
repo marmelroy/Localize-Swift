@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "343A6DCF1D1529560081AA37"
-               BuildableName = "Localize_Swift.framework"
-               BlueprintName = "Localize_Swift OSX"
-               ReferencedContainer = "container:Localize_Swift.xcodeproj">
+               BlueprintIdentifier = "343A6DDD1D152B1B0081AA37"
+               BuildableName = "SwiftyLocalization.framework"
+               BlueprintName = "SwiftyLocalization tvOS"
+               ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "343A6DCF1D1529560081AA37"
-            BuildableName = "Localize_Swift.framework"
-            BlueprintName = "Localize_Swift OSX"
-            ReferencedContainer = "container:Localize_Swift.xcodeproj">
+            BlueprintIdentifier = "343A6DDD1D152B1B0081AA37"
+            BuildableName = "SwiftyLocalization.framework"
+            BlueprintName = "SwiftyLocalization tvOS"
+            ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "343A6DCF1D1529560081AA37"
-            BuildableName = "Localize_Swift.framework"
-            BlueprintName = "Localize_Swift OSX"
-            ReferencedContainer = "container:Localize_Swift.xcodeproj">
+            BlueprintIdentifier = "343A6DDD1D152B1B0081AA37"
+            BuildableName = "SwiftyLocalization.framework"
+            BlueprintName = "SwiftyLocalization tvOS"
+            ReferencedContainer = "container:SwiftyLocalization.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
