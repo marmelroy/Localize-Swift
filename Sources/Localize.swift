@@ -80,26 +80,6 @@ public extension String {
     func localizedPlural(_ argument: CVarArg) -> String {
         return NSString.localizedStringWithFormat(localized() as NSString, argument) as String
     }
-    
-    /**
-     Swift 2 friendly localization syntax for country code
-     - returns: The localized string for country code
-     */
-    @available(iOS 10.0, *)
-    func localizedCountry() -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: Localize.currentLanguage())
-        return locale.localizedString(forCountryCode: self) ?? self
-    }
-    
-    /**
-     Swift 2 friendly localization syntax for currency code
-     - returns: The localized string for currency code
-     */
-    @available(iOS 10.0, *)
-    func localizedCurrency() -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: Localize.currentLanguage())
-        return locale.localizedString(forCurrencyCode: self) ?? self
-    }
 }
 
 
@@ -182,6 +162,32 @@ open class Localize: NSObject {
             return displayName
         }
         return String()
+    }
+    
+    /// Returns current locale.
+    ///
+    /// - Returns: current locale.
+    final class func currentLocale() -> Locale {
+        return Locale(identifier: Localize.currentLanguage())
+    }
+    
+    /// Returns a localized string for a specified ISO 4217 currency code.
+    ///
+    /// - Parameter currencyCode: ISO 4217 currency code the currency whose name you want.
+    /// - Returns: Localized string for a specified ISO 4217 currency code.
+    final class func localizedCurrency(_ currencyCode: String) -> String {
+        return currentLocale()
+            .localizedString(forCurrencyCode: currencyCode) ?? currencyCode
+    }
+    
+    /// Returns the localized string for the specified country code.
+    ///
+    /// - Parameter countryCode: The country code indicating the country whose name you want.
+    /// - Returns: Localized string for the specified country code.
+    @available(iOS 10.0, *)
+    final class func localizedCountry(_ countryCode: String) -> String {
+        return (currentLocale() as NSLocale)
+            .localizedString(forCountryCode: countryCode) ?? countryCode
     }
 }
 
