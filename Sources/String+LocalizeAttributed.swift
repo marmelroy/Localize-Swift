@@ -34,26 +34,39 @@ public extension String {
 		return self.localized().transform()
 	}
 	
-	private func transform() -> NSMutableAttributedString {
-		let mutable : NSMutableAttributedString = NSMutableAttributedString(string: self, attributes: nil)
-		
-		let pattern : String = "\\#\\[\\{(.+)\\}(.+)\\]"
+	private func parse(mutable: NSMutableAttributedString) -> NSMutableAttributedString {
+		var tempMutable = mutable
+		let pattern : String = "\\#\\[\\{([^\\}]+)\\}(.+)\\]"
 		let regexp = try! NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
 		
-		let matches : [NSTextCheckingResult] = regexp.matches(in: self, options: [], range: NSMakeRange(0, self.characters.count))
+		
+		let matches : [NSTextCheckingResult] = regexp.matches(in: mutable.string, options: [], range: NSMakeRange(0, mutable.string.characters.count))
 		
 		for match in matches {
 			let group = match.rangeAt(0)
 			let styles = match.rangeAt(1)
 			let text = match.rangeAt(2)
-
-			let temp = parse(style: self.substring(from: styles))
 			
-			mutable.replaceCharacters(in: group, with: self.substring(from: text))
+			let temp = parse(style: mutable.string.substring(from: styles))
 			
-			mutable.addAttributes(temp, range: NSMakeRange(group.location, text.length))
+			tempMutable.replaceCharacters(in: group, with: mutable.string.substring(from: text))
+			
+			tempMutable.addAttributes(temp, range: NSMakeRange(group.location, text.length))
+			tempMutable = self.parse(mutable: tempMutable)
+			
 		}
 		
+		return tempMutable
+	}
+	
+	private func transform() -> NSMutableAttributedString {
+		var mutable : NSMutableAttributedString = NSMutableAttributedString(string: self, attributes: nil)
+		
+		mutable.beginEditing()
+		
+		mutable = self.parse(mutable: mutable)
+		
+		mutable.endEditing()
 		return mutable
 	}
 	
@@ -64,7 +77,7 @@ public extension String {
 		let regexp = try! NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
 		
 		let matches : [NSTextCheckingResult] = regexp.matches(in: style, options: [], range: NSMakeRange(0, style.characters.count))
-
+		
 		for match in matches {
 			let key = style.substring(from: match.rangeAt(1))
 			let value = style.substring(from: match.rangeAt(2))
@@ -83,6 +96,14 @@ public extension String {
 			return (key: NSForegroundColorAttributeName, value: UIColor(hexa: Int.init(value, radix: 16)!))
 		case "background":
 			return (key: NSBackgroundColorAttributeName, value: UIColor(hexa: Int.init(value, radix: 16)!))
+		case "font":
+			let temp = value.components(separatedBy: ",")
+			return (key: NSFontAttributeName, value: UIFont(name: temp[0], size: CGFloat(Int.init(temp[1], radix: 10) ?? Int(UIFont.systemFontSize))))
+		case "align":
+			let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
+			
+			paragraphStyle.alignment = .center
+			return (key: NSParagraphStyleAttributeName, value: paragraphStyle)
 		default:
 			return (key: "", value: "")
 		}
