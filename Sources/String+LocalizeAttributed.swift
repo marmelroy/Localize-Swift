@@ -30,8 +30,8 @@ public extension String {
 		return self.substring(with: newRange)
 	}
 	
-	public var localizedAttributed : NSMutableAttributedString {
-		return self.localized().transform()
+	public var attributed : NSMutableAttributedString {
+		return self.transform()
 	}
 	
 	private func parse(mutable: NSMutableAttributedString) -> NSMutableAttributedString {
