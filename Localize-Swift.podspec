@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Localize-Swift"
-  s.version          = "1.7.1"
+  s.version          = "1.7.2"
   s.summary          = "Swift-friendly localization and i18n syntax with in-app language switching."
 
 # This description is used to generate tags and improve search results.
