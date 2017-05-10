@@ -30,7 +30,7 @@ public extension String {
 		return self.substring(with: newRange)
 	}
 	
-	var localizedAttributed : NSMutableAttributedString {
+	public var localizedAttributed : NSMutableAttributedString {
 		return self.transform()
 	}
 	
