@@ -31,7 +31,7 @@ public extension String {
 	}
 	
 	public var localizedAttributed : NSMutableAttributedString {
-		return self.transform()
+		return self.localized().transform()
 	}
 	
 	private func transform() -> NSMutableAttributedString {
