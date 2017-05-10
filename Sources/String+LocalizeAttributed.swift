@@ -98,7 +98,12 @@ public extension String {
 			return (key: NSBackgroundColorAttributeName, value: UIColor(hexa: Int.init(value, radix: 16)!))
 		case "font":
 			let temp = value.components(separatedBy: ",")
-			return (key: NSFontAttributeName, value: UIFont(name: temp[0], size: CGFloat(Int.init(temp[1], radix: 10) ?? Int(UIFont.systemFontSize))))
+			
+			guard let font = UIFont(name: temp[0], size: CGFloat(Int.init(temp[1], radix: 10) ?? Int(UIFont.systemFontSize))) else {
+				return (key: "", value: "")
+			}
+			
+			return (key: NSFontAttributeName, value: font)
 		case "align":
 			let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
 			
