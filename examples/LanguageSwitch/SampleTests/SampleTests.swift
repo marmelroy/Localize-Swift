@@ -23,6 +23,14 @@ class SampleTests: XCTestCase {
         XCTAssertEqual(translatedString, "Bonjour le monde")
     }
     
+    func testSwift1SyntaxTr() {
+        let testString = "Hello world";
+        Localize.setCurrentLanguage("tr")
+        let translatedString = Localized(testString)
+        XCTAssertEqual(translatedString, "Merhaba Dünya")
+    }
+    
+    
     func testSwift2Syntax() {
         let testString = "Hello world";
         Localize.setCurrentLanguage("fr")

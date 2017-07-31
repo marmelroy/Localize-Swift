@@ -118,6 +118,10 @@
 		68A520161DA6DA8900F43D9E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ButtonTitles.strings"; sourceTree = "<group>"; };
 		68A520171DA6DA9600F43D9E /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/ButtonTitles.strings; sourceTree = "<group>"; };
 		B823A35026E31B4C36949480 /* Pods_SampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C94D018D1F2D6F66001FDF12 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = tr; path = tr.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C94D018E1F2D6F66001FDF12 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = tr; path = tr.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C94D018F1F2D6F66001FDF12 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/ButtonTitles.strings; sourceTree = "<group>"; };
+		C94D01901F2D6F66001FDF12 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +300,7 @@
 				"zh-Hans",
 				he,
 				"zh-Hant",
+				tr,
 			);
 			mainGroup = 34346CF41B7294470063FED4;
 			productRefGroup = 34346CFE1B7294470063FED4 /* Products */;
@@ -414,6 +419,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				34346D261B72976A0063FED4 /* en */,
+				C94D018D1F2D6F66001FDF12 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				34346D271B72976A0063FED4 /* en */,
+				C94D018E1F2D6F66001FDF12 /* tr */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -438,6 +445,7 @@
 				34346D351B7298DD0063FED4 /* zh-Hans */,
 				34346D361B7298E80063FED4 /* he */,
 				20D57BE01DC0AF00001BA2F9 /* zh-Hant */,
+				C94D01901F2D6F66001FDF12 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -453,6 +461,7 @@
 				68A520151DA6DA7A00F43D9E /* ja */,
 				68A520161DA6DA8900F43D9E /* zh-Hans */,
 				68A520171DA6DA9600F43D9E /* he */,
+				C94D018F1F2D6F66001FDF12 /* tr */,
 			);
 			name = ButtonTitles.strings;
 			sourceTree = "<group>";
@@ -531,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -572,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
