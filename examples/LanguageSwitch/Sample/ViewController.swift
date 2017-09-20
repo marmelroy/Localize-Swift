@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     // MARK: Localized Text
     
-    func setText(){
+    @objc func setText(){
         textLabel.text = "Hello world".localized();
 	changeButton.setTitle("Change".localized(using: "ButtonTitles"), for: UIControlState.normal)
         resetButton.setTitle("Reset".localized(using: "ButtonTitles"), for: UIControlState.normal)
