@@ -28,7 +28,7 @@ Swift 1.x friendly localization syntax, replaces NSLocalizedString
 - Returns: The localized string.
 */
 public func Localized(_ string: String) -> String {
-    return string.localized()
+    return string.localized
 }
 
 /**
@@ -37,7 +37,7 @@ public func Localized(_ string: String) -> String {
  - Returns: The formatted localized string with arguments.
  */
 public func Localized(_ string: String, arguments: CVarArg...) -> String {
-    return String(format: string.localized(), arguments: arguments)
+    return String(format: string.localized, arguments: arguments)
 }
 
 /**
@@ -55,10 +55,10 @@ public func LocalizedPlural(_ string: String, argument: CVarArg) -> String {
 
 public extension String {
     /**
-     Swift 2 friendly localization syntax, replaces NSLocalizedString
+     Swift 3 friendly localization syntax, replaces NSLocalizedString
      - Returns: The localized string.
      */
-    func localized() -> String {
+    var localized: String {
         return localized(using: nil, in: .main)
     }
 
@@ -67,7 +67,7 @@ public extension String {
      - Returns: The formatted localized string with arguments.
      */
     func localizedFormat(_ arguments: CVarArg...) -> String {
-        return String(format: localized(), arguments: arguments)
+        return String(format: localized, arguments: arguments)
     }
     
     /**
@@ -78,7 +78,7 @@ public extension String {
      - returns: Pluralized localized string.
      */
     func localizedPlural(_ argument: CVarArg) -> String {
-        return NSString.localizedStringWithFormat(localized() as NSString, argument) as String
+        return NSString.localizedStringWithFormat(localized as NSString, argument) as String
     }
 }
 
@@ -105,11 +105,11 @@ open class Localize: NSObject {
      Current language
      - Returns: The current language. String.
      */
-    open class func currentLanguage() -> String {
+    open class var currentLanguage: String {
         if let currentLanguage = UserDefaults.standard.object(forKey: LCLCurrentLanguageKey) as? String {
             return currentLanguage
         }
-        return defaultLanguage()
+        return defaultLanguage
     }
     
     /**
@@ -117,8 +117,8 @@ open class Localize: NSObject {
      - Parameter language: Desired language.
      */
     open class func setCurrentLanguage(_ language: String) {
-        let selectedLanguage = availableLanguages().contains(language) ? language : defaultLanguage()
-        if (selectedLanguage != currentLanguage()){
+        let selectedLanguage = availableLanguages().contains(language) ? language : defaultLanguage
+        if (selectedLanguage != currentLanguage){
             UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
             UserDefaults.standard.synchronize()
             NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
@@ -129,7 +129,7 @@ open class Localize: NSObject {
      Default language
      - Returns: The app's default language. String.
      */
-    open class func defaultLanguage() -> String {
+    open class var defaultLanguage: String {
         var defaultLanguage: String = String()
         guard let preferredLanguage = Bundle.main.preferredLocalizations.first else {
             return LCLDefaultLanguage
@@ -148,7 +148,7 @@ open class Localize: NSObject {
      Resets the current language to the default
      */
     open class func resetCurrentLanguageToDefault() {
-        setCurrentLanguage(self.defaultLanguage())
+        setCurrentLanguage(defaultLanguage)
     }
     
     /**
@@ -157,11 +157,10 @@ open class Localize: NSObject {
      - Returns: The localized string.
      */
     open class func displayNameForLanguage(_ language: String) -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage())
+        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage)
         if let displayName = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
             return displayName
         }
         return String()
     }
 }
-
