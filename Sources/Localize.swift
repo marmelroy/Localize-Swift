@@ -131,7 +131,7 @@ open class Localize: NSObject {
      */
     open class func defaultLanguage() -> String {
         var defaultLanguage: String = String()
-        guard let preferredLanguage = Bundle.main.preferredLocalizations.first else {
+        guard let preferredLanguage = Locale.current.languageCode else {
             return LCLDefaultLanguage
         }
         let availableLanguages: [String] = self.availableLanguages()
