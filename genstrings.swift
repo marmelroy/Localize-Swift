@@ -6,7 +6,7 @@ class GenStrings {
 
     var str = "Hello, playground"
     let fileManager = FileManager.default
-    let acceptedFileExtensions = ["swift"]
+    let acceptedFileExtensions = ["swift", "h", "m"]
     let excludedFolderNames = ["Carthage"]
     let excludedFileNames = ["genstrings.swift"]
     var regularExpresions = [String:NSRegularExpression]()
