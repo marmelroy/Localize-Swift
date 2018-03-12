@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Internal current language key
 let LCLCurrentLanguageKey = "LCLCurrentLanguageKey"
@@ -20,6 +21,9 @@ let LCLBaseBundle = "Base"
 /// Name for language change notification
 public let LCLLanguageChangeNotification = "LCLLanguageChangeNotification"
 
+// Set appearnce language direction responsnding
+
+public var changeSemantics = false
 // MARK: Localization Syntax
 
 /**
@@ -122,6 +126,14 @@ open class Localize: NSObject {
             UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
             UserDefaults.standard.synchronize()
             NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
+            if changeSemantics, selectedLanguage == "ar"{
+                if #available(iOSApplicationExtension 9.0, *) {
+                    UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                } else {
+                    // TODO: - Fallback on earlier versions
+                    //
+                }
+            }
         }
     }
     
