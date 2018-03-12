@@ -21,9 +21,6 @@ let LCLBaseBundle = "Base"
 /// Name for language change notification
 public let LCLLanguageChangeNotification = "LCLLanguageChangeNotification"
 
-// Set appearnce language direction responsnding
-
-public var changeSemantics = false
 // MARK: Localization Syntax
 
 /**
@@ -91,7 +88,9 @@ public extension String {
 // MARK: Language Setting Functions
 
 open class Localize: NSObject {
-    
+    // Set appearnce language direction responsnding
+    public var changeSemantics = false
+
     /**
      List available languages
      - Returns: Array of available languages.
