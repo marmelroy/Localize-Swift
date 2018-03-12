@@ -141,6 +141,8 @@ open class Localize: NSObject {
                     switch direction {
                     case .rightToLeft:
                         UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                    case .leftToRight:
+                        UIView.appearance().semanticContentAttribute = .forceLeftToRight
                     default:
                         break
                     }
