@@ -41,7 +41,7 @@ Localize.currentLanguage = "fr"
 
 To change app semantics depending on language, add this to appdelegate on didFinishLaunchingWithOptions:
 ```swift
-Localize.currentLanguage = "fr"
+Localize.changeSemantics = true
 ```
 
 To update the UI in the view controller where a language change can take place, observe LCLLanguageChangeNotification:
