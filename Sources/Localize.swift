@@ -24,10 +24,10 @@ public let LCLLanguageChangeNotification = "LCLLanguageChangeNotification"
 // MARK: Localization Syntax
 
 /**
-Swift 1.x friendly localization syntax, replaces NSLocalizedString
-- Parameter string: Key to be localized.
-- Returns: The localized string.
-*/
+ Swift 1.x friendly localization syntax, replaces NSLocalizedString
+ - Parameter string: Key to be localized.
+ - Returns: The localized string.
+ */
 public func Localized(_ string: String) -> String {
     return string.localized()
 }
@@ -62,7 +62,7 @@ public extension String {
     func localized() -> String {
         return localized(using: nil, in: .main)
     }
-
+    
     /**
      Swift 2 friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
      - Returns: The formatted localized string with arguments.
@@ -89,8 +89,8 @@ public extension String {
 
 open class Localize: NSObject {
     // Set appearnce language direction responsnding
-    public var changeSemantics = false
-
+    public static var changeSemantics = false
+    
     /**
      List available languages
      - Returns: Array of available languages.
@@ -127,10 +127,15 @@ open class Localize: NSObject {
             NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
             if changeSemantics, selectedLanguage == "ar"{
                 if #available(iOSApplicationExtension 9.0, *) {
-                    UIView.appearance().semanticContentAttribute = .forceRightToLeft
-                } else {
-                    // TODO: - Fallback on earlier versions
-                    //
+                    if #available(iOS 9.0, *) {
+                        let direction = Locale.characterDirection(forLanguage: selectedLanguage)
+                        switch direction {
+                        case .rightToLeft:
+                            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                        default:
+                            break
+                        }
+                    }
                 }
             }
         }
