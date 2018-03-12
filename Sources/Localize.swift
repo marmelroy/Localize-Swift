@@ -89,7 +89,11 @@ public extension String {
 
 open class Localize: NSObject {
     // Set appearnce language direction responsnding
-    public static var changeSemantics = false
+    public static var changeSemantics = false {
+        didSet{
+            updateAppSemantics(currentLanguage())
+        }
+    }
     
     /**
      List available languages
@@ -125,16 +129,20 @@ open class Localize: NSObject {
             UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
             UserDefaults.standard.synchronize()
             NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
-            if changeSemantics, selectedLanguage == "ar"{
-                if #available(iOSApplicationExtension 9.0, *) {
-                    if #available(iOS 9.0, *) {
-                        let direction = Locale.characterDirection(forLanguage: selectedLanguage)
-                        switch direction {
-                        case .rightToLeft:
-                            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-                        default:
-                            break
-                        }
+           
+        }
+    }
+    
+    open class func updateAppSemantics(_ language: String) {
+        if changeSemantics {
+            if #available(iOSApplicationExtension 9.0, *) {
+                if #available(iOS 9.0, *) {
+                    let direction = Locale.characterDirection(forLanguage: language)
+                    switch direction {
+                    case .rightToLeft:
+                        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                    default:
+                        break
                     }
                 }
             }
