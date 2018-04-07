@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 /// Internal current language key
 let LCLCurrentLanguageKey = "LCLCurrentLanguageKey"
+let AppleLanguagesKey = "AppleLanguages"
 
 /// Default language. English. If English is unavailable defaults to base localization.
 let LCLDefaultLanguage = "en"
@@ -118,11 +120,23 @@ open class Localize: NSObject {
      */
     open class func setCurrentLanguage(_ language: String) {
         let selectedLanguage = availableLanguages().contains(language) ? language : defaultLanguage()
-        if (selectedLanguage != currentLanguage()){
+        if (selectedLanguage != currentLanguage()) {
             UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
+            UserDefaults.standard.set([selectedLanguage], forKey: AppleLanguagesKey)
             UserDefaults.standard.synchronize()
-            NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification),
+                                            object: nil)
+            Bundle.setLanguage(language)
         }
+    }
+    
+    /**
+     Change the current language and Restart from the Root View Controller
+     - Parameter language: Desired language.
+     */
+    open class func setCurrentLanguage(_ language: String, restartFromRoot rootViewController: UIViewController) {
+        self.setCurrentLanguage(language)
+        UIApplication.shared.keyWindow?.rootViewController = rootViewController
     }
     
     /**
@@ -131,7 +145,7 @@ open class Localize: NSObject {
      */
     open class func defaultLanguage() -> String {
         var defaultLanguage: String = String()
-        guard let preferredLanguage = Bundle.main.preferredLocalizations.first else {
+        guard let preferredLanguage = Locale.current.languageCode else {
             return LCLDefaultLanguage
         }
         let availableLanguages: [String] = self.availableLanguages()
@@ -164,4 +178,3 @@ open class Localize: NSObject {
         return String()
     }
 }
-
