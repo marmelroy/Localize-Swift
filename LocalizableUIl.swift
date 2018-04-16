@@ -51,6 +51,26 @@ import Localize_Swift
     
 }
 
+// Set this subclass as your navigation item in your storyboard and pass `key` of your localized string
+@IBDesignable class LocalizeUINavigationItem: UINavigationItem {
+    
+    @IBInspectable var table :String?
+    @IBInspectable var key:String?
+    
+    override func awakeFromNib() {
+        guard let key = key else {return}
+        self.title = key.localized(using: table)
+        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        
+    }
+    
+    @objc func setText () {
+        guard let key = key else {return}
+        self.title = key.localized(using: table)
+
+    }
+    
+}
 
 
 
