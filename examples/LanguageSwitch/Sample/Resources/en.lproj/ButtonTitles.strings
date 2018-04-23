@@ -1,9 +1,11 @@
 /* 
-  Localizable.strings
+  ButtonTitles.strings
   Sample
 
-  Created by Mario Andres Villamizar Palacio on 4/23/18.
-  Copyright © 2018 Roy Marmelstein. All rights reserved.
+  Created by Vitalii Budnik on 10/6/16.
+  Copyright © 2016 Roy Marmelstein. All rights reserved.
 */
 
-"Hello world" = "Hello world";
+"Change" = "Change";
+
+"Reset" = "Reset";
