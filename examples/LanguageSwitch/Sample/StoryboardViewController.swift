@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CodeViewController.swift
 //  Sample
 //
 //  Created by Roy Marmelstein on 05/08/2015.
@@ -9,7 +9,7 @@
 import UIKit
 import Localize_Swift
 
-class ViewController: UIViewController {
+class StoryboardViewController: UIViewController {
 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
@@ -17,33 +17,12 @@ class ViewController: UIViewController {
     
     var actionSheet: UIAlertController!
     
-    let availableLanguages = Localize.availableLanguages()
+    let availableLanguages = Localize.availableLanguages(true)
     
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setText()
-    }
-    
-    // Add an observer for LCLLanguageChangeNotification on viewWillAppear. This is posted whenever a language changes and allows the viewcontroller to make the necessary UI updated. Very useful for places in your app when a language change might happen.
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name( LCLLanguageChangeNotification), object: nil)
-    }
-    
-    // Remove the LCLLanguageChangeNotification on viewWillDisappear
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    // MARK: Localized Text
-    
-    @objc func setText(){
-        textLabel.text = "Hello world".localized();
-	changeButton.setTitle("Change".localized(using: "ButtonTitles"), for: UIControlState.normal)
-        resetButton.setTitle("Reset".localized(using: "ButtonTitles"), for: UIControlState.normal)
     }
     
     // MARK: IBActions
@@ -54,7 +33,19 @@ class ViewController: UIViewController {
             let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
                 (alert: UIAlertAction!) -> Void in
-                    Localize.setCurrentLanguage(language)
+                
+                Localize.setCurrentLanguage(language)
+
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+                // Option 1:
+                /*let rootViewController = storyboard.instantiateInitialViewController()!
+                Localize.setCurrentLanguage(language, restartFromRoot: rootViewController)*/
+                
+                // Option 2:
+                let chooseViewController = storyboard.instantiateViewController(withIdentifier: "chooseViewController")
+                self.navigationController?.setViewControllers([chooseViewController], animated: true)
+                
             })
             actionSheet.addAction(languageAction)
         }
@@ -67,6 +58,16 @@ class ViewController: UIViewController {
 
     @IBAction func doResetLanguage(_ sender: AnyObject) {
         Localize.resetCurrentLanguageToDefault()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Option 1:
+        /*let rootViewController = storyboard.instantiateInitialViewController()!
+         Localize.setCurrentLanguage(language, restartFromRoot: rootViewController)*/
+        
+        // Option 2:
+        let chooseViewController = storyboard.instantiateViewController(withIdentifier: "chooseViewController")
+        self.navigationController?.setViewControllers([chooseViewController], animated: true)
     }
 }
 

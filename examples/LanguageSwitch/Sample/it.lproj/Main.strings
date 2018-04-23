@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "3TV-mT-Vwu"; */
+"3TV-mT-Vwu.normalTitle" = "Cambia";
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "PPW-2d-udp"; */
+"PPW-2d-udp.normalTitle" = "Cambia";
+
+/* Class = "UILabel"; text = "Choose an option"; ObjectID = "XgW-dZ-J8l"; */
+"XgW-dZ-J8l.text" = "Scegliere un'opzione";
+
+/* Class = "UIButton"; normalTitle = "Via Code"; ObjectID = "cd7-Vb-QDa"; */
+"cd7-Vb-QDa.normalTitle" = "Per codice";
+
+/* Class = "UIButton"; normalTitle = "Via Storyboard"; ObjectID = "ebF-Vi-h4D"; */
+"ebF-Vi-h4D.normalTitle" = "Per storyboard";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pYA-Tt-i1b"; */
+"pYA-Tt-i1b.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "s5q-wp-dud"; */
+"s5q-wp-dud.normalTitle" = "Ripristinare";
+
+/* Class = "UILabel"; text = "Hello world"; ObjectID = "sVF-PC-7lS"; */
+"sVF-PC-7lS.text" = "Ciao mondo";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "wKL-If-xit"; */
+"wKL-If-xit.normalTitle" = "Ripristinare";
