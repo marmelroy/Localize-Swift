@@ -131,7 +131,6 @@
 		A9175191208E235400558E26 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ButtonTitles.strings"; sourceTree = "<group>"; };
 		A9175192208E235500558E26 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = he.lproj/ButtonTitles.strings; sourceTree = "<group>"; };
 		A9175193208E235600558E26 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/ButtonTitles.strings; sourceTree = "<group>"; };
-		A9175194208E235700558E26 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ButtonTitles.strings"; sourceTree = "<group>"; };
 		A9175195208E25F000558E26 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A9175199208E25F100558E26 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A917519B208E262B00558E26 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -611,7 +610,6 @@
 				A9175191208E235400558E26 /* zh-Hans */,
 				A9175192208E235500558E26 /* he */,
 				A9175193208E235600558E26 /* es */,
-				A9175194208E235700558E26 /* zh-Hant */,
 			);
 			name = ButtonTitles.strings;
 			path = Resources;
