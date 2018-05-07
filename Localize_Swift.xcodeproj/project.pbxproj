@@ -33,6 +33,12 @@
 		68A520051DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
 		68A520061DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
 		68A520071DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */; };
+		A92704AD20A0A3BB00122600 /* Bundle+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92704AC20A0A3BB00122600 /* Bundle+Localize.swift */; };
+		A93287AB2079320500CFADC0 /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = A93287A92079320400CFADC0 /* NSBundle+Language.m */; };
+		A93287AC2079320500CFADC0 /* NSBundle+Language.h in Headers */ = {isa = PBXBuildFile; fileRef = A93287AA2079320400CFADC0 /* NSBundle+Language.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93287AD2079327500CFADC0 /* NSBundle+Language.h in Headers */ = {isa = PBXBuildFile; fileRef = A93287AA2079320400CFADC0 /* NSBundle+Language.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93287AE2079327600CFADC0 /* NSBundle+Language.h in Headers */ = {isa = PBXBuildFile; fileRef = A93287AA2079320400CFADC0 /* NSBundle+Language.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93287AF2079327600CFADC0 /* NSBundle+Language.h in Headers */ = {isa = PBXBuildFile; fileRef = A93287AA2079320400CFADC0 /* NSBundle+Language.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,9 @@
 		68973D651DA7AA200076F08A /* String+LocalizeBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeBundle.swift"; path = "Sources/String+LocalizeBundle.swift"; sourceTree = SOURCE_ROOT; };
 		68973D6A1DA7AB140076F08A /* String+LocalizedBundleTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizedBundleTableName.swift"; path = "Sources/String+LocalizedBundleTableName.swift"; sourceTree = SOURCE_ROOT; };
 		68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeTableName.swift"; path = "Sources/String+LocalizeTableName.swift"; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 0; };
+		A92704AC20A0A3BB00122600 /* Bundle+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle+Localize.swift"; path = "Sources/Bundle+Localize.swift"; sourceTree = SOURCE_ROOT; };
+		A93287A92079320400CFADC0 /* NSBundle+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+Language.m"; path = "Sources/NSBundle+Language.m"; sourceTree = SOURCE_ROOT; };
+		A93287AA2079320400CFADC0 /* NSBundle+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSBundle+Language.h"; path = "Sources/NSBundle+Language.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +144,9 @@
 				68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */,
 				68973D651DA7AA200076F08A /* String+LocalizeBundle.swift */,
 				68973D6A1DA7AB140076F08A /* String+LocalizedBundleTableName.swift */,
+				A92704AC20A0A3BB00122600 /* Bundle+Localize.swift */,
+				A93287AA2079320400CFADC0 /* NSBundle+Language.h */,
+				A93287A92079320400CFADC0 /* NSBundle+Language.m */,
 				3433F23B1C518AF7003AE34D /* Info.plist */,
 				344169461C67539300B93D28 /* Foundation.framework */,
 			);
@@ -158,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3433F2521C518B38003AE34D /* Localize_Swift.h in Headers */,
+				A93287AC2079320500CFADC0 /* NSBundle+Language.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DD61D1529560081AA37 /* Localize_Swift.h in Headers */,
+				A93287AD2079327500CFADC0 /* NSBundle+Language.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DE31D152B1B0081AA37 /* Localize_Swift.h in Headers */,
+				A93287AE2079327600CFADC0 /* NSBundle+Language.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				343A6DF01D152E5A0081AA37 /* Localize_Swift.h in Headers */,
+				A93287AF2079327600CFADC0 /* NSBundle+Language.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +306,7 @@
 				TargetAttributes = {
 					3433F2351C518AF7003AE34D = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0920;
 					};
 					3433F23F1C518AF7003AE34D = {
 						CreatedOnToolsVersion = 7.2;
@@ -366,6 +382,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				68973D6B1DA7AB140076F08A /* String+LocalizedBundleTableName.swift in Sources */,
+				A93287AB2079320500CFADC0 /* NSBundle+Language.m in Sources */,
+				A92704AD20A0A3BB00122600 /* Bundle+Localize.swift in Sources */,
 				68973D661DA7AA200076F08A /* String+LocalizeBundle.swift in Sources */,
 				3433F2531C518B38003AE34D /* Localize.swift in Sources */,
 				68A520041DA6D5FD00F43D9E /* String+LocalizeTableName.swift in Sources */,
@@ -535,7 +553,7 @@
 		3433F24B1C518AF7003AE34D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
@@ -558,7 +576,7 @@
 		3433F24C1C518AF7003AE34D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;

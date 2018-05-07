@@ -6,7 +6,9 @@ target 'Sample' do
   use_frameworks!
 
   # Pods for Sample
-  pod 'Localize-Swift', :path => '../..'
+  #pod 'Localize-Swift', :path => '../..'
+	
+  pod 'Localize-Swift', :git => 'https://github.com/mariovillamizar/Localize-Swift.git', :commit => '554d61ff21dc0d7b14c63908cd70a00fd90d380d'
 
   target 'SampleTests' do
     inherit! :search_paths

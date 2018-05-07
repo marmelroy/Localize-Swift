@@ -1,0 +1,11 @@
+/*
+ Localizable.strings
+ Sample
+ 
+ Created by Roy Marmelstein on 05/08/2015.
+ Copyright (c) 2015 Roy Marmelstein. All rights reserved.
+ */
+
+"Change" = "Modifier";
+
+"Reset" = "Réinitialiser";
