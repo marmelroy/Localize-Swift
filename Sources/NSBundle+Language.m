@@ -40,11 +40,18 @@ static const char kBundleKey = 0;
         object_setClass([NSBundle mainBundle], [BundleEx class]);
     });
     
-    
-    if (@available(iOS 9.0, *)) {
-        [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+    if (flag == true) {
+        if (@available(iOS 9.0, *)) {
+            [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
+            [[UITableView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
+            [[UINavigationBar appearance] setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
+        }
     } else {
-        // Fallback on earlier versions
+        if (@available(iOS 9.0, *)) {
+            [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+            [[UITableView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+            [[UINavigationBar appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+        }
     }
     
     id value = language ? [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:language ofType:@"lproj"]] : nil;
