@@ -33,15 +33,19 @@ static const char kBundleKey = 0;
 
 @implementation NSBundle (Language)
 
-+ (void)setLanguage:(NSString *)language
++ (void)setLanguage:(NSString *)language forcingRTL:(BOOL) flag
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         object_setClass([NSBundle mainBundle], [BundleEx class]);
     });
-    [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
-    [[UITableView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
-    [[UINavigationBar appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+    
+    
+    if (@available(iOS 9.0, *)) {
+        [[UIView appearance] setSemanticContentAttribute:UISemanticContentAttributeForceLeftToRight];
+    } else {
+        // Fallback on earlier versions
+    }
     
     id value = language ? [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:language ofType:@"lproj"]] : nil;
     objc_setAssociatedObject([NSBundle mainBundle], &kBundleKey, value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

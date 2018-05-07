@@ -10,6 +10,6 @@
 
 @interface NSBundle (Language)
 
-+ (void)setLanguage:(NSString *)language;
-
++ (void)setLanguage:(NSString *)language forcingRTL:(BOOL) flag;
+    
 @end

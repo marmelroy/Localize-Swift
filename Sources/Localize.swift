@@ -118,25 +118,30 @@ open class Localize: NSObject {
      Change the current language
      - Parameter language: Desired language.
      */
-    open class func setCurrentLanguage(_ language: String) {
+    open class func setCurrentLanguage(_ language: String, forcingRTL flag: Bool = false) {
         let selectedLanguage = availableLanguages().contains(language) ? language : defaultLanguage()
-        if (selectedLanguage != currentLanguage()) {
-            UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
-            UserDefaults.standard.set([selectedLanguage], forKey: AppleLanguagesKey)
-            UserDefaults.standard.synchronize()
-            NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification),
-                                            object: nil)
-            Bundle.setLanguage(language)
-        }
+        UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
+        UserDefaults.standard.set([selectedLanguage], forKey: AppleLanguagesKey)
+        UserDefaults.standard.synchronize()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification),
+                                        object: nil)
+        Bundle.setLanguage(language, forcingRTL: flag)
     }
     
     /**
      Change the current language and Restart from the Root View Controller
      - Parameter language: Desired language.
      */
-    open class func setCurrentLanguage(_ language: String, restartFromRoot rootViewController: UIViewController) {
-        self.setCurrentLanguage(language)
+    open class func setCurrentLanguage(_ language: String, forcingRTL flag: Bool = false, restartingFromRoot rootViewController: UIViewController, animated: Bool = false) {
+        self.setCurrentLanguage(language, forcingRTL: flag)
         UIApplication.shared.keyWindow?.rootViewController = rootViewController
+        
+        if animated {
+            let mainwindow = (UIApplication.shared.delegate?.window!)!
+            mainwindow.backgroundColor = UIColor(hue: 0.6477, saturation: 0.6314, brightness: 0.6077, alpha: 0.8)
+            UIView.transition(with: mainwindow, duration: 0.5, options: .transitionFlipFromLeft,
+                              animations: nil, completion: nil)
+        }
     }
     
     /**
@@ -161,8 +166,8 @@ open class Localize: NSObject {
     /**
      Resets the current language to the default
      */
-    open class func resetCurrentLanguageToDefault() {
-        setCurrentLanguage(self.defaultLanguage())
+    open class func resetCurrentLanguageToDefault(forcingRTL flag: Bool = false) {
+        self.setCurrentLanguage(self.defaultLanguage(), forcingRTL: flag)
     }
     
     /**
@@ -171,10 +176,69 @@ open class Localize: NSObject {
      - Returns: The localized string.
      */
     open class func displayNameForLanguage(_ language: String) -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage())
+        let locale : NSLocale = NSLocale(localeIdentifier: self.currentLanguage())
         if let displayName = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
             return displayName
         }
         return String()
+    }
+}
+
+
+extension UILabel {
+    
+    var originalAligment: NSTextAlignment {
+        get {
+            switch self.tag {
+            case 989796:
+                return .center
+            case 232425:
+                return .justified
+            case 757677:
+                return .left
+            case 343332:
+                return .right
+            case 616365:
+                return .natural
+            default:
+                return .justified
+            }
+        }
+        set {
+            switch newValue {
+            case .center:
+                self.tag = 989796
+            case .justified:
+                self.tag = 232425
+            case .left:
+                self.tag = 757677
+            case .right:
+                self.tag = 343332
+            case .natural:
+                self.tag = 616365
+            }
+        }
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.originalAligment = self.textAlignment
+    }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        if self.isKind(of: NSClassFromString("UITextFieldLabel")!) {
+            return // handle special case with uitextfields
+        }
+        if Localize.currentLanguage() == "ar" {
+            if self.originalAligment != .center {
+                self.textAlignment = self.originalAligment == .right ? .left : .right
+            }
+        } else {
+            if self.originalAligment != .center || self.originalAligment != .justified {
+                self.textAlignment = self.originalAligment
+            }
+        }
     }
 }
