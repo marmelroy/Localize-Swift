@@ -43,9 +43,9 @@ public extension String {
 		let matches : [NSTextCheckingResult] = regexp.matches(in: mutable.string, options: [], range: NSMakeRange(0, mutable.string.characters.count))
 		
 		for match in matches {
-			let group = match.rangeAt(0)
-			let styles = match.rangeAt(1)
-			let text = match.rangeAt(2)
+			let group = match.range(at: 0)
+			let styles = match.range(at: 1)
+			let text = match.range(at: 2)
 			
 			let temp = parse(style: mutable.string.substring(from: styles))
 			
@@ -70,8 +70,8 @@ public extension String {
 		return mutable
 	}
 	
-	func parse(style: String) -> [String:Any]{
-		var attributes : [String:Any] = [:]
+	func parse(style: String) -> [NSAttributedStringKey:Any]{
+		var attributes : [NSAttributedStringKey:Any] = [:]
 		let pattern : String = "[;]?([^;:]+):([^;:}]+)"
 		
 		let regexp = try! NSRegularExpression(pattern: pattern, options: [.caseInsensitive])
@@ -79,8 +79,8 @@ public extension String {
 		let matches : [NSTextCheckingResult] = regexp.matches(in: style, options: [], range: NSMakeRange(0, style.characters.count))
 		
 		for match in matches {
-			let key = style.substring(from: match.rangeAt(1))
-			let value = style.substring(from: match.rangeAt(2))
+			let key = style.substring(from: match.range(at: 1))
+			let value = style.substring(from: match.range(at: 2))
 			
 			
 			let temp = self.attribute(key: key, value: value)
@@ -90,27 +90,28 @@ public extension String {
 		return attributes
 	}
 	
-	func attribute(key: String, value: String) -> (key: String, value: Any) {
+	func attribute(key: String, value: String) -> (key: NSAttributedStringKey, value: Any) {
 		switch key {
 		case "color":
-			return (key: NSForegroundColorAttributeName, value: UIColor(hexa: Int.init(value, radix: 16)!))
+			
+			return (key: NSAttributedStringKey.foregroundColor, value: UIColor(hexa: Int.init(value, radix: 16)!))
 		case "background":
-			return (key: NSBackgroundColorAttributeName, value: UIColor(hexa: Int.init(value, radix: 16)!))
+			return (key: NSAttributedStringKey.backgroundColor, value: UIColor(hexa: Int.init(value, radix: 16)!))
 		case "font":
 			let temp = value.components(separatedBy: ",")
 			
 			guard let font = UIFont(name: temp[0], size: CGFloat(Int.init(temp[1], radix: 10) ?? Int(UIFont.systemFontSize))) else {
-				return (key: "", value: "")
+				return (key: NSAttributedStringKey.init(""), value: "")
 			}
 			
-			return (key: NSFontAttributeName, value: font)
+			return (key: NSAttributedStringKey.font, value: font)
 		case "align":
 			let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
 			
 			paragraphStyle.alignment = .center
-			return (key: NSParagraphStyleAttributeName, value: paragraphStyle)
+			return (key: NSAttributedStringKey.paragraphStyle, value: paragraphStyle)
 		default:
-			return (key: "", value: "")
+			return (key: NSAttributedStringKey.init(""), value: "")
 		}
 	}
 }

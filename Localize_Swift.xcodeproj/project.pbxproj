@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ED39529211CB405000723E6 /* String+LocalizeAttributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED39528211CB405000723E6 /* String+LocalizeAttributed.swift */; };
 		3433F2411C518AF7003AE34D /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3433F2361C518AF7003AE34D /* Localize_Swift.framework */; };
 		3433F2461C518AF7003AE34D /* Localize_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3433F2451C518AF7003AE34D /* Localize_SwiftTests.swift */; };
 		3433F2521C518B38003AE34D /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 3433F2501C518B38003AE34D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ED39528211CB405000723E6 /* String+LocalizeAttributed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+LocalizeAttributed.swift"; path = "Sources/String+LocalizeAttributed.swift"; sourceTree = SOURCE_ROOT; };
 		3433F2361C518AF7003AE34D /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3433F23B1C518AF7003AE34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3433F2401C518AF7003AE34D /* Localize_SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Localize_SwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 		3433F2381C518AF7003AE34D /* Localize_Swift */ = {
 			isa = PBXGroup;
 			children = (
+				2ED39528211CB405000723E6 /* String+LocalizeAttributed.swift */,
 				3433F2501C518B38003AE34D /* Localize_Swift.h */,
 				3433F2511C518B38003AE34D /* Localize.swift */,
 				68A520031DA6D5FD00F43D9E /* String+LocalizeTableName.swift */,
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED39529211CB405000723E6 /* String+LocalizeAttributed.swift in Sources */,
 				68973D6B1DA7AB140076F08A /* String+LocalizedBundleTableName.swift in Sources */,
 				68973D661DA7AA200076F08A /* String+LocalizeBundle.swift in Sources */,
 				3433F2531C518B38003AE34D /* Localize.swift in Sources */,
