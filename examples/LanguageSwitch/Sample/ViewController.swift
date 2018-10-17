@@ -42,14 +42,14 @@ class ViewController: UIViewController {
     
     @objc func setText(){
         textLabel.text = "Hello world".localized();
-	changeButton.setTitle("Change".localized(using: "ButtonTitles"), for: UIControlState.normal)
-        resetButton.setTitle("Reset".localized(using: "ButtonTitles"), for: UIControlState.normal)
+	changeButton.setTitle("Change".localized(using: "ButtonTitles"), for: UIControl.State.normal)
+        resetButton.setTitle("Reset".localized(using: "ButtonTitles"), for: UIControl.State.normal)
     }
     
     // MARK: IBActions
 
     @IBAction func doChangeLanguage(_ sender: AnyObject) {
-        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertControllerStyle.actionSheet)
+        actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertController.Style.actionSheet)
         for language in availableLanguages {
             let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
             })
             actionSheet.addAction(languageAction)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
             (alert: UIAlertAction) -> Void in
         })
         actionSheet.addAction(cancelAction)
