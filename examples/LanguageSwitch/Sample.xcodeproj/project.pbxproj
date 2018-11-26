@@ -11,7 +11,6 @@
 		3426FF931BB6AEE200E8E1BB /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3426FF921BB6AEE200E8E1BB /* SampleTests.swift */; };
 		3426FF9B1BB6AF5D00E8E1BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34346D2F1B72983C0063FED4 /* Localizable.strings */; };
 		342B3BE21DDAEA4600F6D25D /* Localize_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342B3BD31DDAEA2D00F6D25D /* Localize_Swift.framework */; };
-		342B3BE31DDAEA4600F6D25D /* Localize_Swift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 342B3BD31DDAEA2D00F6D25D /* Localize_Swift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34346D031B7294470063FED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34346D021B7294470063FED4 /* AppDelegate.swift */; };
 		34346D051B7294470063FED4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34346D041B7294470063FED4 /* ViewController.swift */; };
 		34346D081B7294470063FED4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34346D061B7294470063FED4 /* Main.storyboard */; };
@@ -82,7 +81,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				342B3BE31DDAEA4600F6D25D /* Localize_Swift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
