@@ -80,6 +80,14 @@ public extension String {
     func localizedPlural(_ argument: CVarArg) -> String {
         return NSString.localizedStringWithFormat(localized() as NSString, argument) as String
     }
+
+    /**
+     Add comment for NSLocalizedString
+     - Returns: The localized string.
+    */
+    func commented(_ argument: String) -> String {
+        return self
+    }
 }
 
 
