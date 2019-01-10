@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Internal current language key
 let LCLCurrentLanguageKey = "LCLCurrentLanguageKey"
@@ -23,10 +24,10 @@ public let LCLLanguageChangeNotification = "LCLLanguageChangeNotification"
 // MARK: Localization Syntax
 
 /**
-Swift 1.x friendly localization syntax, replaces NSLocalizedString
-- Parameter string: Key to be localized.
-- Returns: The localized string.
-*/
+ Swift 1.x friendly localization syntax, replaces NSLocalizedString
+ - Parameter string: Key to be localized.
+ - Returns: The localized string.
+ */
 public func Localized(_ string: String) -> String {
     return string.localized()
 }
@@ -61,7 +62,7 @@ public extension String {
     func localized() -> String {
         return localized(using: nil, in: .main)
     }
-
+    
     /**
      Swift 2 friendly localization syntax with format arguments, replaces String(format:NSLocalizedString)
      - Returns: The formatted localized string with arguments.
@@ -87,6 +88,16 @@ public extension String {
 // MARK: Language Setting Functions
 
 open class Localize: NSObject {
+    // Set appearnce language direction responsnding
+    public static var changeSemantics = false {
+        didSet{
+            if #available(iOS 9.0, *) {
+                setCurrentSemantics(currentLanguage)
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
     
     /**
      List available languages
@@ -101,27 +112,45 @@ open class Localize: NSObject {
         return availableLanguages
     }
     
-    /**
-     Current language
-     - Returns: The current language. String.
-     */
-    open class func currentLanguage() -> String {
-        if let currentLanguage = UserDefaults.standard.object(forKey: LCLCurrentLanguageKey) as? String {
-            return currentLanguage
+  
+    
+    
+    /// get and set current language of the app via string, ex: "ar", "en", ... etc
+    open class var currentLanguage: String {
+        get {
+            if let currentLanguage = UserDefaults.standard.object(forKey: LCLCurrentLanguageKey) as? String {
+                return currentLanguage
+            }
+            return defaultLanguage
+        }set{
+            let selectedLanguage = availableLanguages().contains(newValue) ? newValue : defaultLanguage
+            if (selectedLanguage != currentLanguage){
+                UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
+                UserDefaults.standard.synchronize()
+                NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
+                if #available(iOS 9.0, *) {
+                    setCurrentSemantics(selectedLanguage)
+                } else {
+                    // Fallback on earlier versions
+                }
+            }
         }
-        return defaultLanguage()
     }
     
-    /**
-     Change the current language
-     - Parameter language: Desired language.
-     */
-    open class func setCurrentLanguage(_ language: String) {
-        let selectedLanguage = availableLanguages().contains(language) ? language : defaultLanguage()
-        if (selectedLanguage != currentLanguage()){
-            UserDefaults.standard.set(selectedLanguage, forKey: LCLCurrentLanguageKey)
-            UserDefaults.standard.synchronize()
-            NotificationCenter.default.post(name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
+   
+    
+    @available(iOS 9.0, *)
+    open class func setCurrentSemantics(_ language: String) {
+        if changeSemantics {
+            let direction = Locale.characterDirection(forLanguage: language)
+            switch direction {
+            case .rightToLeft:
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            case .leftToRight:
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            default:
+                break
+            }
         }
     }
     
@@ -129,7 +158,7 @@ open class Localize: NSObject {
      Default language
      - Returns: The app's default language. String.
      */
-    open class func defaultLanguage() -> String {
+    open class var defaultLanguage: String {
         var defaultLanguage: String = String()
         guard let preferredLanguage = Bundle.main.preferredLocalizations.first else {
             return LCLDefaultLanguage
@@ -148,7 +177,7 @@ open class Localize: NSObject {
      Resets the current language to the default
      */
     open class func resetCurrentLanguageToDefault() {
-        setCurrentLanguage(self.defaultLanguage())
+        currentLanguage = self.defaultLanguage
     }
     
     /**
@@ -157,7 +186,7 @@ open class Localize: NSObject {
      - Returns: The localized string.
      */
     open class func displayNameForLanguage(_ language: String) -> String {
-        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage())
+        let locale : NSLocale = NSLocale(localeIdentifier: currentLanguage)
         if let displayName = locale.displayName(forKey: NSLocale.Key.identifier, value: language) {
             return displayName
         }

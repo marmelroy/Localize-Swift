@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
                 (alert: UIAlertAction!) -> Void in
-                    Localize.setCurrentLanguage(language)
+                    Localize.currentLanguage = language
             })
             actionSheet.addAction(languageAction)
         }
