@@ -95,7 +95,7 @@ open class Localize: NSObject {
     open class func availableLanguages(_ excludeBase: Bool = false) -> [String] {
         var availableLanguages = Bundle.main.localizations
         // If excludeBase = true, don't include "Base" in available languages
-        if let indexOfBase = availableLanguages.index(of: "Base") , excludeBase == true {
+        if let indexOfBase = availableLanguages.firstIndex(of: "Base") , excludeBase == true {
             availableLanguages.remove(at: indexOfBase)
         }
         return availableLanguages
