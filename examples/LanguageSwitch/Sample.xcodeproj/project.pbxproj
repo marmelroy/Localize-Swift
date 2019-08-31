@@ -235,12 +235,12 @@
 				TargetAttributes = {
 					3426FF8F1BB6AEE200E8E1BB = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						TestTargetID = 34346CFC1B7294470063FED4;
 					};
 					34346CFC1B7294470063FED4 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
