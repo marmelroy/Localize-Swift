@@ -12,6 +12,7 @@ class GenStrings {
     var regularExpresions = [String:NSRegularExpression]()
 
     let localizedRegex = "(?<=\")([^\"]*)(?=\".(localized|localizedFormat))|(?<=(Localized|NSLocalizedString)\\(\")([^\"]*?)(?=\")"
+    let commentedRegex = "(?<=.commented\\(\")([^\"]*)(?=\")"
 
     enum GenstringsError: Error {
         case Error
@@ -24,30 +25,49 @@ class GenStrings {
         let allFiles = fetchFilesInFolder(rootPath: rootPath)
         // We use a set to avoid duplicates
         var localizableStrings = Set<String>()
+        var comments = [String:String]()
         for filePath in allFiles {
-            let stringsInFile = localizableStringsInFile(filePath: filePath)
+            let (stringsInFile, commentsInFile) = localizableStringsInFile(filePath: filePath)
             localizableStrings = localizableStrings.union(stringsInFile)
+            comments = comments.merging(commentsInFile, uniquingKeysWith: { (_, last) in last })
         }
         // We sort the strings
         let sortedStrings = localizableStrings.sorted(by: { $0 < $1 })
         var processedStrings = String()
         for string in sortedStrings {
+            if let comment = comments[string] {
+                processedStrings.append("/* \(comment) */ \n")
+            }
             processedStrings.append("\"\(string)\" = \"\(string)\"; \n")
         }
         print(processedStrings)
     }
 
     // Applies regex to a file at filePath.
-    func localizableStringsInFile(filePath: URL) -> Set<String> {
+    func localizableStringsInFile(filePath: URL) -> (Set<String>, [String:String]) {
         do {
             let fileContentsData = try Data(contentsOf: filePath)
             guard let fileContentsString = NSString(data: fileContentsData, encoding: String.Encoding.utf8.rawValue) else {
-                return Set<String>()
+                return (Set<String>(), [String:String]())
             }
-            let localizedStringsArray = try regexMatches(pattern: localizedRegex, string: fileContentsString as String).map({fileContentsString.substring(with: $0.range)})
-            return Set(localizedStringsArray)
+
+            let localizedMatches = try regexMatches(pattern: localizedRegex, string: fileContentsString as String)
+            let commentedMatches = try regexMatches(pattern: commentedRegex, string: fileContentsString as String)
+
+            let localizedStringsArray = localizedMatches.map({fileContentsString.substring(with: $0.range)})
+            var comments = [String:String]()
+            for m in commentedMatches {
+                let comment = fileContentsString.substring(with: m.range)
+                let localizedRange = localizedMatches.filter { $0.range.location + $0.range.length <= m.range.location }.last?.range
+                if localizedRange != nil {
+                    let localized = fileContentsString.substring(with: localizedRange!)
+                    comments[localized] = comment
+                }
+            }
+
+            return (Set(localizedStringsArray), comments)
         } catch {}
-        return Set<String>()
+        return (Set<String>(), [String:String]())
     }
 
     //MARK: Regex
