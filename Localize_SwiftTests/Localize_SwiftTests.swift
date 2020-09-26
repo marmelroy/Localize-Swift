@@ -3,7 +3,7 @@
 //  Localize_SwiftTests
 //
 //  Created by Roy Marmelstein on 21/01/2016.
-//  Copyright © 2016 Roy Marmelstein. All rights reserved.
+//  Copyright © 2020 Roy Marmelstein. All rights reserved.
 //
 
 import XCTest

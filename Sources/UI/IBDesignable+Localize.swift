@@ -2,7 +2,7 @@
 //  IBDesignable+Localize1.swift
 //  Localize-Swift
 //
-//  Created by BinaryBoy on 7/23/19.
+//  Copyright © 2020 Roy Marmelstein. All rights reserved.
 //
 
 import Foundation
