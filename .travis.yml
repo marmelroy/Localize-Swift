@@ -1,4 +1,4 @@
-osx_image: xcode10.3
+osx_image: xcode12
 language: swift
 env:
   global:
