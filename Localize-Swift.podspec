@@ -12,12 +12,23 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/marmelroy/Localize-Swift.git", :tag => s.version.to_s, :submodules => true}
   s.social_media_url   = "http://twitter.com/marmelroy"
 
-  s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.9'
-  s.tvos.deployment_target = '9.0'
-  s.watchos.deployment_target = '2.0'
-
+  s.swift_version = '5.3'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.3' }
   s.requires_arc = true
+
+  s.subspec 'LocalizeSwiftCore' do |core|
+    core.ios.deployment_target = '9.0'
+    core.osx.deployment_target = '10.10'
+    core.tvos.deployment_target = '9.0'
+    core.watchos.deployment_target = '2.0'
+    core.source_files = "Sources/*.{swift}"
+  end
+
+  s.subspec 'UIKit' do |ui|
+    ui.dependency 'Localize-Swift/LocalizeSwiftCore'
+    ui.ios.deployment_target = '9.0'
+    ui.source_files = 'Sources/UI/'
+  end
+
   s.source_files = 'Sources'
 end
