@@ -63,6 +63,26 @@ This will print the collected strings in the terminal. Select and copy to your d
 
 The script includes the ability to specify excluded directories and files (by editing the script).
 
+### [Preferrred] Setting up with [Swift Package Manager](https://swiftpm.co/?query=Localize-Swift)
+
+The [Swift Package Manager](https://swift.org/package-manager/) is now the preferred tool for distributing Localize-Swift. 
+
+From Xcode 11+ :
+
+1. Select File > Swift Packages > Add Package Dependency. Enter `https://github.com/marmelroy/Localize-Swift.git` in the "Choose Package Repository" dialog.
+2. In the next page, specify the version resolving rule as "Up to Next Major" with "3.2.0".
+3. After Xcode checked out the source and resolving the version, you can choose the "Localize-Swift" library and add it to your app target.
+
+For more info, read [Adding Package Dependencies to Your App](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) from Apple.
+
+Alternatively, you can also add Localize-Swift to your `Package.swift` file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/marmelroy/Localize-Swift.git", .upToNextMajor(from: "3.2.0"))
+]
+```
+
 ### Setting up with Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
@@ -83,5 +103,5 @@ github "marmelroy/Localize-Swift"
 ### Setting up with [CocoaPods](http://cocoapods.org/?q=Localize-Swift)
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'Localize-Swift', '~> 2.0'
+pod 'Localize-Swift', '~> 3.2'
 ```
