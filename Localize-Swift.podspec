@@ -16,12 +16,17 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.3' }
   s.requires_arc = true
 
+  s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = '10.10'
+  s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '4.0'
+
   s.subspec 'LocalizeSwiftCore' do |core|
     core.ios.deployment_target = '9.0'
-    core.osx.deployment_target = '10.9'
+    core.osx.deployment_target = '10.10'
     core.tvos.deployment_target = '9.0'
-    core.watchos.deployment_target = '2.0'
-    core.source_files = "Sources/*.{swift}"
+    core.watchos.deployment_target = '4.0'
+    core.source_files = "Sources/"
   end
 
   s.subspec 'UIKit' do |ui|
