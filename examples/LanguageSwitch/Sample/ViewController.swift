@@ -35,7 +35,6 @@ class ViewController: UIViewController {
     // Remove the LCLLanguageChangeNotification on viewWillDisappear
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: Localized Text
