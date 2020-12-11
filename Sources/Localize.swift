@@ -171,5 +171,31 @@ open class Localize: NSObject {
         }
         return String()
     }
+    
+    /// Returns current locale.
+    ///
+    /// - Returns: current locale.
+    final class func currentLocale() -> Locale {
+        return Locale(identifier: Localize.currentLanguage())
+    }
+    
+    /// Returns a localized string for a specified ISO 4217 currency code.
+    ///
+    /// - Parameter currencyCode: ISO 4217 currency code the currency whose name you want.
+    /// - Returns: Localized string for a specified ISO 4217 currency code.
+    final class func localizedCurrency(_ currencyCode: String) -> String {
+        return currentLocale()
+            .localizedString(forCurrencyCode: currencyCode) ?? currencyCode
+    }
+    
+    /// Returns the localized string for the specified country code.
+    ///
+    /// - Parameter countryCode: The country code indicating the country whose name you want.
+    /// - Returns: Localized string for the specified country code.
+    @available(iOS 10.0, *)
+    final class func localizedCountry(_ countryCode: String) -> String {
+        return (currentLocale() as NSLocale)
+            .localizedString(forCountryCode: countryCode) ?? countryCode
+    }
 }
 
