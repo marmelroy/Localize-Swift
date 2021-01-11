@@ -3,8 +3,6 @@
 [![Build Status](https://travis-ci.org/marmelroy/Localize-Swift.svg?branch=master)](https://travis-ci.org/marmelroy/Localize-Swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-[![jaywcjlove/sb](https://jaywcjlove.github.io/sb/lang/chinese.svg)](README-zh.md)
-
 # Localize-Swift
 Localize-Swift는 Swift iOS앱에서 i18n과 현지화를 향상시키는 간단한 프레임워크입니다 - 더 깔끔한 문법과 앱 내 언어 전환을 지원합니다.
 
