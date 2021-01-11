@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/marmelroy/Localize-Swift.svg?branch=master)](https://travis-ci.org/marmelroy/Localize-Swift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-[![Translation](https://img.shields.io/badge/Translation-%ED%95%9C%EA%B5%AD%EC%96%B4-informational)](README-ko.md)
+[![Translation](https://img.shields.io/badge/Translation-%ED%95%9C%EA%B5%AD%EC%96%B4-informational)](README-KO.md)
 
 # Localize-Swift
 Localize-Swift is a simple framework that improves i18n and localization in Swift iOS apps - providing cleaner syntax and in-app language switching.
