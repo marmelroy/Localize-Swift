@@ -4,7 +4,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # Localize-Swift
-Localize-Swift는 Swift iOS앱에서 i18n과 현지화를 향상시키는 간단한 프레임워크입니다 - 더 깔끔한 문법과 앱 내 언어 전환을 지원합니다.
+Localize-Swift는 Swift iOS 앱에서 i18n및 현지화를 향상시키는 간단한 프레임워크입니다 - 더 깔끔한 문법과 앱 내 언어 전환을 지원합니다.
 
 <p align="center"><img src="http://i.imgur.com/vsrpqBt.gif" width="242" height="425"/></p>
 
@@ -19,7 +19,7 @@ Localize-Swift는 Swift iOS앱에서 i18n과 현지화를 향상시키는 간단
 
 지역화된 텍스트를 포함할 Swift 파일 최상단에 Localize를 Import 합니다.
 
-If CocoaPods -
+CocoaPods에서 -
 ```swift
 import Localize_Swift
 ```
@@ -74,7 +74,7 @@ $ brew update
 $ brew install carthage
 ```
 
-Carthage를 사옹해 Localize-Swift를 Xcode 프로젝트에 통합시키기 위해서,`Cartfile`:
+Carthage를 사옹해 Localize-Swift를 Xcode 프로젝트에 통합시키기 위해서,`Cartfile`을 :
 
 ```ogdl
 github "marmelroy/Localize-Swift"
