@@ -10,7 +10,7 @@ import UIKit
 import Localize_Swift
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
@@ -40,21 +40,22 @@ class ViewController: UIViewController {
     
     // MARK: Localized Text
     
-    @objc func setText(){
-        textLabel.text = "Hello world".localized();
-	changeButton.setTitle("Change".localized(using: "ButtonTitles"), for: UIControl.State.normal)
+    @objc func setText() {
+        @LocalizableString var helloWorldText = "Hello world"
+        textLabel.text = helloWorldText
+        changeButton.setTitle("Change".localized(using: "ButtonTitles"), for: UIControl.State.normal)
         resetButton.setTitle("Reset".localized(using: "ButtonTitles"), for: UIControl.State.normal)
     }
     
     // MARK: IBActions
-
+    
     @IBAction func doChangeLanguage(_ sender: AnyObject) {
         actionSheet = UIAlertController(title: nil, message: "Switch Language", preferredStyle: UIAlertController.Style.actionSheet)
         for language in availableLanguages {
             let displayName = Localize.displayNameForLanguage(language)
             let languageAction = UIAlertAction(title: displayName, style: .default, handler: {
                 (alert: UIAlertAction!) -> Void in
-                    Localize.setCurrentLanguage(language)
+                Localize.setCurrentLanguage(language)
             })
             actionSheet.addAction(languageAction)
         }
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
         actionSheet.addAction(cancelAction)
         self.present(actionSheet, animated: true, completion: nil)
     }
-
+    
     @IBAction func doResetLanguage(_ sender: AnyObject) {
         Localize.resetCurrentLanguageToDefault()
     }
