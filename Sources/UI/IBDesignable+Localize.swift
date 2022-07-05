@@ -5,6 +5,7 @@
 //  Copyright © 2020 Roy Marmelstein. All rights reserved.
 //
 
+#if !os(macOS)
 import Foundation
 import UIKit
 
@@ -90,3 +91,5 @@ import UIKit
         }
     }
 }
+
+#endif
