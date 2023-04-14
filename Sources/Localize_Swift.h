@@ -6,7 +6,14 @@
 //  Copyright © 2020 Roy Marmelstein. All rights reserved.
 //
 
+#if __has_feature(modules)
+
+#if __has_warning("-Watimport-in-framework-header")
+#pragma clang diagnostic ignored "-Watimport-in-framework-header"
+#endif
 @import Foundation;
+#endif
+
 
 //! Project version number for Localize_Swift.
 FOUNDATION_EXPORT double Localize_SwiftVersionNumber;
