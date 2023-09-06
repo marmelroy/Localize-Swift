@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Localize-Swift"
-  s.version          = "3.2.0"
+  s.version          = "3.2.0.1"
   s.summary          = "Swift-friendly localization and i18n syntax with in-app language switching."
   s.description      = <<-DESC
                       A simple framework that improves localization and i18n in Swift apps with cleaner syntax and in-app language switching.
